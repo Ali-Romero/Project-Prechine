@@ -1,5 +1,16 @@
 const BASE_URL = '/project/nuxt-starter/'
 
+const BREAKPOINTS = {
+  xxs: 320,
+  xs: 576,
+  sm: 768,
+  md: 1024,
+  lg: 1200,
+  xl: 1300,
+  xxl: 1400,
+  xxxl: 1500,
+}
+
 export default {
   target: 'static',
 
@@ -30,13 +41,29 @@ export default {
     '@/assets/styles/app.sass',
   ],
 
-  plugins: [],
+  plugins: ['@/plugins/validation.js', '@/plugins/scrollto.js'],
 
   components: true,
 
-  buildModules: ['@nuxtjs/style-resources', '@nuxtjs/eslint-module', '@nuxtjs/stylelint-module'],
+  buildModules: [
+    '@nuxt/image',
+    '@nuxtjs/style-resources',
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/stylelint-module',
+  ],
 
-  modules: ['@nuxtjs/axios', '@nuxtjs/pwa'],
+  modules: ['@nuxtjs/axios', '@nuxtjs/pwa', 'vue-screen/nuxt'],
+
+  screen: {
+    ...BREAKPOINTS,
+  },
+
+  image: {
+    dir: 'assets/images',
+    screens: Object.fromEntries(
+      Object.entries(BREAKPOINTS).map(([key, value]) => [key, value - 1])
+    ),
+  },
 
   axios: {
     baseURL: BASE_URL,
@@ -48,7 +75,9 @@ export default {
     },
   },
 
-  build: {},
+  build: {
+    transpile: ['vee-validate/dist/rules', 'vue-pro-modal'],
+  },
 
   server: {
     host: '0.0.0.0',
