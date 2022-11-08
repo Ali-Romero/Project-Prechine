@@ -18,7 +18,8 @@
       />
 
       <span v-if="showMaskPlaceholder" class="ui-input__mask">
-        <span>{{ maskPlaceholder.value }}</span>{{ maskPlaceholder.mask }}
+        <span>{{ maskPlaceholder.value }}</span
+        >{{ maskPlaceholder.mask }}
       </span>
     </span>
   </label>
@@ -43,7 +44,7 @@ export default {
     /**
      * Маска для поля ввода. Использует директиву из модуля 'v-mask'
      */
-     mask: {
+    mask: {
       type: [String, Array, Boolean],
       default: false,
     },
@@ -75,7 +76,7 @@ export default {
 
       return {
         value,
-        mask
+        mask,
       }
     },
     model: {
@@ -88,9 +89,9 @@ export default {
     },
     classes() {
       return {
-        'ui-input--focus': this.focus
+        'ui-input--focus': this.focus,
       }
-    }
+    },
   },
 }
 </script>
@@ -118,6 +119,7 @@ export default {
     height: 100%
     font-size: inherit
     line-height: inherit
+    color: inherit
     display: block
 
   &__mask
@@ -126,6 +128,7 @@ export default {
     position: absolute
     top: 0
     left: 0
+    pointer-events: none
 
     & span
       visibility: hidden

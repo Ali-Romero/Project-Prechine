@@ -1,5 +1,5 @@
 <template>
-  <component :is="`icons-${name}`"></component>
+  <component :is="`icons-${name}`" class="d-block"></component>
 </template>
 
 <script>
