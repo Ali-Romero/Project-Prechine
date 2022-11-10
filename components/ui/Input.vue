@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
   <label class="ui-input" :class="classes">
-    <span v-if="icon" class="ui-input__icon">
+    <span class="ui-input__icon">
       <slot name="icon">
         <ui-icon :name="icon" />
       </slot>
@@ -36,6 +36,10 @@ export default {
     value: {
       type: [String, Number],
       required: true,
+    },
+    error: {
+      type: Boolean,
+      default: false,
     },
     icon: {
       type: String,
@@ -90,6 +94,7 @@ export default {
     classes() {
       return {
         'ui-input--focus': this.focus,
+        'ui-input--error': this.error,
       }
     },
   },
@@ -99,20 +104,58 @@ export default {
 <style lang="sass" scoped>
 .ui-input
   display: flex
-  border: 1px solid grey
-
+  border: 1px solid #E1E1E1
+  border-radius: 100px
+  height: 60px
+  padding: 0 10px 0 20px
+  @media (min-width: map-get($breakpoints, 'sm'))
+    padding: 0 8px 0 4px
+    height: 50px
+  @media (min-width: map-get($breakpoints, 'lg'))
+    height: 67px
+    padding: 0 12px 0 20px
+  @media (min-width: map-get($breakpoints, 'xxxl'))
+    height: 87px
+    padding: 0 20px 0 30px
   &--focus
-    border: 1px solid red
+    border-color: #E1E1E1
+
+  &--error
+    border-color: red
 
   &__icon
-    margin-right: 10px
-
+    margin-right: 14px
+    display: flex
+    align-items: center
+    @media (min-width: map-get($breakpoints, 'sm'))
+      margin-right: 6px
+    @media (min-width: map-get($breakpoints, 'lg'))
+      margin-right: 10px
+    svg
+      width: 20px
+      height: 20px
+      @media (min-width: map-get($breakpoints, 'sm'))
+        width: 18px
+        height: 18px
+      @media (min-width: map-get($breakpoints, 'lg'))
+        width: 27px
+        height: 27px
   &__field
-    font-size: 14px
-    line-height: 20px
+    font-size: 15px
+    line-height: 15px
+    color: #7D7D7D
     position: relative
     display: block
     flex: 1
+    @media (min-width: map-get($breakpoints, 'sm'))
+      font-size: 14px
+      line-height: 14px
+    @media (min-width: map-get($breakpoints, 'lg'))
+      font-size: 16px
+      line-height: 18px
+    @media (min-width: map-get($breakpoints, 'xxxl'))
+      font-size: 18px
+      line-height: 20px
 
   &__mask,
   &__input
@@ -120,6 +163,7 @@ export default {
     font-size: inherit
     line-height: inherit
     color: inherit
+    width: 100%
     display: block
 
   &__mask
@@ -129,6 +173,7 @@ export default {
     top: 0
     left: 0
     pointer-events: none
+    font-family: 'Manrope-Light'
 
     & span
       visibility: hidden
@@ -139,4 +184,14 @@ export default {
     outline: none
     padding: 0
     margin: 0
+  &__input::-webkit-input-placeholder
+    font-family: 'Manrope-Light'
+  &__input:-moz-placeholder
+    font-family: 'Manrope-Light'
+  &__input::-moz-placeholder
+    font-family: 'Manrope-Light'
+  &__input:-ms-input-placeholder
+    font-family: 'Manrope-Light'
+  &__input::placeholder
+    font-family: 'Manrope-Light'
 </style>

@@ -31,7 +31,7 @@ export default {
   },
 
   styleResources: {
-    sass: ['@/assets/styles/variables.sass'],
+    sass: ['@/assets/styles/variables.sass', '@/assets/styles/mixins.sass'],
   },
 
   css: [
@@ -41,7 +41,12 @@ export default {
     '@/assets/styles/app.sass',
   ],
 
-  plugins: ['@/plugins/validation.js', '@/plugins/scrollto.js'],
+  plugins: [
+    '@/plugins/validation.js',
+    '@/plugins/scrollto.js',
+    '@/plugins/feedback.js',
+    { src: '@/plugins/ymaps.js', mode: 'client' },
+  ],
 
   components: true,
 

@@ -1,0 +1,38 @@
+<template>
+  <div class="agree">
+    <div class="agree__checkbox">
+      <ui-icon name="agree-checkbox"></ui-icon>
+    </div>
+    <div class="agree__description">
+      Я подтверждаю, что ознакомлен и даю согласие на обработку персональных
+      данных на условиях и для целей, определяемых
+      <br class="d-lg-none" />
+      <a href="">Политикой конфиденциальности</a>
+    </div>
+  </div>
+</template>
+
+<style lang="sass" scoped>
+.agree
+  display: flex
+  align-items: flex-start
+  justify-content: center
+  @media (min-width: map-get($breakpoints, 'lg'))
+    align-items: center
+  &__checkbox
+    margin-right: 4px
+    @media (min-width: map-get($breakpoints, 'lg'))
+      margin-right: 10px
+  &__description
+    font-size: 11px
+    line-height: 12px
+    color: #7D7D7D
+    font-family: 'Manrope-Light'
+    text-align: center
+    @media (min-width: map-get($breakpoints, 'lg'))
+      text-align: left
+      font-size: 12px
+      line-height: 17px
+    a
+      text-decoration: underline
+</style>

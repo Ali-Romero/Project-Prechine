@@ -1,18 +1,38 @@
+.title
+  font-size: 24px
+  line-height: 34px
+  text-transform: uppercase
+  font-family: 'Manrope-ExtraBold'
+  display: inline-block
+  @media (min-width: map-get($breakpoints, 'sm'))
+    font-size: 36px
+    line-height: 55px
+  @media (min-width: map-get($breakpoints, 'lg'))
+    font-size: 56px
+    line-height: 76px
+  @media (min-width: map-get($breakpoints, 'xxxl'))
+    font-size: 60px
+    line-height: 84px
+
 .text-center
   text-align: center
 
 .text-border
-  border: 3px solid #1776D4
-  border-radius: 100px
-  padding: 0px 16px
-  margin: 0 5px 0 -18px
-  @media (min-width: map-get($breakpoints, 'xxxl'))
-    padding: 0 16px
-    margin: 0px 5px 0 -20px
-    border: 4px solid #1776D4
+  position: relative
+  &::before
+    position: absolute
+    content: ""
+    width: 100%
+    height: 100%
+    border-radius: 100px
+    border: 3px solid #1776D4
+    @media (min-width: map-get($breakpoints, 'lg'))
+      border: 3px solid #1776D4
+    @media (min-width: map-get($breakpoints, 'xxxl'))
+      border: 4px solid #1776D4
 
-.d-block
-  display: block
+@include display()
 
-.d-flex
-  display: flex
+@each $bp, $size in $breakpoints
+  @media (min-width: $size)
+    @include display($bp)

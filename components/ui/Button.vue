@@ -52,8 +52,11 @@ export default {
   color: white
   border-radius: 100px
   height: 87px
-  font-size: 16px
-  line-height: 24px
+  font-size: 14px
+  line-height: 18px
+  @media (min-width: map-get($breakpoints, 'sm'))
+    font-size: 14px
+    line-height: 20px
   @media (min-width: map-get($breakpoints, 'lg'))
     font-size: 18px
     line-height: 26px

@@ -37,10 +37,27 @@ export default {
 
 <style lang="sass" scoped>
 .ui-validator
+  position: relative
+
   &__error
+    position: absolute
     display: inline-block
     color: red
     animation: shake 0.3s 0.3s
+    font-size: 9px
+    line-height: 12px
+    top: 34px
+    left: 16px
+    @media (min-width: map-get($breakpoints, 'lg'))
+      font-size: 12px
+      line-height: 14px
+      top: 46px
+      left: 22px
+    @media (min-width: map-get($breakpoints, 'xxxl'))
+      top: 59px
+      left: 33px
+      font-size: 14px
+      line-height: 16px
 
 @keyframes shake
   0%

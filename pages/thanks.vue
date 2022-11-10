@@ -1,7 +1,7 @@
 <template>
   <ui-layout>
     <template #header>
-      <header>header</header>
+      <app-header></app-header>
     </template>
     <template #main>
       <div>
@@ -9,7 +9,7 @@
       </div>
     </template>
     <template #footer>
-      <footer>footer</footer>
+      <app-footer></app-footer>
     </template>
   </ui-layout>
 </template>
