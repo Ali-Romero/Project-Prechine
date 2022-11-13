@@ -57,11 +57,7 @@ export default {
     '@nuxtjs/stylelint-module',
   ],
 
-  modules: ['@nuxtjs/axios', '@nuxtjs/pwa', 'vue-screen/nuxt'],
-
-  screen: {
-    ...BREAKPOINTS,
-  },
+  modules: ['@nuxtjs/axios', '@nuxtjs/pwa'],
 
   image: {
     dir: 'assets/images',
@@ -81,7 +77,15 @@ export default {
   },
 
   build: {
-    transpile: ['vee-validate/dist/rules', 'vue-pro-modal'],
+    transpile: [
+      'vee-validate',
+      'vue-pro-modal',
+      'swiper',
+      'dom7',
+      'ssr-window',
+      'gsap',
+      'gsap/ScrollTrigger',
+    ],
   },
 
   server: {

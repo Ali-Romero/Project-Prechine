@@ -23,12 +23,13 @@ export default {
   position: relative
   display: inline-block
   z-index: 1
+  padding-top: 100px
   &__num
     font-size: 160px
     line-height: 160px
     position: absolute
     color: white
-    top: -104px
+    bottom: 10px
     text-align: center
     left: 0
     right: 0
