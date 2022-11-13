@@ -27,7 +27,12 @@
           на поездки или проживание в курортных странах
         </div>
         <div class="main-section__button">
-          <ui-button fluid>Получить презентацию</ui-button>
+          <ui-button fluid>
+            Получить презентацию
+            <template #icon>
+              <ui-icon name="arrow-btn" />
+            </template>
+          </ui-button>
         </div>
       </div>
     </ui-wrapper>
@@ -134,11 +139,8 @@
       font-family: 'Manrope-Bold'
 
   &__button
-    max-width: 250px
-    height: 52px
-    @media (min-width: map-get($breakpoints, 'sm'))
-      max-width: 300px
-      height: 60px
+    max-width: 300px
+    height: 70px
     @media (min-width: map-get($breakpoints, 'lg'))
       max-width: 370px
       height: 78px

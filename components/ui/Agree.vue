@@ -24,11 +24,15 @@
     @media (min-width: map-get($breakpoints, 'lg'))
       margin-right: 10px
   &__description
-    font-size: 11px
-    line-height: 12px
+    font-size: 10px
+    line-height: 13px
     color: #7D7D7D
     font-family: 'Manrope-Light'
-    text-align: center
+    text-align: left
+    @media (min-width: map-get($breakpoints, 'sm'))
+      text-align: center
+      font-size: 11px
+      line-height: 12px
     @media (min-width: map-get($breakpoints, 'lg'))
       text-align: left
       font-size: 12px

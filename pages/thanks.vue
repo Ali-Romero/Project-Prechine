@@ -4,9 +4,7 @@
       <app-header></app-header>
     </template>
     <template #main>
-      <div>
-        <h1>thanks</h1>
-      </div>
+      <app-thanks-section></app-thanks-section>
     </template>
     <template #footer>
       <app-footer></app-footer>

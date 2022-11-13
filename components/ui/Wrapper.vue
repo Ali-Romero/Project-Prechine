@@ -24,7 +24,7 @@ export default {
     max-width: 780px
     padding: 0 10px
   @media (min-width: map-get($breakpoints, 'lg'))
-    max-width: 1240px
+    max-width: 1170px
     padding: 0 20px
   @media (min-width: map-get($breakpoints, 'xxxl'))
     max-width: 1482px

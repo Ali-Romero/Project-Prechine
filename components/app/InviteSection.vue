@@ -79,7 +79,7 @@
           </div>
         </div>
         <div class="invite-section__feedback">
-          <app-feedback-form></app-feedback-form>
+          <app-feedback></app-feedback>
         </div>
       </div>
     </ui-wrapper>
@@ -89,9 +89,12 @@
 <style lang="sass" scoped>
 .invite-section
   color: white
-  background-color: #000000d6
+  background: url("@/assets/images/invite-section-bg.jpg")
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
   &__inner
-    padding: 89px 0 90px 0
+    padding: 169px 0 90px 0
   &__row
     margin-bottom: 34px
     @media (min-width: map-get($breakpoints, 'sm'))

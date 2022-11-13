@@ -31,7 +31,7 @@ export default {
   computed: {
     styles() {
       return {
-        display: this.block ? 'block' : ''
+        display: this.block ? 'block' : '',
       }
     },
   },

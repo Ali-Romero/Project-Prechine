@@ -1,11 +1,11 @@
 <template>
-  <ui-form class="feedback-main" @submit="submit">
-    <div class="feedback-main__top">
-      <div class="feedback-main__title">
+  <ui-form class="feedback" @submit="submit">
+    <div class="feedback__top">
+      <div class="feedback__title">
         Принять участие <br class="d-block d-sm-none" />
         в экскурсии:
       </div>
-      <div class="feedback-main__checkbox">
+      <div class="feedback__checkbox">
         <div>
           <ui-checkbox
             v-model="fields.action"
@@ -23,12 +23,12 @@
         </div>
       </div>
     </div>
-    <div class="feedback-main__container">
+    <div class="feedback__container">
       <ui-validator
         v-slot="{ error }"
         show-message
         rules="required|phone"
-        class="feedback-main__input"
+        class="feedback__input"
       >
         <ui-input-phone v-model="fields.phone" :error="error" />
       </ui-validator>
@@ -36,23 +36,23 @@
         v-slot="{ error }"
         show-message
         rules="required|email"
-        class="feedback-main__input"
+        class="feedback__input"
       >
         <ui-input-email v-model="fields.email" :error="error" />
       </ui-validator>
       <ui-validator
         v-slot="{ error }"
         show-message
-        class="feedback-main__input"
+        class="feedback__input"
         rules="required"
       >
         <ui-input-name v-model="fields.name" :error="error" />
       </ui-validator>
-      <div class="feedback-main__button">
+      <div class="feedback__button">
         <ui-button fluid type="submit">Принять участие</ui-button>
       </div>
     </div>
-    <div class="feedback-main__agree">
+    <div class="feedback__agree">
       <ui-agree></ui-agree>
     </div>
   </ui-form>
@@ -80,12 +80,12 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.feedback-main
+.feedback
   background-color: #FFFFFF
   width: 100%
   color: #212121
   border-radius: 24px
-  padding: 30px 11px
+  padding: 30px 22px
   max-width: 1439px
   @media (min-width: map-get($breakpoints, 'lg'))
     padding: 40px 50px

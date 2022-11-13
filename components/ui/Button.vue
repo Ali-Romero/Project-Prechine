@@ -52,7 +52,7 @@ export default {
   color: white
   border-radius: 100px
   height: 87px
-  font-size: 14px
+  font-size: 16px
   line-height: 18px
   @media (min-width: map-get($breakpoints, 'sm'))
     font-size: 14px
@@ -85,4 +85,22 @@ export default {
         left: -150%
       100%
         left: 150%
+  &__icon
+    margin-left: 8px
+    @media (min-width: map-get($breakpoints, 'sm'))
+      margin-left: 12px
+    @media (min-width: map-get($breakpoints, 'lg'))
+      margin-left: 18px
+    svg
+      width: 20px
+      height: 20px
+      @media (min-width: map-get($breakpoints, 'sm'))
+        width: 21px
+        height: 19px
+      @media (min-width: map-get($breakpoints, 'lg'))
+        width: 24px
+        height: 25px
+      @media (min-width: map-get($breakpoints, 'xxxl'))
+        width: 27px
+        height: 28px
 </style>
