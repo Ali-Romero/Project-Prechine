@@ -6,7 +6,7 @@
           <h2 class="income-section__title title-secondary">
             Доходы партнёров
           </h2>
-          <div class="income-section__title-info">
+          <div class="income-section__title-info info">
             90% задач будут выполнять сотрудники головной компании, поэтому
             прибыль можно считать пассивным доходом.
           </div>
@@ -90,6 +90,7 @@
       margin-bottom: 21px
   &__title-info
     margin-bottom: 39px
+    text-align: left
     @media (min-width: map-get($breakpoints, 'lg'))
       margin-bottom: 52px
   &__cards

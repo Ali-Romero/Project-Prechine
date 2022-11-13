@@ -4,6 +4,7 @@
       <app-main-section></app-main-section>
       <app-difference-section></app-difference-section>
       <app-about-section></app-about-section>
+      <app-cases-section></app-cases-section>
       <app-income-section></app-income-section>
       <app-build-section></app-build-section>
       <app-invite-section></app-invite-section>

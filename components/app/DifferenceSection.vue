@@ -43,13 +43,13 @@
     margin: 0 auto 21px auto
     text-align: center
   &__title-info
+    font-family: 'Manrope-Light'
     margin: 0 auto 52px auto
     font-size: 22px
     line-height: 33px
     text-align: center
     color: #7D7D7D
     max-width: 623px
-    font-family: 'Manrope-Light'
   &__bottom-info
     position: relative
     z-index: 1
