@@ -1,5 +1,5 @@
 <template>
-  <section class="difference-section">
+  <section ref="section" class="difference-section">
     <ui-wrapper class="difference-section__wrapper">
       <div class="difference-section__circle">
         <app-difference-circle-slider />
@@ -14,16 +14,16 @@
             маркетплейсах и показываем какие выгоды она даёт.
           </div>
         </div>
-        <div class="difference-section__content">
-          <div class="difference-section__number-titles">
-            <div class="difference-section__number-title">
+        <div ref="content" class="difference-section__content">
+          <div ref="steps" class="difference-section__steps">
+            <div class="difference-section__step">
               <app-difference-title title-difference-num="01">
                 <template #difference-title-text>
                   Поиск товара
                 </template>
               </app-difference-title>
             </div>
-            <div class="difference-section__number-title">
+            <div class="difference-section__step">
               <app-difference-title title-difference-num="01">
                 <template #difference-title-text>
                   Поиск товара
@@ -51,7 +51,33 @@
 </template>
 
 <script>
+// import { gsap } from "gsap"
+// import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+// gsap.registerPlugin(ScrollTrigger);
+
 export default {
+  mounted() {
+    // const test = gsap.timeline({
+    //   scrollTrigger: {
+    //     markers: true,
+    //     trigger: this.$refs.section,
+    //     pin: true, // pin the trigger element while active
+    //     pinSpacing: true,
+    //     start: "top top", // when the top of the trigger hits the top of the viewport
+    //     end: () => this.$refs.section.offsetHeight * 2, // end after scrolling 500px beyond the start
+    //     scrub: true, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+    //   }
+    // })
+
+    // const steps = this.$refs.steps
+    // const stepItems = steps.querySelectorAll('.difference-section__step')
+
+    // test.fromTo(stepItems, { y: '100%' }, { y: '-100%' })
+
+    // test.to(this.$refs.track, { y: () => -(this.$refs.track.offsetHeight - this.$refs.track.querySelector('.difference-section__step').offsetHeight) }, 0)
+    // test.to(this.$refs.content, { toggleClass: 'QWEQWEQWEWQEWQE' })
+  }
 }
 </script>
 
@@ -82,17 +108,18 @@ export default {
     max-width: 623px
     font-family: 'Manrope-Light'
   &__content
+    height: 626px
     padding-left: 230px
     display: flex
-  &__number-titles
+  &__steps
     flex-grow: 1
+    overflow: hidden
+  &__step
+    padding-top: 130px
+    height: 626px
     display: flex
-    flex-direction: column
-    align-items: center
     justify-content: center
-  &__number-title
-    padding-top: 160px
-    height: 60vh
+    align-items: flex-start
   &__bottom-info
     position: relative
     z-index: 1
