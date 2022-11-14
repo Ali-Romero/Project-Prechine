@@ -65,44 +65,44 @@
 </template>
 
 <script>
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
+// import { gsap } from "gsap"
+// import { ScrollTrigger } from "gsap/ScrollTrigger"
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 export default {
   mounted() {
-    const timeline = gsap.timeline({
-      scrollTrigger: {
-        markers: true,
-        trigger: this.$refs.section,
-        pin: true, // pin the trigger element while active
-        pinSpacing: true,
-        start: "top top", // when the top of the trigger hits the top of the viewport
-        end: () => this.$refs.section.offsetHeight * 4, // end after scrolling 500px beyond the start
-        scrub: true, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-      }
-    })
+    // const timeline = gsap.timeline({
+    //   scrollTrigger: {
+    //     markers: true,
+    //     trigger: this.$refs.section,
+    //     pin: true, // pin the trigger element while active
+    //     pinSpacing: true,
+    //     start: "top top", // when the top of the trigger hits the top of the viewport
+    //     end: () => this.$refs.section.offsetHeight * 4, // end after scrolling 500px beyond the start
+    //     scrub: true, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+    //   }
+    // })
 
-    const $steps = this.$refs.steps
+    // const $steps = this.$refs.steps
 
-    const [firstStep, ...steps] = $steps.querySelectorAll('.difference-section__step')
+    // const [firstStep, ...steps] = $steps.querySelectorAll('.difference-section__step')
 
-    timeline.fromTo(firstStep, { y: '0' }, { y: '-100%' })
+    // timeline.fromTo(firstStep, { y: '0' }, { y: '-100%' })
 
-    steps.forEach((step, index) => {
-      timeline.fromTo(
-        step,
-        {
-          y: 0,
-        },
-        {
-          y: () => -($steps.offsetHeight + (step.offsetHeight / 2)),
-          onStart: () => { console.log('onStart', index + 2) },
-          onReverseComplete: () => { console.log('onReverseComplete', index + 1) }
-        }
-      )
-    })
+    // steps.forEach((step, index) => {
+    //   timeline.fromTo(
+    //     step,
+    //     {
+    //       y: 0,
+    //     },
+    //     {
+    //       y: () => -($steps.offsetHeight + (step.offsetHeight / 2)),
+    //       onStart: () => { console.log('onStart', index + 2) },
+    //       onReverseComplete: () => { console.log('onReverseComplete', index + 1) }
+    //     }
+    //   )
+    // })
   }
 }
 </script>
@@ -126,9 +126,8 @@ export default {
     margin: 0 auto 21px auto
     text-align: center
   &__title-info
+    font-family: 'Manrope-Light'
     margin: 0 auto
-    font-size: 22px
-    line-height: 33px
     text-align: center
     color: #7D7D7D
     max-width: 623px

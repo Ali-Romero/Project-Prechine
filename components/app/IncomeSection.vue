@@ -6,7 +6,7 @@
           <h2 class="income-section__title title-secondary">
             Доходы партнёров
           </h2>
-          <div class="income-section__title-info">
+          <div class="income-section__title-info info">
             90% задач будут выполнять сотрудники головной компании, поэтому
             прибыль можно считать пассивным доходом.
           </div>
@@ -48,6 +48,14 @@
               <ui-card value="5" name="месяцев окупаемости"></ui-card>
             </li>
           </ul>
+          <div class="income-section__mobile-info-helper">
+            <div>
+              <ui-icon name="icon-hover"></ui-icon>
+            </div>
+            <span>
+              Проведите в сторону, чтобы увидеть другие доходы
+            </span>
+          </div>
         </div>
         <div class="income-section__btn-content">
           <div class="income-section__btn-description">
@@ -75,6 +83,9 @@
   line-height: 21px
   font-family: 'Manrope-Light'
   @media (min-width: map-get($breakpoints, 'lg'))
+    font-size: 16px
+    line-height: 20px
+  @media (min-width: map-get($breakpoints, 'xxxl'))
     font-size: 22px
     line-height: 33px
   &:before
@@ -82,20 +93,33 @@
   &__inner
     padding: 93px 0 90px 0
   &__title-container
-    max-width: 421px
-    margin: 0 0 0 auto
+    max-width: 282px
+    @media (min-width: map-get($breakpoints, 'sm'))
+      margin: 0 0 0 auto
+    @media (min-width: map-get($breakpoints, 'lg'))
+      max-width: 357px
+    @media (min-width: map-get($breakpoints, 'xxxl'))
+      max-width: 421px
   &__title
     margin-bottom: 18px
     @media (min-width: map-get($breakpoints, 'lg'))
       margin-bottom: 21px
   &__title-info
     margin-bottom: 39px
+    text-align: left
     @media (min-width: map-get($breakpoints, 'lg'))
       margin-bottom: 52px
   &__cards
-    max-width: 758px
+    max-width: 592px
     width: 100%
-    margin-bottom: 116px
+    margin-bottom: 60px
+    @media (min-width: map-get($breakpoints, 'sm'))
+      max-width: 420px
+      margin-bottom: 116px
+    @media (min-width: map-get($breakpoints, 'lg'))
+      max-width: 592px
+    @media (min-width: map-get($breakpoints, 'xxxl'))
+      max-width: 758px
     ul
       display: flex
       justify-content: space-between
@@ -112,6 +136,9 @@
           margin-bottom: 0
   &__cards-total
     max-width: 397px
+    margin-left: 23px
+    @media (min-width: map-get($breakpoints, 'sm'))
+      margin-left: 0
   &__cards-total-info
     font-size: 12px
     line-height: 18px
@@ -120,10 +147,14 @@
     margin-bottom: 36px
     @media (min-width: map-get($breakpoints, 'lg'))
       justify-content: center
+      font-size: 14px
+      line-height: 20px
+      margin-top: 20px
+      margin-bottom: 0
+    @media (min-width: map-get($breakpoints, 'xxxl'))
       font-size: 16px
       line-height: 24px
       margin-top: 27px
-      margin-bottom: 0
     svg
       margin-right: 6px
       @media (min-width: map-get($breakpoints, 'lg'))
@@ -132,6 +163,21 @@
       max-width: 238px
       @media (min-width: map-get($breakpoints, 'lg'))
         max-width: 316px
+  &__mobile-info-helper
+    display: flex
+    align-items: center
+    margin-left: 51px
+    margin-top: 23px
+    @media (min-width: map-get($breakpoints, 'sm'))
+      display: none
+    div
+      margin-right: 17px
+    span
+      display: block
+      max-width: 162px
+      font-size: 12px
+      line-height: 18px
+      font-family: 'Manrope-Light'
   &__btn-content
     @media (min-width: map-get($breakpoints, 'sm'))
       display: flex
@@ -149,9 +195,17 @@
       margin-bottom: 0
       text-align: left
       max-width: 827px
+      font-size: 21px
+      line-height: 30px
+      margin-right: 30px
+    @media (min-width: map-get($breakpoints, 'lg'))
+      max-width: 827px
+      font-size: 30px
+      line-height: 42px
+      margin-right: 135px
+    @media (min-width: map-get($breakpoints, 'xxxl'))
       font-size: 40px
       line-height: 56px
-      margin-right: 135px
   &__btn
     width: 100%
     max-width: 300px
@@ -159,6 +213,12 @@
     margin: 0 auto
     @media (min-width: map-get($breakpoints, 'sm'))
       margin: 0
+      max-width: 274px
+      height: 66px
+    @media (min-width: map-get($breakpoints, 'lg'))
+      max-width: 350px
+      height: 80px
+    @media (min-width: map-get($breakpoints, 'xxxl'))
       max-width: 369px
       height: 87px
 </style>

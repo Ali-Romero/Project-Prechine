@@ -35,7 +35,7 @@ export default {
     classes() {
       return [`circle-slider--current-${this.slide}`]
     },
-  }
+  },
 }
 </script>
 
@@ -44,7 +44,7 @@ export default {
   position: relative
   width: 893px
   height: 893px
-  border:  3px solid #FFFFFF
+  border: 3px solid #FFFFFF
   border-radius: 100%
   transition: transform 0.2s
 

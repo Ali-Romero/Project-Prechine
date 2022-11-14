@@ -121,7 +121,7 @@
     font-family: 'Manrope-Light'
     max-width: 456px
     font-size: 14px
-    line-height: 18px
+    line-height: 21px
     margin-bottom: 30px
     @media (min-width: map-get($breakpoints, 'sm'))
       max-width: 402px
