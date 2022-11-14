@@ -46,6 +46,14 @@
               :price-sale="products[0].priceSale"
               :markup="products[0].markup"
             />
+            <div class="cases-section__nav-button">
+              <div class="cases-section__nav-button-prev">
+                <ui-nav-button prev></ui-nav-button>
+              </div>
+              <div class="cases-section__nav-button-next">
+                <ui-nav-button next></ui-nav-button>
+              </div>
+            </div>
           </div>
         </div>
         <div class="cases-section__bottom-info">
@@ -212,6 +220,7 @@ export default {
   &__product
     max-width: 486px
     width: 100%
+    position: relative
     @media (min-width: map-get($breakpoints, 'lg'))
       max-width: 665px
     @media (min-width: map-get($breakpoints, 'xxxl'))
@@ -248,6 +257,23 @@ export default {
       font-size: 30px
       line-height: 45px
       max-width: 657px
+  &__nav-button
+    display: flex
+    justify-content: center
+    @media (min-width: map-get($breakpoints, 'sm'))
+      justify-content: flex-start
+      position: absolute
+      bottom: 0px
+      left: 196px
+    @media (min-width: map-get($breakpoints, 'lg'))
+      bottom: 4px
+      left: 298px
+    @media (min-width: map-get($breakpoints, 'xxxl'))
+      bottom: 45px
+      left: 500px
+  &__nav-button-prev
+    margin-right: 10px
+  // &__nav-button-next
 .product-mini
   font-size: 17px
   line-height: 26px

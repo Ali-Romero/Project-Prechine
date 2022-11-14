@@ -107,9 +107,11 @@ export default {
         @media (min-width: map-get($breakpoints, 'xxxl'))
           width: 452px
   &__info
-    padding: 10px 0 0 0
-    @media (min-width: map-get($breakpoints, 'xxxl'))
-      padding: 33px 0 0 0
+    padding: 19px 0 0 0
+    @media (min-width: map-get($breakpoints, 'sm'))
+      padding: 4px 0 0 0
+    @media (min-width: map-get($breakpoints, 'lg'))
+      padding: 17px 0 0 0
     @media (min-width: map-get($breakpoints, 'xxxl'))
       padding: 44px 0 0 0
 .product-info
@@ -135,20 +137,18 @@ export default {
 
   &__title
     font-size: 18px
-    line-height: 27px
+    line-height: 26px
     margin-bottom: 19px
     text-transform: uppercase
     font-family: 'Manrope-SemiBold'
     text-align: center
     @media (min-width: map-get($breakpoints, 'sm'))
       text-align: left
-      font-size: 19px
-      line-height: 28px
       margin-bottom: 15px
     @media (min-width: map-get($breakpoints, 'lg'))
       font-size: 22px
       line-height: 32px
-      margin-bottom: 35px
+      margin-bottom: 20px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       font-size: 26px
       line-height: 39px
@@ -166,7 +166,7 @@ export default {
     li
       padding: 10px 13px
       @media (min-width: map-get($breakpoints, 'sm'))
-        padding: 10px 6px
+        padding: 6px
       @media (min-width: map-get($breakpoints, 'lg'))
         padding: 10px 15px
       @media (min-width: map-get($breakpoints, 'xxxl'))
@@ -194,6 +194,9 @@ export default {
         font-size: 22px
         line-height: 33px
   &__price
+    margin-bottom: 20px
+    @media (min-width: map-get($breakpoints, 'sm'))
+      margin-bottom: 0
     ul
       justify-content: space-between
       li
@@ -222,7 +225,11 @@ export default {
         &:last-child
           margin-right: 0
         div
-          margin-bottom: 6px
+          margin-bottom: 8px
+          @media (min-width: map-get($breakpoints, 'sm'))
+            margin-bottom: 3px
+          @media (min-width: map-get($breakpoints, 'lg'))
+            margin-bottom: 6px
           @media (min-width: map-get($breakpoints, 'xxxl'))
             margin-bottom: 10px
         span
