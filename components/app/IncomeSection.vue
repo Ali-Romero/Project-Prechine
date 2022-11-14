@@ -48,6 +48,14 @@
               <ui-card value="5" name="месяцев окупаемости"></ui-card>
             </li>
           </ul>
+          <div class="income-section__mobile-info-helper">
+            <div>
+              <ui-icon name="icon-hover"></ui-icon>
+            </div>
+            <span>
+              Проведите в сторону, чтобы увидеть другие доходы
+            </span>
+          </div>
         </div>
         <div class="income-section__btn-content">
           <div class="income-section__btn-description">
@@ -86,7 +94,8 @@
     padding: 93px 0 90px 0
   &__title-container
     max-width: 282px
-    margin: 0 0 0 auto
+    @media (min-width: map-get($breakpoints, 'sm'))
+      margin: 0 0 0 auto
     @media (min-width: map-get($breakpoints, 'lg'))
       max-width: 357px
     @media (min-width: map-get($breakpoints, 'xxxl'))
@@ -103,7 +112,12 @@
   &__cards
     max-width: 592px
     width: 100%
-    margin-bottom: 116px
+    margin-bottom: 60px
+    @media (min-width: map-get($breakpoints, 'sm'))
+      max-width: 420px
+      margin-bottom: 116px
+    @media (min-width: map-get($breakpoints, 'lg'))
+      max-width: 592px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       max-width: 758px
     ul
@@ -122,6 +136,9 @@
           margin-bottom: 0
   &__cards-total
     max-width: 397px
+    margin-left: 23px
+    @media (min-width: map-get($breakpoints, 'sm'))
+      margin-left: 0
   &__cards-total-info
     font-size: 12px
     line-height: 18px
@@ -146,6 +163,21 @@
       max-width: 238px
       @media (min-width: map-get($breakpoints, 'lg'))
         max-width: 316px
+  &__mobile-info-helper
+    display: flex
+    align-items: center
+    margin-left: 51px
+    margin-top: 23px
+    @media (min-width: map-get($breakpoints, 'sm'))
+      display: none
+    div
+      margin-right: 17px
+    span
+      display: block
+      max-width: 162px
+      font-size: 12px
+      line-height: 18px
+      font-family: 'Manrope-Light'
   &__btn-content
     @media (min-width: map-get($breakpoints, 'sm'))
       display: flex

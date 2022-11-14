@@ -1,6 +1,7 @@
 <template>
   <div class="product-card">
     <div class="product-card__image">
+      <div class="d-sm-none product-info__title">{{ title }}</div>
       <ui-image
         :src="image"
         alt="image"
@@ -11,7 +12,7 @@
     </div>
     <div class="product-card__info">
       <div class="product-info">
-        <div class="product-info__title">{{ title }}</div>
+        <div class="d-none d-sm-block product-info__title">{{ title }}</div>
         <div class="product-info__table">
           <ul>
             <li>
@@ -93,7 +94,7 @@ export default {
       margin-right: 50px
     ::v-deep
       img
-        width: 260px
+        width: 300px
         height: auto
         border-radius: 14px
         margin: 0 auto

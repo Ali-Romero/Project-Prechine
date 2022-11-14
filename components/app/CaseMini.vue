@@ -1,5 +1,5 @@
 <template>
-  <div class="case-mini" :class="classes">
+  <div class="case-mini" :class="classes" v-on="$listeners">
     <img :src="image" width="84" height="84" alt="product" />
   </div>
 </template>
@@ -28,6 +28,7 @@ export default {
 
 <style lang="sass" scoped>
 .case-mini
+  cursor: pointer
   &--active
     position: relative
     &:before

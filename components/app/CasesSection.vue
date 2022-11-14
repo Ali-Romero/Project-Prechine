@@ -23,6 +23,9 @@
               <div class="product-mini__title">
                 На чём сегодня зарабатывают партнёры PriChina
               </div>
+              <div class="product-mini__mobile d-sm-none">
+                <app-cases-swiper :products="products" />
+              </div>
               <div class="d-none d-sm-block">
                 <div class="product-mini__cases-list">
                   <div
@@ -273,14 +276,15 @@ export default {
       left: 500px
   &__nav-button-prev
     margin-right: 10px
-  // &__nav-button-next
+
 .product-mini
   font-size: 17px
   line-height: 26px
   font-family: 'Manrope-Light'
   text-align: center
-  @media (min-width: map-get($breakpoints, 'lg'))
+  @media (min-width: map-get($breakpoints, 'sm'))
     text-align: left
+  @media (min-width: map-get($breakpoints, 'lg'))
     font-size: 22px
     line-height: 30px
   @media (min-width: map-get($breakpoints, 'xxxl'))
@@ -305,7 +309,6 @@ export default {
           width: 114px
         @media (min-width: map-get($breakpoints, 'xxxl'))
           width: 150px
-
   &__title
     margin-bottom: 29px
     @media (min-width: map-get($breakpoints, 'sm'))
@@ -314,7 +317,7 @@ export default {
       margin-bottom: 34px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       margin-bottom: 135px
-  // &__cases
+
   &__cases-list
     display: flex
     flex-wrap: wrap
@@ -323,4 +326,6 @@ export default {
     margin-bottom: 4px
     @media (min-width: map-get($breakpoints, 'lg'))
       margin-bottom: 6px
+  &__mobile
+    margin-bottom: 38px
 </style>
