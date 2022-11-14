@@ -24,7 +24,21 @@
               </app-difference-title>
             </div>
             <div class="difference-section__step">
-              <app-difference-title title-difference-num="01">
+              <app-difference-title title-difference-num="02">
+                <template #difference-title-text>
+                  Поиск товара
+                </template>
+              </app-difference-title>
+            </div>
+            <div class="difference-section__step">
+              <app-difference-title title-difference-num="03">
+                <template #difference-title-text>
+                  Поиск товара
+                </template>
+              </app-difference-title>
+            </div>
+            <div class="difference-section__step">
+              <app-difference-title title-difference-num="04">
                 <template #difference-title-text>
                   Поиск товара
                 </template>
@@ -50,48 +64,47 @@
   </section>
 </template>
 
-//
 <script>
-// import { gsap } from 'gsap'
-// import { ScrollTrigger } from 'gsap/ScrollTrigger'
+// import { gsap } from "gsap"
+// import { ScrollTrigger } from "gsap/ScrollTrigger"
 
-// gsap.registerPlugin(ScrollTrigger)
+// gsap.registerPlugin(ScrollTrigger);
 
-// export default {
-//   mounted() {
-//     const test = gsap.timeline({
-//       scrollTrigger: {
-//         markers: true,
-//         trigger: this.$refs.section,
-//         pin: true, // pin the trigger element while active
-//         pinSpacing: true,
-//         start: 'top top', // when the top of the trigger hits the top of the viewport
-//         end: () => this.$refs.section.offsetHeight * 2, // end after scrolling 500px beyond the start
-//         scrub: true, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-//       },
-//     })
+export default {
+  mounted() {
+    // const timeline = gsap.timeline({
+    //   scrollTrigger: {
+    //     markers: true,
+    //     trigger: this.$refs.section,
+    //     pin: true, // pin the trigger element while active
+    //     pinSpacing: true,
+    //     start: "top top", // when the top of the trigger hits the top of the viewport
+    //     end: () => this.$refs.section.offsetHeight * 4, // end after scrolling 500px beyond the start
+    //     scrub: true, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+    //   }
+    // })
 
-//     const steps = this.$refs.steps
-//     const stepItems = steps.querySelectorAll('.difference-section__step')
+    // const $steps = this.$refs.steps
 
-//     test.fromTo(stepItems, { y: '100%' }, { y: '-100%' })
+    // const [firstStep, ...steps] = $steps.querySelectorAll('.difference-section__step')
 
-//     test.to(
-//       this.$refs.track,
-//       {
-//         y: () =>
-//           -(
-//             this.$refs.track.offsetHeight -
-//             this.$refs.track.querySelector('.difference-section__step')
-//               .offsetHeight
-//           ),
-//       },
-//       0
-//     )
-//     test.to(this.$refs.content, { toggleClass: 'QWEQWEQWEWQEWQE' })
-//   },
-// }
-//
+    // timeline.fromTo(firstStep, { y: '0' }, { y: '-100%' })
+
+    // steps.forEach((step, index) => {
+    //   timeline.fromTo(
+    //     step,
+    //     {
+    //       y: 0,
+    //     },
+    //     {
+    //       y: () => -($steps.offsetHeight + (step.offsetHeight / 2)),
+    //       onStart: () => { console.log('onStart', index + 2) },
+    //       onReverseComplete: () => { console.log('onReverseComplete', index + 1) }
+    //     }
+    //   )
+    // })
+  }
+}
 </script>
 
 <style lang="sass" scoped>
@@ -120,15 +133,20 @@
     max-width: 623px
     font-family: 'Manrope-Light'
   &__content
-    height: 626px
     padding-left: 230px
     display: flex
   &__steps
+    outline: 1px solid red
+    position: relative
+    height: 600px
     flex-grow: 1
     overflow: hidden
   &__step
-    padding-top: 130px
-    height: 626px
+    outline: 1px solid green
+    width: 100%
+    position: absolute
+    left: 0
+    top: 100%
     display: flex
     justify-content: center
     align-items: flex-start
