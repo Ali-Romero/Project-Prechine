@@ -30,6 +30,7 @@
   &__list
     display: flex
     justify-content: center
+
   &__item
     margin-right: 10px
     &:last-child

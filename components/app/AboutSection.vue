@@ -73,7 +73,7 @@
           <div class="about-section__btn-description">
             Узнайте подробнее о франшизе и фулфилмент сервисе
           </div>
-          <div class="about-section__btn">
+          <div class="about-section__btn" @click.prevent="modal = true">
             <ui-button fluid
               >Подробнее о франшизе
               <template #icon>
@@ -83,9 +83,22 @@
           </div>
         </div>
       </ui-wrapper>
+      <ui-modal v-model="modal">
+        <app-feedback-modal-call />
+      </ui-modal>
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      modal: false
+    }
+  }
+}
+</script>
 
 <style lang="sass" scoped>
 .about-section
@@ -95,6 +108,7 @@
   padding: 0 0 90px 0
   @media (min-width: map-get($breakpoints, 'lg'))
     border-radius: 0px 0px 80px 80px
+
   &__bg
     max-width: 440px
     margin: 0 auto 60px auto
@@ -132,6 +146,7 @@
     position: relative
     @media (min-width: map-get($breakpoints, 'sm'))
       position: unset
+
   &__box
     padding: 81px 0 0 0
     border-radius: 50px
@@ -144,6 +159,7 @@
       padding: 80px 0 0 0
     @media (min-width: map-get($breakpoints, 'xxxl'))
       padding: 93px 0 0 0
+
   &__info
     max-width: 373px
     padding: 0 0 85px 0
@@ -156,14 +172,15 @@
       max-width: 509px
       margin-right: 34px
       padding: 0 0 109px 0
+
   &__title
     margin-bottom: 21px
+
   &__info-part-1
     font-size: 16px
     line-height: 23px
     margin-bottom: 387px
     font-family: 'Manrope-Light'
-
     @media (min-width: map-get($breakpoints, 'sm'))
       margin-bottom: 20px
     @media (min-width: map-get($breakpoints, 'lg'))
@@ -196,6 +213,7 @@
         margin-bottom: 14px
       &:last-child
         margin-bottom: 0
+
   &__photo
     position: absolute
     z-index: 1
@@ -214,6 +232,7 @@
         width: 377px
       @media (min-width: map-get($breakpoints, 'xxxl'))
         width: 495px
+
   &__photo-container
     position: absolute
     bottom: -49px
@@ -234,6 +253,7 @@
     @media (min-width: map-get($breakpoints, 'xxxxxxl'))
       bottom: 105px
       right: -358px
+
   &__photo-info
     display: flex
     background: #FFFFFF
@@ -282,6 +302,7 @@
         max-width: 307px
       @media (min-width: map-get($breakpoints, 'xxxl'))
         max-width: 335px
+
   &__photo-name
     font-family: 'Manrope-SemiBold'
     font-size: 16px
@@ -303,6 +324,7 @@
       line-height: 47px
       max-width: 259px
       margin-left: 60px
+
   &__photo-bg-image
     position: absolute
     z-index: -1
@@ -331,13 +353,13 @@
         width: 464px
       @media (min-width: map-get($breakpoints, 'xxxxxxl'))
         width: 581px
-  &__btn-content
-    //
+
   &__btn-container
     @media (min-width: map-get($breakpoints, 'sm'))
       display: flex
       justify-content: center
       align-items: center
+
   &__btn-description
     width: 100%
     max-width: 341px
@@ -365,6 +387,7 @@
       font-size: 40px
       line-height: 56px
       margin-right: 160px
+
   &__btn
     width: 100%
     max-width: 300px

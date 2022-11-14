@@ -20,12 +20,12 @@ export default {
     return {
       params: {
         slidesPerView: 4,
-        centerInsufficientSlides: true,
-        centeredSlides: true,
-        centeredSlidesBounds: true,
-        loopFillGroupWithBlank: false,
+        freeMode: true,
         speed: 500,
-        // freeMode: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
       },
     }
   },

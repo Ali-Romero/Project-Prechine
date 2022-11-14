@@ -70,15 +70,18 @@
   font-family: 'Manrope-Light'
   @media (min-width: map-get($breakpoints, 'lg'))
     border-radius: 0px 0px 80px 80px
+
   &__inner
     padding: 81px 0 60px 0
     @media (min-width: map-get($breakpoints, 'lg'))
       padding: 92px 0 90px 0
+
   &__title
     margin-bottom: 14px
     text-align: center
     @media (min-width: map-get($breakpoints, 'lg'))
       margin-bottom: 21px
+
   &__title-info
     text-align: center
     color: #A0A0A0
@@ -97,16 +100,19 @@
     @media (min-width: map-get($breakpoints, 'xxxl'))
       font-size: 22px
       line-height: 33px
+
   &__scroll
     margin-bottom: 60px
     @media (min-width: map-get($breakpoints, 'lg'))
       margin-bottom: 70px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       margin-bottom: 90px
+
   &__scroll-list
     @media (min-width: map-get($breakpoints, 'sm'))
       display: flex
       flex-wrap: nowrap
+
   &__scroll-item
     margin-bottom: 50px
     @media (min-width: map-get($breakpoints, 'sm'))
@@ -119,6 +125,7 @@
       margin-right: 160px
     &::last-child
       margin-right: 0
+
   &__bottom-description
     margin: 0 auto
     text-align: center

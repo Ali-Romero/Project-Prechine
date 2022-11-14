@@ -46,6 +46,19 @@
         <div class="feedback-modal-call__button">
           <ui-button fluid type="submit">Получить консультацию</ui-button>
         </div>
+        <input type="text" name="section-name" value="Закрытая" hidden />
+        <input
+          type="text"
+          name="section-name-text"
+          value="Запишитесь на онлайн-консультацию, чтобы узнать подробнее о франшизе PriChina"
+          hidden
+        />
+        <input
+          type="text"
+          name="section-btn-text"
+          value="Получить консультацию"
+          hidden
+        />
         <div class="feedback-modal-call__agree">
           <ui-agree></ui-agree>
         </div>
@@ -62,15 +75,15 @@ export default {
       fields: {
         name: '',
         email: '',
-        phone: '',
-      },
+        phone: ''
+      }
     }
   },
   methods: {
     async submit() {
       await this.$feedback.submit(this.fields)
-    },
-  },
+    }
+  }
 }
 </script>
 
@@ -79,24 +92,27 @@ export default {
   background: #FFFFFF
   box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.08)
   border-radius: 16px
-  max-width: 700px
+  width: 300px
   padding: 33px 23px 20px 23px
   margin: 0 auto
   overflow: hidden
   @media (min-width: map-get($breakpoints, 'sm'))
     padding: 33px 40px 23px 40px
     border-radius: 20px
+    width: 700px
   @media (min-width: map-get($breakpoints, 'lg'))
     border-radius: 40px
-    max-width: 856px
+    width: 856px
     padding: 39px 50px 26px 50px
   @media (min-width: map-get($breakpoints, 'xxxl'))
-    max-width: 933px
+    width: 933px
     padding: 49px 60px 36px 60px
+
   &__wrapper
     @media (min-width: map-get($breakpoints, 'sm'))
       display: flex
       justify-content: space-between
+
   &__top
     max-width: 245px
     display: flex
@@ -109,6 +125,7 @@ export default {
       max-width: 339px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       max-width: 435px
+
   &__title
     font-size: 18px
     line-height: 25px
@@ -130,9 +147,11 @@ export default {
       font-size: 32px
       line-height: 42px
       margin-bottom: 65px
+
   &__title-info
     font-family: 'Manrope-Light'
     display: block
+
   &__image
     display: flex
     justify-content: center
@@ -170,6 +189,7 @@ export default {
           width: 347px
         @media (min-width: map-get($breakpoints, 'xxxl'))
           width: 389px
+
   &__container
     max-width: 258px
     width: 100%
@@ -177,6 +197,7 @@ export default {
       max-width: 292px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       max-width: 316px
+
   &__input
     margin-bottom: 16px
     @media (min-width: map-get($breakpoints, 'xxxl'))
@@ -189,6 +210,7 @@ export default {
       @media (min-width: map-get($breakpoints, 'xxxl'))
         height: 87px
         padding: 0 20px 0 30px
+
   &__button
     height: 57px
     margin-bottom: 12px
@@ -197,6 +219,7 @@ export default {
     @media (min-width: map-get($breakpoints, 'xxxl'))
       margin-bottom: 16px
       height: 87px
+
   &__agree
     ::v-deep
       .agree

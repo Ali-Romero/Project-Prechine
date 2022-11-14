@@ -30,20 +30,20 @@ export default {
   props: {
     img: {
       type: String,
-      required: true,
+      required: true
     },
     second: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   computed: {
     classes() {
       return {
-        'advantage--secondary': this.second,
+        'advantage--secondary': this.second
       }
-    },
-  },
+    }
+  }
 }
 </script>
 
@@ -63,6 +63,7 @@ export default {
     .advantage__info
       @media (min-width: map-get($breakpoints, 'sm'))
         max-width: 438px
+
   &__image
     margin-bottom: 22px
     @media (min-width: map-get($breakpoints, 'sm'))
@@ -89,6 +90,7 @@ export default {
       max-width: 338px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       max-width: 373px
+
   &__icon
     margin-bottom: 4px
     @media (min-width: map-get($breakpoints, 'lg'))
@@ -99,6 +101,7 @@ export default {
       @media (min-width: map-get($breakpoints, 'lg'))
         width: 52px
         height: 52px
+
   &__title
     font-size: 20px
     line-height: 28px
@@ -115,6 +118,7 @@ export default {
       font-size: 30px
       line-height: 42px
       margin-bottom: 26px
+
   &__description
     font-size: 14px
     line-height: 21px

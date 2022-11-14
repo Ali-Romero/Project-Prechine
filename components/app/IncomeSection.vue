@@ -52,16 +52,14 @@
             <div>
               <ui-icon name="icon-hover"></ui-icon>
             </div>
-            <span>
-              Проведите в сторону, чтобы увидеть другие доходы
-            </span>
+            <span> Проведите в сторону, чтобы увидеть другие доходы </span>
           </div>
         </div>
         <div class="income-section__btn-content">
           <div class="income-section__btn-description">
             Обсудить финансовую модель и товары, которые продают партнёры
           </div>
-          <div class="income-section__btn">
+          <div class="income-section__btn" @click.prevent="modal = true">
             <ui-button fluid>
               Подробнее о доходах
               <template #icon>
@@ -72,8 +70,21 @@
         </div>
       </div>
     </ui-wrapper>
+    <ui-modal v-model="modal">
+      <app-feedback-modal-call />
+    </ui-modal>
   </section>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      modal: false
+    }
+  }
+}
+</script>
 
 <style lang="sass" scoped>
 .income-section
@@ -90,8 +101,10 @@
     line-height: 33px
   &:before
     opacity: 0.3
+
   &__inner
     padding: 93px 0 90px 0
+
   &__title-container
     max-width: 282px
     @media (min-width: map-get($breakpoints, 'sm'))
@@ -100,15 +113,18 @@
       max-width: 357px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       max-width: 421px
+
   &__title
     margin-bottom: 18px
     @media (min-width: map-get($breakpoints, 'lg'))
       margin-bottom: 21px
+
   &__title-info
     margin-bottom: 39px
     text-align: left
     @media (min-width: map-get($breakpoints, 'lg'))
       margin-bottom: 52px
+
   &__cards
     max-width: 592px
     width: 100%
@@ -134,11 +150,13 @@
         &:nth-child(7),
         &:nth-child(8)
           margin-bottom: 0
+
   &__cards-total
     max-width: 397px
     margin-left: 23px
     @media (min-width: map-get($breakpoints, 'sm'))
       margin-left: 0
+
   &__cards-total-info
     font-size: 12px
     line-height: 18px
@@ -163,6 +181,7 @@
       max-width: 238px
       @media (min-width: map-get($breakpoints, 'lg'))
         max-width: 316px
+
   &__mobile-info-helper
     display: flex
     align-items: center
@@ -178,10 +197,12 @@
       font-size: 12px
       line-height: 18px
       font-family: 'Manrope-Light'
+
   &__btn-content
     @media (min-width: map-get($breakpoints, 'sm'))
       display: flex
       align-items: center
+
   &__btn-description
     font-family: 'Manrope-ExtraBold'
     text-transform: uppercase
@@ -206,6 +227,7 @@
     @media (min-width: map-get($breakpoints, 'xxxl'))
       font-size: 40px
       line-height: 56px
+
   &__btn
     width: 100%
     max-width: 300px

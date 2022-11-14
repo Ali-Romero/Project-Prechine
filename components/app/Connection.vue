@@ -1,6 +1,13 @@
 <template>
   <div class="connection" :class="classes">
-    <div class="connection__icon">
+    <div
+      v-if="page === 'index'"
+      class="connection__icon"
+      @click.prevent="modal = true"
+    >
+      <ui-icon name="connection-phone" />
+    </div>
+    <div v-if="page === 'thanks'" class="connection__icon">
       <ui-icon name="connection-phone" />
     </div>
     <div class="connection__container">
@@ -17,6 +24,9 @@
         >
       </div>
     </div>
+    <ui-modal v-model="modal">
+      <app-feedback-modal-call />
+    </ui-modal>
   </div>
 </template>
 
@@ -25,12 +35,12 @@ export default {
   props: {
     header: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   data() {
     return {
-      modal: false,
+      modal: false
     }
   },
   computed: {
@@ -39,10 +49,10 @@ export default {
     },
     classes() {
       return {
-        'connection--header': this.header,
+        'connection--header': this.header
       }
-    },
-  },
+    }
+  }
 }
 </script>
 
@@ -75,6 +85,7 @@ export default {
           color: #FF840C
     .connection__description
       color: #212121
+
   &__icon
     width: 23px
     height: 23px
@@ -103,6 +114,7 @@ export default {
       @media (min-width: map-get($breakpoints, 'lg'))
         width: 19px
         height: 19px
+
   &__num
     font-family: 'Manrope-Medium'
     font-size: 20px

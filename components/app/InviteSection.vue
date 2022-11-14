@@ -55,9 +55,7 @@
                 <ul>
                   <li>
                     <span></span>
-                    <div>
-                      Представление центра.
-                    </div>
+                    <div>Представление центра.</div>
                   </li>
                   <li>
                     <span></span>
@@ -93,20 +91,24 @@
   background-repeat: no-repeat
   background-position: center
   background-size: cover
+
   &__inner
     padding: 169px 0 90px 0
+
   &__row
     margin-bottom: 34px
     @media (min-width: map-get($breakpoints, 'sm'))
       margin-bottom: 60px
       display: flex
       align-items: flex-end
+
   &__col
     &:first-child
       @media (min-width: map-get($breakpoints, 'sm'))
         margin-right: 48px
       @media (min-width: map-get($breakpoints, 'xxxl'))
         margin-right: 92px
+
   &__title
     margin-bottom: 40px
     @media (min-width: map-get($breakpoints, 'xxxl'))
@@ -155,12 +157,14 @@
         @media (min-width: map-get($breakpoints, 'xxxl'))
           left: -9px
           top: 8px
+
   &__founder
     display: flex
     align-items: center
     margin-bottom: 87px
     @media (min-width: map-get($breakpoints, 'sm'))
       margin-bottom: 0
+
   &__founder-photo
     margin-right: 21px
     position: relative
@@ -208,6 +212,7 @@
         @media (min-width: map-get($breakpoints, 'xxxl'))
           width: 24px
           height: 21px
+
   &__founder-description
     max-width: 209px
     font-size: 15px
@@ -224,8 +229,10 @@
       max-width: 458px
       font-size: 24px
       line-height: 36px
+
   &__table-info
     position: relative
+
   &__table-info-content
     position: relative
     z-index: 3
@@ -292,6 +299,7 @@
             max-width: 291px
           @media (min-width: map-get($breakpoints, 'xxxl'))
             max-width: 297px
+
   &__table-info-title
     font-family: 'Manrope-SemiBold'
     text-transform: uppercase
@@ -310,6 +318,7 @@
       font-size: 22px
       line-height: 33px
       margin-bottom: 20px
+
   &__table-info-image
     position: absolute
     z-index: 4

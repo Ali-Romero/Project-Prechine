@@ -9,21 +9,21 @@ export default {
   props: {
     next: {
       type: Boolean,
-      default: false,
+      default: false
     },
     prev: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   computed: {
     classes() {
       return {
         'ui-nav-button--next': this.next,
-        'ui-nav-button--prev': this.prev,
+        'ui-nav-button--prev': this.prev
       }
-    },
-  },
+    }
+  }
 }
 </script>
 
@@ -52,8 +52,7 @@ export default {
     background-color: #212121
     svg
       color: white
-  &--prev
-    //
+
   &--next
     transform: rotate(180deg)
   svg

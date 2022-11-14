@@ -50,10 +50,10 @@
               :markup="products[0].markup"
             />
             <div class="cases-section__nav-button">
-              <div class="cases-section__nav-button-prev">
+              <div class="cases-section__nav-button-prev swiper-button-prev">
                 <ui-nav-button prev></ui-nav-button>
               </div>
-              <div class="cases-section__nav-button-next">
+              <div class="cases-section__nav-button-next swiper-button-next">
                 <ui-nav-button next></ui-nav-button>
               </div>
             </div>
@@ -92,7 +92,7 @@ export default {
           profit: '451 106 рублей',
           pricePurchase: '356 рублей',
           priceSale: '1 084 рублей',
-          markup: '254%',
+          markup: '254%'
         },
         {
           thumbnail: require('@/assets/images/product-mini-2.jpg'),
@@ -102,7 +102,7 @@ export default {
           profit: '1 948 961 рублей',
           pricePurchase: '430 рублей',
           priceSale: '1 059 рублей',
-          markup: '246%',
+          markup: '246%'
         },
         {
           thumbnail: require('@/assets/images/product-mini-3.jpg'),
@@ -112,7 +112,7 @@ export default {
           profit: '498 634 рублей',
           pricePurchase: '80 рублей',
           priceSale: '406 рублей',
-          markup: '507%',
+          markup: '507%'
         },
         {
           thumbnail: require('@/assets/images/product-mini-4.jpg'),
@@ -122,7 +122,7 @@ export default {
           profit: '1 272 425 рублей',
           pricePurchase: '307 рублей',
           priceSale: '968 рублей',
-          markup: '315%',
+          markup: '315%'
         },
         {
           thumbnail: require('@/assets/images/product-mini-5.jpg'),
@@ -132,7 +132,7 @@ export default {
           profit: '470 106 рублей',
           pricePurchase: '312 рублей',
           priceSale: '1 084 рублей',
-          markup: '347%',
+          markup: '347%'
         },
         {
           thumbnail: require('@/assets/images/product-mini-6.jpg'),
@@ -142,7 +142,7 @@ export default {
           profit: '661 100 рублей',
           pricePurchase: '249 рублей',
           priceSale: '779 рублей',
-          markup: '312%',
+          markup: '312%'
         },
         {
           thumbnail: require('@/assets/images/product-mini-7.jpg'),
@@ -152,7 +152,7 @@ export default {
           profit: '453 784 рублей',
           pricePurchase: '119 рублей',
           priceSale: '714 рублей',
-          markup: '600%',
+          markup: '600%'
         },
         {
           thumbnail: require('@/assets/images/product-mini-8.jpg'),
@@ -162,7 +162,7 @@ export default {
           profit: '1 572 331 рублей',
           pricePurchase: '489 рублей',
           priceSale: '1 752 рублей',
-          markup: '358%',
+          markup: '358%'
         },
         {
           thumbnail: require('@/assets/images/product-mini-9.jpg'),
@@ -172,7 +172,7 @@ export default {
           profit: '4 912 800 рублей',
           pricePurchase: '456 рублей',
           priceSale: '1 117 рублей',
-          markup: '244%',
+          markup: '244%'
         },
         {
           thumbnail: require('@/assets/images/product-mini-10.jpg'),
@@ -182,22 +182,25 @@ export default {
           profit: '4 388 364 рублей',
           pricePurchase: '312 рублей',
           priceSale: '1 492 рублей',
-          markup: '478%',
-        },
-      ],
+          markup: '478%'
+        }
+      ]
     }
-  },
+  }
 }
 </script>
 
 <style lang="sass" scoped>
 .cases-section
   color: #212121
+
   &__inner
     padding: 92px 0 0 0
+
   &__title
     margin-bottom: 21px
     text-align: center
+
   &__title-info
     font-family: 'Manrope-Light'
     max-width: 704px
@@ -207,11 +210,13 @@ export default {
       max-width: 836px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       max-width: 963px
+
   &__content
     margin-bottom: 85px
     @media (min-width: map-get($breakpoints, 'sm'))
       display: flex
       justify-content: space-between
+
   &__mini
     @media (min-width: map-get($breakpoints, 'sm'))
       width: 100%
@@ -220,6 +225,7 @@ export default {
       max-width: 348px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       max-width: 440px
+
   &__product
     max-width: 486px
     width: 100%
@@ -228,6 +234,7 @@ export default {
       max-width: 665px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       max-width: 933px
+
   &__bottom-info
     display: flex
     align-items: center
@@ -235,6 +242,7 @@ export default {
     flex-direction: column-reverse
     @media (min-width: map-get($breakpoints, 'sm'))
       flex-direction: row
+
   &__bottom-img
     ::v-deep
       img
@@ -244,6 +252,7 @@ export default {
           width: 490px
         @media (min-width: map-get($breakpoints, 'xxxl'))
           width: 652px
+
   &__bottom-text
     font-family: 'Manrope-Light'
     font-size: 18px
@@ -260,6 +269,7 @@ export default {
       font-size: 30px
       line-height: 45px
       max-width: 657px
+
   &__nav-button
     display: flex
     justify-content: center
@@ -274,6 +284,7 @@ export default {
     @media (min-width: map-get($breakpoints, 'xxxl'))
       bottom: 45px
       left: 500px
+
   &__nav-button-prev
     margin-right: 10px
 
@@ -290,6 +301,7 @@ export default {
   @media (min-width: map-get($breakpoints, 'xxxl'))
     font-size: 30px
     line-height: 42px
+
   &__image
     margin-bottom: 7px
     @media (min-width: map-get($breakpoints, 'sm'))
@@ -309,6 +321,7 @@ export default {
           width: 114px
         @media (min-width: map-get($breakpoints, 'xxxl'))
           width: 150px
+
   &__title
     margin-bottom: 29px
     @media (min-width: map-get($breakpoints, 'sm'))
@@ -322,10 +335,12 @@ export default {
     display: flex
     flex-wrap: wrap
     justify-content: space-between
+
   &__cases-item
     margin-bottom: 4px
     @media (min-width: map-get($breakpoints, 'lg'))
       margin-bottom: 6px
+
   &__mobile
     margin-bottom: 38px
 </style>

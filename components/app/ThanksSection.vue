@@ -90,9 +90,7 @@
         </div>
         <div class="thanks-section__backup">
           <router-link to="/">
-            <span>
-              Вернуться на основную страницу
-            </span>
+            <span> Вернуться на основную страницу </span>
           </router-link>
         </div>
         <div class="thanks-section__slogan">
@@ -123,6 +121,7 @@
   &__inner
     padding: 65px 0 70px 0
     position: relative
+
   &__title
     font-size: 24px
     line-height: 34px
@@ -183,6 +182,7 @@
       font-size: 20px
       line-height: 30px
       margin-bottom: 19px
+
   &__time
     background: white
     color: #212121
@@ -215,8 +215,10 @@
         &:last-child
           margin-bottom: 0
           margin-right: 0
+
   &__time-icon
     margin-right: 14px
+
   &__time-text
     span
       display: block
@@ -226,6 +228,7 @@
       @media (min-width: map-get($breakpoints, 'xxxl'))
         font-size: 18px
         line-height: 27px
+
   &__time-info
     color: #7D7D7D
     font-size: 12px
@@ -238,6 +241,7 @@
       line-height: 24px
     span
       color: #212121
+
   &__team-title
     font-size: 17px
     line-height: 28px
@@ -258,6 +262,7 @@
       font-size: 20px
       line-height: 30px
       margin-bottom: 26px
+
   &__social
     margin-bottom: 174px
     font-family: 'Manrope-Light'
@@ -297,6 +302,7 @@
             height: auto
             @media (min-width: map-get($breakpoints, 'xxxl'))
               width: 71px
+
   &__backup
     font-size: 15px
     line-height: 22px
@@ -312,6 +318,7 @@
     @media (min-width: map-get($breakpoints, 'xxxl'))
       font-size: 16px
       line-height: 24px
+
   &__slogan
     position: absolute
     bottom: 0
@@ -324,6 +331,7 @@
       padding: 0 0 0 173px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       left: 545px
+
   &__slogan-text
     font-family: 'Manrope-Light'
     font-size: 20px
@@ -344,6 +352,7 @@
       line-height: 42px
       max-width: 234px
       margin-bottom: 31px
+
   &__slogan-icon
     width: 40px
     height: 40px
@@ -372,6 +381,7 @@
       @media (min-width: map-get($breakpoints, 'sm'))
         width: 24px
         height: 21px
+
   &__slogan-circle
     position: absolute
     border-radius: 100%
@@ -394,6 +404,7 @@
       width: 619px
       height: 619px
       top: 172px
+
   &__photo
     position: relative
     margin-bottom: 29px
@@ -420,6 +431,7 @@
         width: 360px
       @media (min-width: map-get($breakpoints, 'xxxxl'))
         width: 410px
+
   &__photo-name
     background: #FFFFFF
     position: absolute
@@ -457,6 +469,7 @@
       padding: 20px
       bottom: 81px
       right: -82px
+
   &__photo-founder
     font-family: 'Manrope-Regular'
     color: #7D7D7D

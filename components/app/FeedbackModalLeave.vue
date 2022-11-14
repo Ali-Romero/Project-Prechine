@@ -68,15 +68,15 @@ export default {
       fields: {
         name: '',
         email: '',
-        phone: '',
-      },
+        phone: ''
+      }
     }
   },
   methods: {
     async submit() {
       await this.$feedback.submit(this.fields)
-    },
-  },
+    }
+  }
 }
 </script>
 
@@ -100,10 +100,12 @@ export default {
   @media (min-width: map-get($breakpoints, 'xxxl'))
     max-width: 933px
     padding: 49px 60px 36px 60px
+
   &__wrapper
     @media (min-width: map-get($breakpoints, 'sm'))
       display: flex
       justify-content: space-between
+
   &__top
     max-width: 245px
     display: flex
@@ -116,6 +118,7 @@ export default {
       max-width: 339px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       max-width: 435px
+
   &__title
     font-size: 18px
     line-height: 25px
@@ -140,11 +143,13 @@ export default {
     span
       font-family: 'Manrope-Light'
       display: block
+
   &__description
     @media (min-width: map-get($breakpoints, 'sm'))
       margin: 6px 0 10px 0
     @media (min-width: map-get($breakpoints, 'lg'))
       margin: 17px 0 15px 0
+
   &__description,
   &__description-info
     font-size: 17px
@@ -160,6 +165,7 @@ export default {
       font-size: 24px
       line-height: 31px
       max-width: 398px
+
   &__description-info
     display: flex
     align-items: center
@@ -191,7 +197,6 @@ export default {
         @media (min-width: map-get($breakpoints, 'lg'))
           max-width: 255px
 
-
   &__image
     display: flex
     justify-content: center
@@ -217,7 +222,6 @@ export default {
       z-index: -1
       @media (min-width: map-get($breakpoints, 'sm'))
         content: none
-
     ::v-deep
       img
         width: 102px
@@ -232,6 +236,7 @@ export default {
           width: 228px
         @media (min-width: map-get($breakpoints, 'xxxl'))
           width: 313px
+
   &__container
     max-width: 258px
     width: 100%
@@ -239,6 +244,7 @@ export default {
       max-width: 292px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       max-width: 316px
+
   &__input
     margin-bottom: 16px
     @media (min-width: map-get($breakpoints, 'xxxl'))
@@ -251,6 +257,7 @@ export default {
       @media (min-width: map-get($breakpoints, 'xxxl'))
         height: 87px
         padding: 0 20px 0 30px
+
   &__button
     height: 57px
     margin-bottom: 12px
@@ -259,6 +266,7 @@ export default {
     @media (min-width: map-get($breakpoints, 'xxxl'))
       margin-bottom: 16px
       height: 87px
+
   &__agree
     ::v-deep
       .agree

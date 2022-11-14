@@ -33,8 +33,8 @@ export default {
   computed: {
     page() {
       return this.$route.name
-    },
-  },
+    }
+  }
 }
 </script>
 
@@ -49,15 +49,18 @@ export default {
       padding: 18px 0
     @media (min-width: map-get($breakpoints, 'xxxl'))
       padding: 20px 0
+
   &__social
     font-size: 12px
     line-height: 18px
     span
       display: block
       margin-bottom: 4px
+
   &__container
     display: flex
     align-items: center
+
   &__logo
     @media (min-width: map-get($breakpoints, 'sm'))
       margin-right: 22px

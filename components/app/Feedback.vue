@@ -67,15 +67,15 @@ export default {
         name: '',
         email: '',
         phone: '',
-        action: 'приехать в Казань (в том числе на экскурсию)',
-      },
+        action: 'приехать в Казань (в том числе на экскурсию)'
+      }
     }
   },
   methods: {
     async submit() {
       await this.$feedback.submit(this.fields)
-    },
-  },
+    }
+  }
 }
 </script>
 
@@ -94,6 +94,7 @@ export default {
   @media (min-width: map-get($breakpoints, 'xxxl'))
     padding: 46px 76px
     max-width: 1439px
+
   &__top
     margin-bottom: 26px
     @media (min-width: map-get($breakpoints, 'sm'))
@@ -101,6 +102,7 @@ export default {
       margin-bottom: 16px
     @media (min-width: map-get($breakpoints, 'lg'))
       margin-bottom: 26px
+
   &__title
     text-transform: uppercase
     color: #212121
@@ -126,6 +128,7 @@ export default {
       font-size: 34px
       line-height: 48px
       margin-right: 61px
+
   &__container
     margin-bottom: 14px
     @media (min-width: map-get($breakpoints, 'sm'))
@@ -135,6 +138,7 @@ export default {
       margin-bottom: 16px
     @media (min-width: map-get($breakpoints, 'lg'))
       margin-bottom: 26px
+
   &__input
     max-width: 260px
     width: 100%
@@ -150,6 +154,7 @@ export default {
       max-width: 308px
     &:last-child
       margin-bottom: 0
+
   &__button
     max-width: 260px
     width: 100%
@@ -163,6 +168,7 @@ export default {
       max-width: 260px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       max-width: 308px
+
   &__checkbox
     max-width: 193px
     width: 100%

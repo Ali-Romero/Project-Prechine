@@ -13,24 +13,24 @@ export default {
   props: {
     value: {
       type: String,
-      default: '',
+      default: ''
     },
     name: {
       type: String,
-      default: '',
+      default: ''
     },
     total: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   computed: {
     classes() {
       return {
-        'ui-card--total': this.total,
+        'ui-card--total': this.total
       }
-    },
-  },
+    }
+  }
 }
 </script>
 

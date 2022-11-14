@@ -26,7 +26,7 @@
           <br class="d-none d-sm-block" />
           на поездки или проживание в курортных странах
         </div>
-        <div class="main-section__button">
+        <div class="main-section__button" @click.prevent="modal = true">
           <ui-button fluid>
             Получить презентацию
             <template #icon>
@@ -36,8 +36,21 @@
         </div>
       </div>
     </ui-wrapper>
+    <ui-modal v-model="modal">
+      <app-feedback-modal-presentation />
+    </ui-modal>
   </section>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      modal: false
+    }
+  }
+}
+</script>
 
 <style lang="sass" scoped>
 .main-section

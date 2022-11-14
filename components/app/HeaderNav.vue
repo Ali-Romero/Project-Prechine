@@ -18,6 +18,7 @@
 .header-nav
   &__list
     display: flex
+
   &__item
     margin-right: 24px
     font-size: 12px

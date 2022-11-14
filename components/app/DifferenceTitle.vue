@@ -12,9 +12,9 @@ export default {
   props: {
     titleDifferenceNum: {
       type: String,
-      default: '',
-    },
-  },
+      default: ''
+    }
+  }
 }
 </script>
 
@@ -24,6 +24,7 @@ export default {
   display: inline-block
   z-index: 1
   padding-top: 100px
+
   &__num
     font-size: 160px
     line-height: 160px
@@ -34,6 +35,7 @@ export default {
     left: 0
     right: 0
     z-index: -1
+
   &__text
     font-size: 36px
     line-height: 50px

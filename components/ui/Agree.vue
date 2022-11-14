@@ -7,10 +7,23 @@
       Я подтверждаю, что ознакомлен и даю согласие на обработку персональных
       данных на условиях и для целей, определяемых
       <br class="d-lg-none" />
-      <a href="">Политикой конфиденциальности</a>
+      <a href="#" @click.prevent="modal = true">Политикой конфиденциальности</a>
     </div>
+    <ui-modal v-model="modal">
+      <app-privacy />
+    </ui-modal>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      modal: false
+    }
+  }
+}
+</script>
 
 <style lang="sass" scoped>
 .agree

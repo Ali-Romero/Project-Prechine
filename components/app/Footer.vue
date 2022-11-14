@@ -44,7 +44,9 @@
             </div>
             <div class="footer__made-in">Сделано в России 🤘</div>
             <div class="footer__policy">
-              <a href="#">Политика конфиденциальности</a>
+              <a href="#" @click.prevent="modal = true"
+                >Политика конфиденциальности</a
+              >
             </div>
           </div>
           <div class="footer__col">
@@ -75,16 +77,24 @@
         </div>
       </div>
     </ui-wrapper>
+    <ui-modal v-model="modal">
+      <app-privacy />
+    </ui-modal>
   </footer>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      modal: false
+    }
+  },
   computed: {
     page() {
       return this.$route.name
-    },
-  },
+    }
+  }
 }
 </script>
 
@@ -99,18 +109,21 @@ export default {
   @media (min-width: map-get($breakpoints, 'lg'))
     font-size: 14px
     line-height: 21px
+
   &__inner
     padding: 30px 0
     @media (min-width: map-get($breakpoints, 'sm'))
       padding: 24px 0
     @media (min-width: map-get($breakpoints, 'lg'))
       padding: 30px 0
+
   &__row
     display: flex
     justify-content: space-between
     flex-direction: column-reverse
     @media (min-width: map-get($breakpoints, 'sm'))
       flex-direction: row
+
   &__col
     &:nth-child(2)
       order: 1
@@ -119,6 +132,7 @@ export default {
       justify-content: flex-end
       @media (min-width: map-get($breakpoints, 'sm'))
         order: unset
+
   &__date,
   &__name
     margin-bottom: 6px
@@ -128,6 +142,7 @@ export default {
       margin-bottom: 10px
     @media (min-width: map-get($breakpoints, 'lg'))
       margin-bottom: 14px
+
   &__arms
     display: flex
     align-items: center
@@ -145,6 +160,7 @@ export default {
       margin-right: 10px
       @media (min-width: map-get($breakpoints, 'lg'))
         margin-right: 14px
+
   &__logo
     display: flex
     align-items: center
@@ -170,8 +186,10 @@ export default {
         height: auto
         @media (min-width: map-get($breakpoints, 'lg'))
           width: 148px
+
   &__made-in
     text-align: center
+
   &__policy
     text-align: center
     margin-bottom: 28px
@@ -187,12 +205,14 @@ export default {
         height: 1px
         background-color: #1776D4
         bottom: 0
+
   &__connection
     display: flex
     justify-content: center
     margin-bottom: 28px
     @media (min-width: map-get($breakpoints, 'sm'))
       margin-bottom: 0
+
   &__f5
     a
       display: flex
@@ -208,6 +228,7 @@ export default {
       &:hover
         text-decoration: underline
         cursor: pointer
+
   &__f5-logo
     margin-right: 17px
 </style>

@@ -18,20 +18,20 @@ export default {
   props: {
     tag: {
       type: String,
-      default: 'button',
+      default: 'button'
     },
     fluid: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   computed: {
     classes() {
       return {
-        'ui-button--fluid': this.fluid,
+        'ui-button--fluid': this.fluid
       }
-    },
-  },
+    }
+  }
 }
 </script>
 
@@ -63,6 +63,9 @@ export default {
   @media (min-width: map-get($breakpoints, 'xxxl'))
     font-size: 20px
     line-height: 27px
+  &:focus-visible
+    outline: none
+    border: none
   &--fluid
     width: 100%
     height: 100%

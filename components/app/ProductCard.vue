@@ -51,33 +51,33 @@ export default {
   props: {
     title: {
       type: String,
-      required: true,
+      required: true
     },
     image: {
       type: String,
-      required: true,
+      required: true
     },
     amount: {
       type: String,
-      default: '',
+      default: ''
     },
     profit: {
       type: String,
-      default: '',
+      default: ''
     },
     pricePurchase: {
       type: String,
-      default: '',
+      default: ''
     },
     priceSale: {
       type: String,
-      default: '',
+      default: ''
     },
     markup: {
       type: String,
-      default: '',
-    },
-  },
+      default: ''
+    }
+  }
 }
 </script>
 
@@ -85,6 +85,7 @@ export default {
 .product-card
   @media (min-width: map-get($breakpoints, 'sm'))
     display: flex
+
   &__image
     @media (min-width: map-get($breakpoints, 'sm'))
       margin-right: 10px
@@ -107,6 +108,7 @@ export default {
           border-radius: 14px
         @media (min-width: map-get($breakpoints, 'xxxl'))
           width: 452px
+
   &__info
     padding: 19px 0 0 0
     @media (min-width: map-get($breakpoints, 'sm'))
@@ -115,6 +117,7 @@ export default {
       padding: 17px 0 0 0
     @media (min-width: map-get($breakpoints, 'xxxl'))
       padding: 44px 0 0 0
+
 .product-info
   color: #212121
   ul
@@ -154,6 +157,7 @@ export default {
       font-size: 26px
       line-height: 39px
       margin-bottom: 45px
+
   &__table
     border: 1px solid #E1E1E1
     margin-bottom: 10px
@@ -174,7 +178,6 @@ export default {
         padding: 20px 24px
       &:first-child
         border-right: 1px solid #E1E1E1
-
     div
       margin-bottom: 8px
       @media (min-width: map-get($breakpoints, 'xxxl'))
@@ -194,6 +197,7 @@ export default {
       @media (min-width: map-get($breakpoints, 'xxxl'))
         font-size: 22px
         line-height: 33px
+
   &__price
     margin-bottom: 20px
     @media (min-width: map-get($breakpoints, 'sm'))

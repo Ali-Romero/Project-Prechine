@@ -47,13 +47,13 @@ export default {
   props: {
     positiveText: {
       type: String,
-      default: '',
+      default: ''
     },
     negativeText: {
       type: String,
-      default: '',
-    },
-  },
+      default: ''
+    }
+  }
 }
 </script>
 
@@ -63,6 +63,7 @@ export default {
   max-width: 740px
   background-color: white
   border-radius: 30px 24px 24px 30px
+
   &__box
     max-width: 370px
     width: 100%
@@ -74,14 +75,17 @@ export default {
       color: #212121
       .difference-card__description
         color: #7D7D7D
+
   &__inner
     display: flex
     flex-direction: column
     justify-content: flex-start
     align-items: center
     padding: 50px 40px
+
   &__icon
     margin-bottom: 18px
+
   &__title
     margin-bottom: 20px
     font-size: 22px
@@ -92,9 +96,11 @@ export default {
     height: 66px
     display: flex
     align-items: center
+
   &__description
     font-size: 18px
     line-height: 27px
+
   &__description-helper
     background-color: #1776D4
     padding: 30px 40px

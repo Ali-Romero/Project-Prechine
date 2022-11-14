@@ -59,15 +59,15 @@ export default {
       fields: {
         name: '',
         email: '',
-        phone: '',
-      },
+        phone: ''
+      }
     }
   },
   methods: {
     async submit() {
       await this.$feedback.submit(this.fields)
-    },
-  },
+    }
+  }
 }
 </script>
 
@@ -91,10 +91,12 @@ export default {
   @media (min-width: map-get($breakpoints, 'xxxl'))
     max-width: 933px
     padding: 49px 60px 36px 60px
+
   &__wrapper
     @media (min-width: map-get($breakpoints, 'sm'))
       display: flex
       justify-content: space-between
+
   &__top
     max-width: 272px
     display: flex
@@ -107,6 +109,7 @@ export default {
       max-width: 347px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       max-width: 429px
+
   &__title
     font-size: 18px
     line-height: 25px
@@ -128,6 +131,7 @@ export default {
       font-size: 32px
       line-height: 42px
       margin-bottom: 25px
+
   &__image
     display: flex
     justify-content: center
@@ -153,7 +157,6 @@ export default {
       z-index: -1
       @media (min-width: map-get($breakpoints, 'sm'))
         content: none
-
     ::v-deep
       img
         width: 96px
@@ -172,6 +175,7 @@ export default {
       max-width: 292px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       max-width: 316px
+
   &__input
     margin-bottom: 16px
     @media (min-width: map-get($breakpoints, 'xxxl'))
@@ -184,6 +188,7 @@ export default {
       @media (min-width: map-get($breakpoints, 'xxxl'))
         height: 87px
         padding: 0 20px 0 30px
+
   &__button
     height: 57px
     margin-bottom: 12px
@@ -192,6 +197,7 @@ export default {
     @media (min-width: map-get($breakpoints, 'xxxl'))
       margin-bottom: 16px
       height: 87px
+
   &__agree
     ::v-deep
       .agree
