@@ -87,8 +87,10 @@ export default {
   border-radius: 24px
   padding: 30px 22px
   max-width: 1439px
+  @media (min-width: map-get($breakpoints, 'sm'))
+    padding: 17px 9px
   @media (min-width: map-get($breakpoints, 'lg'))
-    padding: 40px 50px
+    padding: 40px 34px
   @media (min-width: map-get($breakpoints, 'xxxl'))
     padding: 46px 76px
     max-width: 1439px

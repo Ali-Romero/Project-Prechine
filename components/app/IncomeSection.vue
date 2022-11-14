@@ -75,6 +75,9 @@
   line-height: 21px
   font-family: 'Manrope-Light'
   @media (min-width: map-get($breakpoints, 'lg'))
+    font-size: 16px
+    line-height: 20px
+  @media (min-width: map-get($breakpoints, 'xxxl'))
     font-size: 22px
     line-height: 33px
   &:before
@@ -82,8 +85,12 @@
   &__inner
     padding: 93px 0 90px 0
   &__title-container
-    max-width: 421px
+    max-width: 282px
     margin: 0 0 0 auto
+    @media (min-width: map-get($breakpoints, 'lg'))
+      max-width: 357px
+    @media (min-width: map-get($breakpoints, 'xxxl'))
+      max-width: 421px
   &__title
     margin-bottom: 18px
     @media (min-width: map-get($breakpoints, 'lg'))
@@ -94,9 +101,11 @@
     @media (min-width: map-get($breakpoints, 'lg'))
       margin-bottom: 52px
   &__cards
-    max-width: 758px
+    max-width: 592px
     width: 100%
     margin-bottom: 116px
+    @media (min-width: map-get($breakpoints, 'xxxl'))
+      max-width: 758px
     ul
       display: flex
       justify-content: space-between
@@ -121,10 +130,14 @@
     margin-bottom: 36px
     @media (min-width: map-get($breakpoints, 'lg'))
       justify-content: center
+      font-size: 14px
+      line-height: 20px
+      margin-top: 20px
+      margin-bottom: 0
+    @media (min-width: map-get($breakpoints, 'xxxl'))
       font-size: 16px
       line-height: 24px
       margin-top: 27px
-      margin-bottom: 0
     svg
       margin-right: 6px
       @media (min-width: map-get($breakpoints, 'lg'))
@@ -150,9 +163,17 @@
       margin-bottom: 0
       text-align: left
       max-width: 827px
+      font-size: 21px
+      line-height: 30px
+      margin-right: 30px
+    @media (min-width: map-get($breakpoints, 'lg'))
+      max-width: 827px
+      font-size: 30px
+      line-height: 42px
+      margin-right: 135px
+    @media (min-width: map-get($breakpoints, 'xxxl'))
       font-size: 40px
       line-height: 56px
-      margin-right: 135px
   &__btn
     width: 100%
     max-width: 300px
@@ -160,6 +181,12 @@
     margin: 0 auto
     @media (min-width: map-get($breakpoints, 'sm'))
       margin: 0
+      max-width: 274px
+      height: 66px
+    @media (min-width: map-get($breakpoints, 'lg'))
+      max-width: 350px
+      height: 80px
+    @media (min-width: map-get($breakpoints, 'xxxl'))
       max-width: 369px
       height: 87px
 </style>

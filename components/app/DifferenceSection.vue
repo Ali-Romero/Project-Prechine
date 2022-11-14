@@ -50,46 +50,48 @@
   </section>
 </template>
 
+//
 <script>
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+// import { gsap } from 'gsap'
+// import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-gsap.registerPlugin(ScrollTrigger)
+// gsap.registerPlugin(ScrollTrigger)
 
-export default {
-  mounted() {
-    const test = gsap.timeline({
-      scrollTrigger: {
-        markers: true,
-        trigger: this.$refs.section,
-        pin: true, // pin the trigger element while active
-        pinSpacing: true,
-        start: 'top top', // when the top of the trigger hits the top of the viewport
-        end: () => this.$refs.section.offsetHeight * 2, // end after scrolling 500px beyond the start
-        scrub: true, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-      },
-    })
+// export default {
+//   mounted() {
+//     const test = gsap.timeline({
+//       scrollTrigger: {
+//         markers: true,
+//         trigger: this.$refs.section,
+//         pin: true, // pin the trigger element while active
+//         pinSpacing: true,
+//         start: 'top top', // when the top of the trigger hits the top of the viewport
+//         end: () => this.$refs.section.offsetHeight * 2, // end after scrolling 500px beyond the start
+//         scrub: true, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+//       },
+//     })
 
-    const steps = this.$refs.steps
-    const stepItems = steps.querySelectorAll('.difference-section__step')
+//     const steps = this.$refs.steps
+//     const stepItems = steps.querySelectorAll('.difference-section__step')
 
-    test.fromTo(stepItems, { y: '100%' }, { y: '-100%' })
+//     test.fromTo(stepItems, { y: '100%' }, { y: '-100%' })
 
-    test.to(
-      this.$refs.track,
-      {
-        y: () =>
-          -(
-            this.$refs.track.offsetHeight -
-            this.$refs.track.querySelector('.difference-section__step')
-              .offsetHeight
-          ),
-      },
-      0
-    )
-    test.to(this.$refs.content, { toggleClass: 'QWEQWEQWEWQEWQE' })
-  },
-}
+//     test.to(
+//       this.$refs.track,
+//       {
+//         y: () =>
+//           -(
+//             this.$refs.track.offsetHeight -
+//             this.$refs.track.querySelector('.difference-section__step')
+//               .offsetHeight
+//           ),
+//       },
+//       0
+//     )
+//     test.to(this.$refs.content, { toggleClass: 'QWEQWEQWEWQEWQE' })
+//   },
+// }
+//
 </script>
 
 <style lang="sass" scoped>
@@ -112,10 +114,7 @@ export default {
     text-align: center
   &__title-info
     font-family: 'Manrope-Light'
-    margin: 0 auto 52px auto
     margin: 0 auto
-    font-size: 22px
-    line-height: 33px
     text-align: center
     color: #7D7D7D
     max-width: 623px

@@ -43,6 +43,10 @@ export default {
   height: 142px
   @media (min-width: map-get($breakpoints, 'lg'))
     border-radius: 24px
+    padding: 30x
+    width: 280px
+    height: 186px
+  @media (min-width: map-get($breakpoints, 'xxxl'))
     padding: 50px
     width: 364px
     height: 253px
@@ -54,6 +58,9 @@ export default {
     display: flex
     @media (min-width: map-get($breakpoints, 'lg'))
       display: block
+      width: 312px
+      height: 215px
+    @media (min-width: map-get($breakpoints, 'xxxl'))
       width: 397px
       height: 281px
     .ui-card__dot
@@ -85,6 +92,10 @@ export default {
     line-height: 36px
     margin-bottom: 6px
     @media (min-width: map-get($breakpoints, 'lg'))
+      font-size: 40px
+      line-height: 50px
+      margin-bottom: 16px
+    @media (min-width: map-get($breakpoints, 'xxxl'))
       font-size: 50px
       line-height: 70px
       margin-bottom: 20px
