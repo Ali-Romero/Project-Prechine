@@ -1,5 +1,5 @@
 <template>
-  <div class="ui-nav-button" :class="classes">
+  <div class="ui-nav-button" :class="classes" v-on="$listeners">
     <ui-icon name="icon-arrow"></ui-icon>
   </div>
 </template>

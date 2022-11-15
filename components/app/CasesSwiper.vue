@@ -1,8 +1,12 @@
 <template>
   <ui-swiper class="cases-swiper" :params="params">
     <ui-swiper-wrapper>
-      <ui-swiper-slide v-for="product in products" :key="product.key">
-        <app-case-mini :image="product.thumbnail"></app-case-mini>
+      <ui-swiper-slide v-for="product in products" :key="product.id">
+        <app-case-mini
+          :image="product.thumbnail"
+          :active="active === product.id"
+          @click="$emit('select', product.id)"
+        />
       </ui-swiper-slide>
     </ui-swiper-wrapper>
   </ui-swiper>
@@ -15,6 +19,10 @@ export default {
       type: Array,
       required: true,
     },
+    active: {
+      type: Number,
+      default: 1
+    }
   },
   data() {
     return {

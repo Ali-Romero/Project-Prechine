@@ -24,37 +24,48 @@
                 На чём сегодня зарабатывают партнёры PriChina
               </div>
               <div class="product-mini__mobile d-sm-none">
-                <app-cases-swiper :products="products" />
+                <app-cases-swiper
+                  :products="products"
+                  :active="slide"
+                  @select="select"
+                />
               </div>
               <div class="d-none d-sm-block">
                 <div class="product-mini__cases-list">
                   <div
                     v-for="product in products"
-                    :key="product.thumbnail"
+                    :key="product.id"
                     class="product-mini__cases-item"
                   >
-                    <app-case-mini :image="product.thumbnail"></app-case-mini>
+                    <app-case-mini
+                      :image="product.thumbnail"
+                      :active="product.id === slide"
+                      @click="slide = product.id"
+                    />
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="cases-section__product">
-            <app-product-card
-              :title="products[0].title"
-              :image="products[0].image"
-              :amount="products[0].amount"
-              :profit="products[0].profit"
-              :price-purchase="products[0].pricePurchase"
-              :price-sale="products[0].priceSale"
-              :markup="products[0].markup"
-            />
+            <transition name="fade" mode="out-in">
+              <app-product-card
+                :key="slide"
+                :title="currentProduct.title"
+                :image="currentProduct.image"
+                :amount="currentProduct.amount"
+                :profit="currentProduct.profit"
+                :price-purchase="currentProduct.pricePurchase"
+                :price-sale="currentProduct.priceSale"
+                :markup="currentProduct.markup"
+              />
+            </transition>
             <div class="cases-section__nav-button">
               <div class="cases-section__nav-button-prev swiper-button-prev">
-                <ui-nav-button prev></ui-nav-button>
+                <ui-nav-button prev @click="prev"></ui-nav-button>
               </div>
               <div class="cases-section__nav-button-next swiper-button-next">
-                <ui-nav-button next></ui-nav-button>
+                <ui-nav-button next @click="next"></ui-nav-button>
               </div>
             </div>
           </div>
@@ -83,8 +94,10 @@
 export default {
   data() {
     return {
+      slide: 1,
       products: [
         {
+          id: 1,
           thumbnail: require('@/assets/images/product-mini-1.jpg'),
           title: 'Плащ дождевик для крупных и средних собак',
           image: 'product-main-1.jpg',
@@ -95,6 +108,7 @@ export default {
           markup: '254%'
         },
         {
+          id: 2,
           thumbnail: require('@/assets/images/product-mini-2.jpg'),
           title: 'Набор дозаторов для ванной',
           image: 'product-main-2.jpg',
@@ -105,6 +119,7 @@ export default {
           markup: '246%'
         },
         {
+          id: 3,
           thumbnail: require('@/assets/images/product-mini-3.jpg'),
           title: 'Подшлемник балаклава',
           image: 'product-main-3.jpg',
@@ -115,6 +130,7 @@ export default {
           markup: '507%'
         },
         {
+          id: 4,
           thumbnail: require('@/assets/images/product-mini-4.jpg'),
           title: 'Пакеты фасовочные для вакууматора',
           image: 'product-main-4.jpg',
@@ -125,6 +141,7 @@ export default {
           markup: '315%'
         },
         {
+          id: 5,
           thumbnail: require('@/assets/images/product-mini-5.jpg'),
           title: 'Органайзер для хранения одежды и вещей',
           image: 'product-main-5.jpg',
@@ -135,6 +152,7 @@ export default {
           markup: '347%'
         },
         {
+          id: 6,
           thumbnail: require('@/assets/images/product-mini-6.jpg'),
           title: 'Лежанка гамак для кошек',
           image: 'product-main-6.jpg',
@@ -145,6 +163,7 @@ export default {
           markup: '312%'
         },
         {
+          id: 7,
           thumbnail: require('@/assets/images/product-mini-7.jpg'),
           title: 'Жилет для собак',
           image: 'product-main-7.jpg',
@@ -155,6 +174,7 @@ export default {
           markup: '600%'
         },
         {
+          id: 8,
           thumbnail: require('@/assets/images/product-mini-8.jpg'),
           title: 'Рубашка медицинская женская',
           image: 'product-main-8.jpg',
@@ -165,6 +185,7 @@ export default {
           markup: '358%'
         },
         {
+          id: 9,
           thumbnail: require('@/assets/images/product-mini-9.jpg'),
           title: 'Спортивные женские шорты',
           image: 'product-main-9.jpg',
@@ -175,6 +196,7 @@ export default {
           markup: '244%'
         },
         {
+          id: 10,
           thumbnail: require('@/assets/images/product-mini-10.jpg'),
           title: 'Утягивающий корсет',
           image: 'product-main-10.jpg',
@@ -185,6 +207,22 @@ export default {
           markup: '478%'
         }
       ]
+    }
+  },
+  computed: {
+    currentProduct() {
+      return this.products[this.slide - 1]
+    }
+  },
+  methods: {
+    next() {
+      this.slide = this.slide === this.products.length ? 1 : this.slide + 1
+    },
+    prev() {
+      this.slide = this.slide === 1 ? this.products.length : this.slide - 1
+    },
+    select(id) {
+      this.slide = id
     }
   }
 }
