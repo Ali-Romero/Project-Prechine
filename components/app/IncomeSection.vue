@@ -91,25 +91,10 @@ export default {
   mounted() {
     const mm = gsap.matchMedia();
 
-    // mm.add("(max-width: 767px)", () => {
-    //   gsap.timeline({
-    //     scrollTrigger: {
-    //       markers: true,
-    //       trigger: this.$refs.total,
-    //       endTrigger: this.$refs.cards,
-    //       pin: true,
-    //       pinSpacing: false,
-    //       start: "top top+=93px",
-    //       end: () => `bottom-=${this.$refs.total.offsetHeight + 93}`,
-    //       scrub: true,
-    //     }
-    //   })
-    // })
-
     mm.add("(min-width: 768px)", () => {
       gsap.timeline({
         scrollTrigger: {
-          markers: true,
+          markers: false,
           trigger: this.$refs.total,
           endTrigger: this.$refs.cards,
           pin: true,
