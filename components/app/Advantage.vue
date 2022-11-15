@@ -62,6 +62,8 @@ export default {
       width: 1268px
     .advantage__info
       @media (min-width: map-get($breakpoints, 'sm'))
+        max-width: 363px
+      @media (min-width: map-get($breakpoints, 'lg'))
         max-width: 438px
 
   &__image
@@ -135,7 +137,7 @@ export default {
       li
         position: relative
         padding: 0 0 0 20px
-        margin-bottom: 10
+        margin-bottom: 10px
         @media (min-width: map-get($breakpoints, 'lg'))
           padding: 0 0 0 24px
           margin-bottom: 16px

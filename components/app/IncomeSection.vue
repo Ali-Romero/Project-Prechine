@@ -21,7 +21,7 @@
             </div>
           </div>
         </div>
-        <div ref="cards" class="income-section__cards">
+        <div ref="cards" class="income-section__cards d-none d-sm-block">
           <ul>
             <li>
               <ui-card value="3 типа" name="товаров для закупки"></ui-card>
@@ -48,6 +48,9 @@
               <ui-card value="5" name="месяцев окупаемости"></ui-card>
             </li>
           </ul>
+        </div>
+        <div class="income-section__cards-mobile d-sm-none">
+          <app-income-swiper-mobile></app-income-swiper-mobile>
           <div class="income-section__mobile-info-helper">
             <div>
               <ui-icon name="icon-hover"></ui-icon>
@@ -206,7 +209,8 @@ export default {
       max-width: 238px
       @media (min-width: map-get($breakpoints, 'lg'))
         max-width: 316px
-
+  &__cards-mobile
+    margin-bottom: 60px
   &__mobile-info-helper
     display: flex
     align-items: center
