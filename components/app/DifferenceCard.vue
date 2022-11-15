@@ -12,15 +12,17 @@
               loading="lazy"
             />
           </div>
-          <div class="difference-card__title">Франшиза PriChina</div>
+          <div class="difference-card__title">{{ blackTitle }}</div>
         </div>
-        <div class="difference-card__description">{{ positiveText }}</div>
-      </div>
-      <div
-        v-if="$scopedSlots.differenceCard"
-        class="difference-card__description-helper"
-      >
-        <slot name="difference-card"></slot>
+        <div class="difference-card__text-box">
+          <div class="difference-card__description">{{ blackText }}</div>
+          <div
+            v-if="blueText"
+            class="difference-card__description-helper"
+          >
+            {{ blueText }}
+          </div>
+        </div>
       </div>
     </div>
     <div class="difference-card__box difference-card__box--2">
@@ -35,12 +37,11 @@
               loading="lazy"
             />
           </div>
-          <div class="difference-card__title">
-            Обучение бизнесу <br />
-            на маркетплейсах
-          </div>
+          <div class="difference-card__title">{{ whiteTitle }}</div>
         </div>
-        <div class="difference-card__description">{{ negativeText }}</div>
+        <div class="difference-card__text-box">
+          <div class="difference-card__description">{{ whiteText }}</div>
+        </div>
       </div>
     </div>
   </div>
@@ -49,30 +50,37 @@
 <script>
 export default {
   props: {
-    positiveText: {
+    blackTitle: {
       type: String,
-      default: ''
+      default: '',
     },
-    negativeText: {
+    whiteTitle: {
       type: String,
-      default: ''
-    }
-  }
+      default: '',
+    },
+    blackText: {
+      type: String,
+      default: '',
+    },
+    whiteText: {
+      type: String,
+      default: '',
+    },
+    blueText: {
+      type: String,
+      default: '',
+    },
+  },
 }
 </script>
 
 <style lang="sass" scoped>
 .difference-card
-  max-width: 300px
   background-color: white
   border-radius: 30px 24px 24px 30px
   @media (min-width: map-get($breakpoints, 'md'))
-    max-width: 507px
     display: flex
-  @media (min-width: map-get($breakpoints, 'lg'))
-    max-width: 594px
-  @media (min-width: map-get($breakpoints, 'xxxl'))
-    max-width: 740px
+
   &__box
     @media (min-width: map-get($breakpoints, 'md'))
       max-width: 370px
@@ -91,13 +99,13 @@ export default {
     flex-direction: column
     justify-content: flex-start
     align-items: center
-    padding: 24px 26px
-    @media (min-width: map-get($breakpoints, 'md'))
-      padding: 20px 16px
-    @media (min-width: map-get($breakpoints, 'lg'))
-      padding: 30px 20px
-    @media (min-width: map-get($breakpoints, 'xxxl'))
-      padding: 50px 40px
+    // padding: 24px 26px
+    // @media (min-width: map-get($breakpoints, 'md'))
+    //   padding: 20px 16px
+    // @media (min-width: map-get($breakpoints, 'lg'))
+    //   padding: 30px 20px
+    // @media (min-width: map-get($breakpoints, 'xxxl'))
+    //   padding: 50px 40px
   &__top
     display: flex
     align-items: center
@@ -109,8 +117,16 @@ export default {
     display: flex
     justify-content: center
     margin-right: 16px
+    padding-top: 24px
     @media (min-width: map-get($breakpoints, 'md'))
+      padding-top: 20px
+      margin-right: 0
+      margin-bottom: 12px
+    @media (min-width: map-get($breakpoints, 'lg'))
       margin-bottom: 18px
+      padding-top: 30px
+    @media (min-width: map-get($breakpoints, 'xxxl'))
+      padding-top: 50px
     img
       width: auto
       height: 47px
@@ -123,39 +139,66 @@ export default {
   &__title
     font-size: 16px
     line-height: 21px
-    text-align: center
     text-transform: uppercase
     font-family: 'Manrope-SemiBold'
     display: flex
     align-items: center
+    max-width: 167px
+    padding-top: 24px
     @media (min-width: map-get($breakpoints, 'md'))
+      padding-top: 0
+      text-align: center
       height: 41px
       margin-bottom: 12px
+      max-width: 176px
     @media (min-width: map-get($breakpoints, 'lg'))
       margin-bottom: 16px
       font-size: 19px
       line-height: 26px
       height: 41px
+      max-width: 208px
     @media (min-width: map-get($breakpoints, 'xxxl'))
+      max-width: 243px
       margin-bottom: 20px
       font-size: 22px
       line-height: 33px
       height: 66px
 
+  &__text-box
+    width: 100%
   &__description
     font-size: 14px
     line-height: 21px
+    margin: 0 auto
+    padding: 0 26px 20px 26px
+    @media (min-width: map-get($breakpoints, 'md'))
+      padding: 0 16px 20px 16px
     @media (min-width: map-get($breakpoints, 'lg'))
       font-size: 16px
       line-height: 24px
+      padding: 0 20px 30px 20px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       font-size: 18px
       line-height: 27px
+      padding: 0 40px 50px 40px
+
 
   &__description-helper
     background-color: #1776D4
-    padding: 30px 40px
     border-radius: 0px 0px 24px 24px
-    font-size: 16px
-    line-height: 24px
+    padding: 20px 26px
+    font-size: 14px
+    line-height: 20px
+    @media (min-width: map-get($breakpoints, 'md'))
+      padding: 12px 11px 12px 16px
+      font-size: 13px
+      line-height: 19px
+    @media (min-width: map-get($breakpoints, 'lg'))
+      padding: 12px 11px 16px 20px
+      font-size: 15px
+      line-height: 20px
+    @media (min-width: map-get($breakpoints, 'xxxl'))
+      padding: 30px 40px
+      font-size: 16px
+      line-height: 24px
 </style>
