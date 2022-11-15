@@ -1,7 +1,7 @@
 <template>
-  <section ref="section" class="difference-section">
+  <section class="difference-section">
     <ui-wrapper class="difference-section__wrapper">
-      <div class="difference-section__inner">
+      <div ref="inner" class="difference-section__inner">
         <div class="difference-section__circle">
           <app-difference-circle-slider :slide="step" />
         </div>
@@ -111,11 +111,11 @@ export default {
       const timeline = gsap.timeline({
         scrollTrigger: {
           markers: false,
-          trigger: this.$refs.section,
+          trigger: this.$refs.inner,
           pin: true, // pin the trigger element while active
           pinSpacing: true,
           start: "top top", // when the top of the trigger hits the top of the viewport
-          end: () => this.$refs.section.offsetHeight * 4, // end after scrolling 500px beyond the start
+          end: () => this.$refs.inner.offsetHeight * 4, // end after scrolling 500px beyond the start
           scrub: true, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
         }
       })
