@@ -149,7 +149,7 @@ export default {
       padding-right: 37px
       margin-bottom: 0
     @media (min-width: map-get($breakpoints, 'lg'))
-    padding-right: 96px
+      padding-right: 96px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       padding-right: 160px
       &::last-child
