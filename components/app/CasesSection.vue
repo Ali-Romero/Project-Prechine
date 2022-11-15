@@ -48,6 +48,17 @@
             </div>
           </div>
           <div class="cases-section__product">
+            <div v-show="false">
+              <ui-image
+                v-for="product in products"
+                :key="product.id"
+                :src="product.image"
+                alt="image"
+                width="452"
+                height="550"
+                sizes="xxs:280px lg:267px xxxl:452px"
+              />
+            </div>
             <transition name="fade" mode="out-in">
               <app-product-card
                 :key="slide"
@@ -235,7 +246,9 @@ export default {
   color: #212121
 
   &__inner
-    padding: 92px 0 0 0
+    padding: 81px 0 0 0
+    @media (min-width: map-get($breakpoints, 'lg'))
+      padding: 92px 0 0 0
 
   &__title
     margin-bottom: 21px
@@ -252,8 +265,9 @@ export default {
       max-width: 963px
 
   &__content
-    margin-bottom: 85px
+    margin-bottom: 48px
     @media (min-width: map-get($breakpoints, 'sm'))
+      margin-bottom: 85px
       display: flex
       justify-content: space-between
 

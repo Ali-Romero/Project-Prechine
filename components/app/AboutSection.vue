@@ -105,7 +105,9 @@ export default {
   color: white
   background-color: #F4F4F4
   border-radius: 0px 0px 60px 60px
-  padding: 0 0 90px 0
+  padding: 0 0 64px 0
+  @media (min-width: map-get($breakpoints, 'sm'))
+    padding: 0 0 90px 0
   @media (min-width: map-get($breakpoints, 'lg'))
     border-radius: 0px 0px 80px 80px
 

@@ -91,9 +91,16 @@
   background-repeat: no-repeat
   background-position: center
   background-size: cover
+  position: relative
+  top: -90px
+  padding: 90px 0 0 0
 
   &__inner
-    padding: 169px 0 90px 0
+    padding: 81px 0 90px 0
+    @media (min-width: map-get($breakpoints, 'sm'))
+      padding: 100px 0 90px 0
+    @media (min-width: map-get($breakpoints, 'lg'))
+      padding: 169px 0 90px 0
 
   &__row
     margin-bottom: 34px
@@ -325,11 +332,12 @@
     bottom: 168px
     left: 162px
     @media (min-width: map-get($breakpoints, 'sm'))
-      bottom: 226px
-      left: 140px
+      bottom: 200px
+      left: 149px
     @media (min-width: map-get($breakpoints, 'lg'))
+      bottom: 65px
       z-index: 2
-      left: 105px
+      left: 65px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       bottom: 69px
       left: 95px

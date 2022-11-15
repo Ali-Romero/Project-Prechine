@@ -1,4 +1,4 @@
-const BASE_URL = '/project/nuxt-starter/'
+const BASE_URL = '/project/prichina-new/'
 
 const BREAKPOINTS = {
   xxs: 320,

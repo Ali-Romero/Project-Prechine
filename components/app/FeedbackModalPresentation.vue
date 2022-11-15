@@ -6,13 +6,13 @@
           Пoлучитe пpeзeнтацию и финaнcoвую мoдeль франшизы
         </div>
         <div class="feedback-modal-presentation__image">
-          <ui-image
-            src="feedback-presentation-img.png"
+          <img
+            src="@/assets/images/feedback-presentation-img.png"
             alt="image"
             width="398"
             height="326"
-            sizes="xxs:96 sm:272px lg:347px xxxl:398px"
-          ></ui-image>
+            loading="lazy"
+          />
         </div>
       </div>
       <div class="feedback-modal-presentation__container">

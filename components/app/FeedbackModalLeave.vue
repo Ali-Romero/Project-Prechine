@@ -15,13 +15,13 @@
           </div>
         </div>
         <div class="feedback-modal-leave__image">
-          <ui-image
-            src="feedback-leave-img.png"
+          <img
+            src="@/assets/images/feedback-leave-img.png"
             alt="image"
             width="313"
             height="314"
-            sizes="xxs:102 sm:188px lg:228px xxxl:313px"
-          ></ui-image>
+            loading="lazy"
+          />
         </div>
       </div>
       <div class="feedback-modal-leave__container">

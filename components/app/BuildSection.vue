@@ -97,6 +97,8 @@ export default {
   background-color: #f4f4f4
   border-radius: 0px 0px 60px 60px
   font-family: 'Manrope-Light'
+  position: relative
+  z-index: 2
   @media (min-width: map-get($breakpoints, 'lg'))
     border-radius: 0px 0px 80px 80px
 

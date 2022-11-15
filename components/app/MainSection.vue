@@ -7,24 +7,27 @@
           Франшиза
           <br />
           онлайн бизнеса:
-          <br class="d-none d-sm-block" />
+          <br class="d-none d-sm-inline" />
           <span class="text-border"> продавай</span> товары
-          <br class="d-none d-sm-block" />
+          <br class="d-none d-sm-inline" />
           на
           <br class="d-sm-none" />
           маркетплейсах
-          <br class="d-none d-sm-block" />
+          <br class="d-none d-sm-inline" />
           <span class="text-border text-border--mb">и путешествуй</span>
           <span class="main-section__title-img">
             <ui-image src="multi-logo.png" width="161" height="60" alt="logo" />
           </span>
         </h1>
-        <div class="main-section__description">
+        <div class="main-section__description d-none d-sm-block">
           Пользуйся фулфилмент сервисом франшизы и зарабатывай
           <span> до 270 000 рублей прибыли в месяц, </span>
           которых хватит
-          <br class="d-none d-sm-block" />
+          <br class="d-none d-sm-inline" />
           на поездки или проживание в курортных странах
+        </div>
+        <div class="main-section__description-mobile d-sm-none">
+          Всю логистику и упаковку товара проделает франчайзинговый фулфилмент центр.
         </div>
         <div class="main-section__button" @click.prevent="modal = true">
           <ui-button fluid>
@@ -86,13 +89,13 @@ export default {
     @media (min-width: map-get($breakpoints, 'xxxl'))
       margin-bottom: 35px
     span.text-border
-      margin-right: 10px
+      margin-right: 2px
       display: inline-block
       @media (min-width: map-get($breakpoints, 'sm'))
         margin-right: 14px
       &::before
         padding: 0px 8px
-        left: -11px
+        left: -13px
         top: -3px
         @media (min-width: map-get($breakpoints, 'sm'))
           padding: 0px 11px
@@ -108,13 +111,13 @@ export default {
 
   &__title-img
     position: absolute
-    top: 105px
-    right: -4px
+    top: 104px
+    right: -16px
     @media (min-width: map-get($breakpoints, 'sm'))
-      top: 174px
+      top: 148px
       right: -114px
     @media (min-width: map-get($breakpoints, 'lg'))
-      top: 242px
+      top: 224px
       right: -160px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       top: 264px
@@ -130,13 +133,18 @@ export default {
         @media (min-width: map-get($breakpoints, 'xxxl'))
           width: 161px
 
-  &__description
+  &__description-mobile
+    font-size: 16px
+    line-height: 24px
     font-family: 'Manrope-Light'
-    max-width: 456px
-    font-size: 14px
-    line-height: 21px
-    margin-bottom: 30px
+    margin-bottom: 44px
+
+  &__description
     @media (min-width: map-get($breakpoints, 'sm'))
+      font-family: 'Manrope-Light'
+      font-size: 14px
+      line-height: 21px
+      margin-bottom: 30px
       max-width: 402px
     @media (min-width: map-get($breakpoints, 'lg'))
       max-width: 626px

@@ -164,14 +164,16 @@ export default {
         margin-right: 14px
 
   &__logo
-    display: flex
-    align-items: center
     margin-bottom: 28px
-    flex-direction: column
-    @media (min-width: map-get($breakpoints, 'sm'))
-      flex-direction: row
     @media (min-width: map-get($breakpoints, 'lg'))
       margin-bottom: 31px
+    a
+      display: flex
+      align-items: center
+      flex-direction: column
+      @media (min-width: map-get($breakpoints, 'sm'))
+        flex-direction: row
+
     img
       &:first-child
         width: 60px

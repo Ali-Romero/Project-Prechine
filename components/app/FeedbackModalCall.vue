@@ -9,13 +9,13 @@
           >
         </div>
         <div class="feedback-modal-call__image">
-          <ui-image
-            src="feedback-call-img.png"
+          <img
+            src="@/assets/images/feedback-call-img.png"
             alt="image"
             width="389"
             height="366"
-            sizes="xxs:108 sm:272px lg:347px xxxl:389px"
-          ></ui-image>
+            loading="lazy"
+          />
         </div>
       </div>
       <div class="feedback-modal-call__container">

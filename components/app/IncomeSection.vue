@@ -129,7 +129,9 @@ export default {
     opacity: 0.3
 
   &__inner
-    padding: 93px 0 90px 0
+    padding: 83px 0 64px 0
+    @media (min-width: map-get($breakpoints, 'sm'))
+      padding: 93px 0 90px 0
 
   &__title-container
     max-width: 282px
