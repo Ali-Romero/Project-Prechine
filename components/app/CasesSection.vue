@@ -1,5 +1,5 @@
 <template>
-  <section class="cases-section">
+  <section id="cases-section" class="cases-section">
     <ui-wrapper>
       <div class="cases-section__inner">
         <h2 class="cases-section__title title-secondary">Реальные кейсы</h2>

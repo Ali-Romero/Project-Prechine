@@ -29,6 +29,8 @@ export default {
 <style lang="sass" scoped>
 .case-mini
   cursor: pointer
+  -webkit-tap-highlight-color: transparent
+
   &--active
     position: relative
     &:before
