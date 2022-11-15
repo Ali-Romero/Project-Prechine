@@ -1,5 +1,5 @@
 <template>
-  <section class="build-section">
+  <section ref="section" class="build-section">
     <ui-wrapper>
       <div class="build-section__inner">
         <h2 class="build-section__title title-secondary">
@@ -10,7 +10,7 @@
           подходит бизнес.
         </div>
         <div class="build-section__scroll">
-          <ul class="build-section__scroll-list">
+          <ul ref="list" class="build-section__scroll-list">
             <li class="build-section__scroll-item">
               <app-advantage img="advantage-1.png">
                 <template #icon>
@@ -61,6 +61,35 @@
     </ui-wrapper>
   </section>
 </template>
+
+<script>
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+gsap.registerPlugin(ScrollTrigger);
+
+export default {
+  mounted() {
+    const mm = gsap.matchMedia();
+
+    mm.add("(min-width: 768px)", () => {
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          markers: false,
+          trigger: this.$refs.section,
+          pin: false,
+          pinSpacing: false,
+          start: "top center-=200px",
+          end: '100%-=700px',
+          scrub: true,
+        }
+      })
+
+      timeline.to(this.$refs.list, { x: () => -(this.$refs.list.firstChild.offsetWidth) })
+    })
+  }
+}
+</script>
 
 <style lang="sass" scoped>
 .build-section
@@ -117,14 +146,14 @@
     margin-bottom: 50px
     @media (min-width: map-get($breakpoints, 'sm'))
       width: 100%
-      margin-right: 37px
+      padding-right: 37px
       margin-bottom: 0
     @media (min-width: map-get($breakpoints, 'lg'))
-      margin-right: 96px
+    padding-right: 96px
     @media (min-width: map-get($breakpoints, 'xxxl'))
-      margin-right: 160px
-    &::last-child
-      margin-right: 0
+      padding-right: 160px
+      &::last-child
+        padding-right: 0
 
   &__bottom-description
     margin: 0 auto
