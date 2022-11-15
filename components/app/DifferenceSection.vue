@@ -3,7 +3,7 @@
     <ui-wrapper class="difference-section__wrapper">
       <div class="difference-section__inner">
         <div class="difference-section__circle">
-          <app-difference-circle-slider :slide="1" />
+          <app-difference-circle-slider :slide="step" />
         </div>
         <div class="difference-section__header">
           <h2 class="difference-section__title title-secondary">
@@ -17,56 +17,32 @@
         <div ref="content" class="difference-section__content">
           <div class="difference-section__steps d-flex d-md-none">
             <div class="difference-section__step">
-              <app-difference-title title-difference-num="01">
-                <template #difference-title-text> Поиск товара </template>
-              </app-difference-title>
-            </div>
-            <div v-if="false" class="difference-section__step">
-              <app-difference-title title-difference-num="02">
-                <template #difference-title-text> Поиск товара </template>
-              </app-difference-title>
-            </div>
-            <div v-if="false" class="difference-section__step">
-              <app-difference-title title-difference-num="03">
-                <template #difference-title-text> Поиск товара </template>
-              </app-difference-title>
-            </div>
-            <div v-if="false" class="difference-section__step">
-              <app-difference-title title-difference-num="04">
-                <template #difference-title-text> Поиск товара </template>
-              </app-difference-title>
+              <app-difference-title
+                :title-difference-num="`0${currentStep.id}`"
+                :title="currentStep.title"
+              />
             </div>
           </div>
           <div ref="steps" class="difference-section__steps d-none d-md-block">
-            <div class="difference-section__step">
-              <app-difference-title title-difference-num="01">
-                <template #difference-title-text> Поиск товара </template>
-              </app-difference-title>
-            </div>
-            <div class="difference-section__step">
-              <app-difference-title title-difference-num="02">
-                <template #difference-title-text> Поиск товара </template>
-              </app-difference-title>
-            </div>
-            <div class="difference-section__step">
-              <app-difference-title title-difference-num="03">
-                <template #difference-title-text> Поиск товара </template>
-              </app-difference-title>
-            </div>
-            <div class="difference-section__step">
-              <app-difference-title title-difference-num="04">
-                <template #difference-title-text> Поиск товара </template>
-              </app-difference-title>
+            <div
+              v-for="item in steps"
+              :key="item.id"
+              class="difference-section__step"
+              :class="{ 'difference-section__step--hidden': item.id !== step }"
+            >
+              <app-difference-title :title-difference-num="`0${item.id}`" :title="item.title" />
             </div>
           </div>
           <div class="difference-section__cards">
             <app-difference-card
-              black-title="Франшиза PriChina"
-              white-title="Обучение бизнесу на маркетплейсах"
-              black-text="На старте и по запросу предоставляется список товаров, перспективных для продажи, со всеми данными: цена закупки, рекомендованная цена продажи и объём партии."
-              white-text="Раскроют принцип аналитики продаж на маркетплейсах и передадут список инструментов для самостоятельного поиска товаров под реализацию."
-              blue-text="Фулфилмент центр PriChina в 7 раз дешевле найма собственного штата и аренды склада, а также имеет тарифы ниже конкурентов."
+              :black-text="currentStep.blackText"
+              :white-text="currentStep.whiteText"
+              :blue-text="currentStep.blueText"
             />
+          </div>
+          <div class="d-md-none">
+            <ui-nav-button prev @click="prev"></ui-nav-button>
+            <ui-nav-button next @click="next"></ui-nav-button>
           </div>
         </div>
       </div>
@@ -82,40 +58,118 @@
 </template>
 
 <script>
-// import { gsap } from "gsap"
-// import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
-// gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
 export default {
+  data() {
+    return {
+      step: 1,
+      steps: [
+      {
+          id: 1,
+          title: 'Поиск товара',
+          blackText: "На старте и по запросу предоставляется список товаров, перспективных для продажи, со всеми данными: цена закупки, рекомендованная цена продажи и объём партии.",
+          whiteText: "Раскроют принцип аналитики продаж на маркетплейсах и передадут список инструментов для самостоятельного поиска товаров под реализацию.",
+          blueText: "",
+        },
+        {
+          id: 2,
+          title: 'Закупка товара',
+          blackText: "Закупим товар через собственную компанию в Китае у проверенных поставщиков. Получите дополнительную оптовую скидку благодаря объёмам всей сети.",
+          whiteText: "Обучитесь поиску товара в Китае и узнаете про принципы работы посредников, работающих с местными поставщиками. Найдёте и начнёте работать «вслепую» с новыми партнёрами.",
+          blueText: "",
+        },
+        {
+          id: 3,
+          title: 'Складирование, упаковка и отправка товаров на маркетплейсы',
+          blackText: "Предоставим в пользование собственный фулфилмент центр по партнёрским ценам. Товар будет приходить на склад франчайзинговой сети, маркироваться и отправляться в пункты выдачи после реализации.",
+          whiteText: "Обучат работе с товаром и расскажут про регламенты маркетплейсов. Предложат 2 варианта работы: аренда собственного склада и наём работников или поиск стороннего фулфилмент центра.	",
+          blueText: "Фулфилмент центр PriChina в 7 раз дешевле найма собственного штата и аренды склада, а также имеет тарифы ниже конкурентов.",
+        },
+        {
+          id: 4,
+          title: 'Продвижение товара',
+          blackText: "По прибытию партии на склад проведём яркую фотосессию, опубликуем карточки товара и займёмся их продвижением.",
+          whiteText: "Наймёте фотографа или скачаете фотографии из интернета, самостоятельно начнёте продвигать продукцию на маркетплейсах. Накапливание практического опыта в продажах повлечёт дополнительные затраты на рекламу и аренды площадей, где проставивается товар.",
+          blueText: "",
+        },
+      ]
+    }
+  },
+  computed: {
+    currentStep() {
+      return this.steps[this.step - 1]
+    }
+  },
   mounted() {
-    // const timeline = gsap.timeline({
-    //   scrollTrigger: {
-    //     markers: true,
-    //     trigger: this.$refs.section,
-    //     pin: true, // pin the trigger element while active
-    //     pinSpacing: true,
-    //     start: "top top", // when the top of the trigger hits the top of the viewport
-    //     end: () => this.$refs.section.offsetHeight * 4, // end after scrolling 500px beyond the start
-    //     scrub: true, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-    //   }
-    // })
-    // const $steps = this.$refs.steps
-    // const [firstStep, ...steps] = $steps.querySelectorAll('.difference-section__step')
-    // timeline.fromTo(firstStep, { y: '0' }, { y: '-100%' })
-    // steps.forEach((step, index) => {
-    //   timeline.fromTo(
-    //     step,
-    //     {
-    //       y: 0,
-    //     },
-    //     {
-    //       y: () => -($steps.offsetHeight + (step.offsetHeight / 2)),
-    //       onStart: () => { console.log('onStart', index + 2) },
-    //       onReverseComplete: () => { console.log('onReverseComplete', index + 1) }
-    //     }
-    //   )
-    // })
+    const mm = gsap.matchMedia();
+
+    mm.add("(min-width: 1024px)", () => {
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          markers: false,
+          trigger: this.$refs.section,
+          pin: true, // pin the trigger element while active
+          pinSpacing: true,
+          start: "top top", // when the top of the trigger hits the top of the viewport
+          end: () => this.$refs.section.offsetHeight * 4, // end after scrolling 500px beyond the start
+          scrub: true, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+        }
+      })
+
+      const $steps = this.$refs.steps
+
+      const [firstStep, ...steps] = $steps.querySelectorAll('.difference-section__step')
+      const lastStep = steps.pop()
+
+      timeline.fromTo(
+        firstStep,
+        { y: () => -(($steps.offsetHeight / 2) + (firstStep.offsetHeight / 2)) },
+        {
+          y: () => -$steps.offsetHeight,
+          onStart: () => { this.step = 1 },
+        }
+      )
+
+      steps.forEach((step, index) => {
+        timeline.fromTo(
+          step,
+          {
+            y: '-100%',
+          },
+          {
+            y: () => -$steps.offsetHeight,
+            onStart: () => { this.step = index + 2 },
+            onReverseComplete: () => { this.step = index + 1 }
+          },
+          '-=30%'
+        )
+      })
+
+      timeline.fromTo(
+        lastStep,
+        {
+          y: '-100%',
+        },
+        {
+          y: -(($steps.offsetHeight / 2) + (lastStep.offsetHeight / 2)),
+          onStart: () => { this.step = 4 },
+          onReverseComplete: () => { this.step = 3 }
+        },
+        '-=30%'
+      )
+    })
+  },
+  methods: {
+    next() {
+      this.step = this.step === this.steps.length ? 1 : this.step + 1
+    },
+    prev() {
+      this.step = this.step === 1 ? this.steps.length : this.step - 1
+    },
   }
 }
 </script>
@@ -222,7 +276,6 @@ export default {
     margin-bottom: 24px
     @media (min-width: map-get($breakpoints, 'md'))
       margin-bottom: 0
-      outline: 1px solid red
       position: relative
       height: 396px
       flex-grow: 1
@@ -232,8 +285,9 @@ export default {
     @media (min-width: map-get($breakpoints, 'xxxl'))
       height: 600px
   &__step
+    transition: opacity 0.5s
+
     @media (min-width: map-get($breakpoints, 'md'))
-      outline: 1px solid green
       width: 100%
       position: absolute
       left: 0
@@ -241,6 +295,8 @@ export default {
       display: flex
       justify-content: center
       align-items: flex-start
+    &--hidden
+      opacity: 0
   &__bottom-info
     position: relative
     z-index: 1

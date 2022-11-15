@@ -12,17 +12,19 @@
               loading="lazy"
             />
           </div>
-          <div class="difference-card__title">{{ blackTitle }}</div>
+          <div class="difference-card__title">Франшиза PriChina</div>
         </div>
-        <div class="difference-card__text-box">
-          <div class="difference-card__description">{{ blackText }}</div>
-          <div
-            v-if="blueText"
-            class="difference-card__description-helper"
-          >
-            {{ blueText }}
+        <transition name="fade" mode="out-in">
+          <div :key="blackText" class="difference-card__text-box">
+            <div class="difference-card__description">{{ blackText }}</div>
+            <div
+              v-if="blueText"
+              class="difference-card__description-helper"
+            >
+              {{ blueText }}
+            </div>
           </div>
-        </div>
+        </transition>
       </div>
     </div>
     <div class="difference-card__box difference-card__box--2">
@@ -37,11 +39,13 @@
               loading="lazy"
             />
           </div>
-          <div class="difference-card__title">{{ whiteTitle }}</div>
+          <div class="difference-card__title">Обучение бизнесу на маркетплейсах</div>
         </div>
-        <div class="difference-card__text-box">
-          <div class="difference-card__description">{{ whiteText }}</div>
-        </div>
+        <transition name="fade" mode="out-in">
+          <div :key="whiteText" class="difference-card__text-box">
+            <div class="difference-card__description">{{ whiteText }}</div>
+          </div>
+        </transition>
       </div>
     </div>
   </div>
@@ -50,14 +54,6 @@
 <script>
 export default {
   props: {
-    blackTitle: {
-      type: String,
-      default: '',
-    },
-    whiteTitle: {
-      type: String,
-      default: '',
-    },
     blackText: {
       type: String,
       default: '',

@@ -2,7 +2,7 @@
   <div class="difference-title">
     <div class="difference-title__num">{{ titleDifferenceNum }}</div>
     <div class="difference-title__text">
-      <slot name="difference-title-text"></slot>
+      {{ title }}
     </div>
   </div>
 </template>
@@ -13,8 +13,12 @@ export default {
     titleDifferenceNum: {
       type: String,
       default: ''
-    }
-  }
+    },
+    title: {
+      type: String,
+      default: '',
+    },
+  },
 }
 </script>
 
