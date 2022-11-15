@@ -1,8 +1,8 @@
 <template>
-  <section class="income-section decor-bg">
+  <section ref="section" class="income-section decor-bg">
     <ui-wrapper>
       <div class="income-section__inner">
-        <div class="income-section__title-container">
+        <div ref="total" class="income-section__title-container">
           <h2 class="income-section__title title-secondary">
             Доходы партнёров
           </h2>
@@ -21,7 +21,7 @@
             </div>
           </div>
         </div>
-        <div class="income-section__cards">
+        <div ref="cards" class="income-section__cards">
           <ul>
             <li>
               <ui-card value="3 типа" name="товаров для закупки"></ui-card>
@@ -55,7 +55,7 @@
             <span> Проведите в сторону, чтобы увидеть другие доходы </span>
           </div>
         </div>
-        <div class="income-section__btn-content">
+        <div ref="end" class="income-section__btn-content">
           <div class="income-section__btn-description">
             Обсудить финансовую модель и товары, которые продают партнёры
           </div>
@@ -77,11 +77,49 @@
 </template>
 
 <script>
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default {
   data() {
     return {
       modal: false
     }
+  },
+  mounted() {
+    const mm = gsap.matchMedia();
+
+    // mm.add("(max-width: 767px)", () => {
+    //   gsap.timeline({
+    //     scrollTrigger: {
+    //       markers: true,
+    //       trigger: this.$refs.total,
+    //       endTrigger: this.$refs.cards,
+    //       pin: true,
+    //       pinSpacing: false,
+    //       start: "top top+=93px",
+    //       end: () => `bottom-=${this.$refs.total.offsetHeight + 93}`,
+    //       scrub: true,
+    //     }
+    //   })
+    // })
+
+    mm.add("(min-width: 768px)", () => {
+      gsap.timeline({
+        scrollTrigger: {
+          markers: true,
+          trigger: this.$refs.total,
+          endTrigger: this.$refs.cards,
+          pin: true,
+          pinSpacing: false,
+          start: "top top+=93px",
+          end: () => `bottom-=${this.$refs.total.offsetHeight + 93}`,
+          scrub: true,
+        }
+      })
+    })
   }
 }
 </script>
@@ -126,15 +164,17 @@ export default {
       margin-bottom: 52px
 
   &__cards
-    max-width: 592px
     width: 100%
     margin-bottom: 60px
     @media (min-width: map-get($breakpoints, 'sm'))
+      margin-top: -180px
       max-width: 420px
       margin-bottom: 116px
     @media (min-width: map-get($breakpoints, 'lg'))
+      margin-top: -275px
       max-width: 592px
     @media (min-width: map-get($breakpoints, 'xxxl'))
+      margin-top: -352px
       max-width: 758px
     ul
       display: flex
