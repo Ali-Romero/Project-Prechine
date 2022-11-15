@@ -90,15 +90,17 @@ export default {
   margin: 0 auto
   overflow: hidden
   color: #212121
+  width: 300px
   @media (min-width: map-get($breakpoints, 'sm'))
     padding: 33px 40px 23px 40px
     border-radius: 20px
+    width: 700px
   @media (min-width: map-get($breakpoints, 'lg'))
     border-radius: 40px
-    max-width: 856px
     padding: 39px 50px 26px 50px
+    width: 856px
   @media (min-width: map-get($breakpoints, 'xxxl'))
-    max-width: 933px
+    width: 933px
     padding: 49px 60px 36px 60px
 
   &__wrapper

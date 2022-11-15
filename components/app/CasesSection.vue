@@ -216,10 +216,12 @@ export default {
   },
   methods: {
     next() {
-      this.slide = this.slide === this.products.length ? 1 : this.slide + 1
+      // this.slide = this.slide === this.products.length ? 1 : this.slide + 1
+      this.slide = Math.min(this.slide + 1, this.products.length)
     },
     prev() {
-      this.slide = this.slide === 1 ? this.products.length : this.slide - 1
+      // this.slide = this.slide === 1 ? this.products.length : this.slide - 1
+      this.slide = Math.max(this.slide - 1, 1)
     },
     select(id) {
       this.slide = id
@@ -262,7 +264,7 @@ export default {
     @media (min-width: map-get($breakpoints, 'lg'))
       max-width: 348px
     @media (min-width: map-get($breakpoints, 'xxxl'))
-      max-width: 440px
+      max-width: 444px
 
   &__product
     max-width: 486px

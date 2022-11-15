@@ -40,7 +40,7 @@
               :blue-text="currentStep.blueText"
             />
           </div>
-          <div class="d-md-none">
+          <div class="difference-section__cards-mobile-btn">
             <ui-nav-button prev @click="prev"></ui-nav-button>
             <ui-nav-button next @click="next"></ui-nav-button>
           </div>
@@ -145,7 +145,7 @@ export default {
             onStart: () => { this.step = index + 2 },
             onReverseComplete: () => { this.step = index + 1 }
           },
-          '-=30%'
+          '-=65%'
         )
       })
 
@@ -159,7 +159,7 @@ export default {
           onStart: () => { this.step = 4 },
           onReverseComplete: () => { this.step = 3 }
         },
-        '-=30%'
+        '-=65%'
       )
     })
   },
@@ -203,12 +203,13 @@ export default {
       top: 289px
     @media (min-width: map-get($breakpoints, 'md'))
       left: auto
-      top: 200px
-      right: calc(100% - 173px)
+      top: 206px
+      right: calc(100% - 139px)
     @media (min-width: map-get($breakpoints, 'lg'))
       right: calc(100% - 199px)
+      top: 220px
     @media (min-width: map-get($breakpoints, 'xxxl'))
-      top: 161px
+      top: 189px
     &:before
       content: ""
       position: absolute
@@ -248,12 +249,18 @@ export default {
     color: #7D7D7D
     max-width: 462px
     font-family: 'Manrope-Light'
+    @media (min-width: map-get($breakpoints, 'lg'))
+      max-width: 546px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       max-width: 623px
   &__content
     @media (min-width: map-get($breakpoints, 'md'))
-      padding-left: 230px
+      padding-left: 157px
       display: flex
+    @media (min-width: map-get($breakpoints, 'lg'))
+      padding-left: 204px
+    @media (min-width: map-get($breakpoints, 'xxxl'))
+      padding-left: 230px
   &__cards
     display: flex
     justify-content: center
@@ -277,13 +284,13 @@ export default {
     @media (min-width: map-get($breakpoints, 'md'))
       margin-bottom: 0
       position: relative
-      height: 396px
+      height: 344px
       flex-grow: 1
       overflow: hidden
     @media (min-width: map-get($breakpoints, 'lg'))
-      height: 450px
+      height: 410px
     @media (min-width: map-get($breakpoints, 'xxxl'))
-      height: 600px
+      height: 540px
   &__step
     transition: opacity 0.5s
 
@@ -297,6 +304,18 @@ export default {
       align-items: flex-start
     &--hidden
       opacity: 0
+  &__cards-mobile-btn
+    display: flex
+    justify-content: center
+    padding: 20px 0 0 0
+    @media (min-width: map-get($breakpoints, 'md'))
+      display: none
+    ::v-deep
+      .ui-nav-button
+        width: 48px
+        height: 48px
+        &:first-child
+          margin-right: 16px
   &__bottom-info
     position: relative
     z-index: 1

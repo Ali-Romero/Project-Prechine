@@ -4,9 +4,9 @@ if(empty($_SERVER['HTTP_X_REQUESTED_WITH']) || strtolower($_SERVER['HTTP_X_REQUE
 }
 // Pre settings
 define("SND_FROM", "info@росфранчайзинг.рф");
-define("SND_TO", "oidareng@yandex.ru"); // allowble comma-sepparated values
-define("SND_NAME", "Franch-name");
-define("NAME_FRANCH", "Название франшизы");
+define("SND_TO", "leads@conversionpro.agency"); // allowble comma-sepparated values
+define("SND_NAME", "PRICHINA");
+define("NAME_FRANCH", "PRICHINA");
 define("SMTP", false); // see settings in Helper.php before you change this const
 
 $path = dirname(__FILE__);
@@ -21,6 +21,7 @@ $fields = array(
 	"name"	=>	["Имя отправителя","Name",false],
 	"phone"	=>	["Номер телефона","Phone",false],
 	"email"	=>	["Email","Email",false],
+	"action"	=>	["Приехать в Казань или пройти онлайн","action",false],
 	"section-name"	=>	["Тип формы","Section-name",false],
 	"utm_source"	=>	["Источник трафика","utm_source",false],
 	"utm_description"	=>	["Текст рекламного объявления","utm_description",false],

@@ -64,7 +64,7 @@
         <div class="thanks-section__social">
           <ul>
             <li>
-              <a href="#">
+              <a href="https://kazanexpress.ru/prichina" target="_blank">
                 <img
                   src="@/assets/images/k-express.png"
                   alt="KazanExpress"
@@ -75,7 +75,7 @@
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="https://kazanexpress.ru/prichina" target="_blank">
                 <span>Главный сайт бренда:</span>
                 <img
                   src="@/assets/images/logo-main.svg"

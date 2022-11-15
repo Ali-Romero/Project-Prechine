@@ -27,20 +27,22 @@
           </div>
           <div class="footer__col">
             <div v-if="page === 'index'" class="footer__logo">
-              <img
-                src="@/assets/images/logo-main.svg"
-                alt="logo"
-                width="79"
-                height="64"
-                loading="lazy"
-              />
-              <img
-                src="@/assets/images/k-express.png"
-                alt="KazanExpress"
-                width="148"
-                height="19"
-                loading="lazy"
-              />
+              <a href="https://kazanexpress.ru/prichina" target="_blank">
+                <img
+                  src="@/assets/images/logo-main.svg"
+                  alt="logo"
+                  width="79"
+                  height="64"
+                  loading="lazy"
+                />
+                <img
+                  src="@/assets/images/k-express.png"
+                  alt="KazanExpress"
+                  width="148"
+                  height="19"
+                  loading="lazy"
+                />
+              </a>
             </div>
             <div class="footer__made-in">Сделано в России 🤘</div>
             <div class="footer__policy">

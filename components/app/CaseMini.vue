@@ -36,12 +36,26 @@ export default {
     &:before
       content: ""
       position: absolute
-      width: 100%
-      height: 100%
       border: 4px solid #FF840C
-      top: 0
-      left: 0
+      top: -4px
+      left: -4px
+      right: 7px
       border-radius: 14px
+      bottom: -4px
+      @media (min-width: map-get($breakpoints, 'sm'))
+        border: 3px solid #FF840C
+        top: -1px
+        left: -3px
+        right: -3px
+        border-radius: 10px
+        bottom: -2px
+      @media (min-width: map-get($breakpoints, 'lg'))
+        border: 3px solid #FF840C
+        border-radius: 12px
+      @media (min-width: map-get($breakpoints, 'xxxl'))
+        border: 4px solid #FF840C
+        border-radius: 14px
+
   ::v-deep
     img
       border-radius: 10px

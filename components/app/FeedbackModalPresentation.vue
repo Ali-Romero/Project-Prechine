@@ -76,7 +76,7 @@ export default {
   background: #FFFFFF
   box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.08)
   border-radius: 16px
-  max-width: 700px
+  width: 300px
   padding: 33px 23px 20px 23px
   margin: 0 auto
   overflow: hidden
@@ -84,12 +84,13 @@ export default {
   @media (min-width: map-get($breakpoints, 'sm'))
     padding: 33px 40px 23px 40px
     border-radius: 20px
+    width: 700px
   @media (min-width: map-get($breakpoints, 'lg'))
     border-radius: 40px
-    max-width: 856px
+    width: 856px
     padding: 39px 50px 26px 50px
   @media (min-width: map-get($breakpoints, 'xxxl'))
-    max-width: 933px
+    width: 933px
     padding: 49px 60px 36px 60px
 
   &__wrapper

@@ -46,19 +46,6 @@
         <div class="feedback-modal-call__button">
           <ui-button fluid type="submit">Получить консультацию</ui-button>
         </div>
-        <input type="text" name="section-name" value="Закрытая" hidden />
-        <input
-          type="text"
-          name="section-name-text"
-          value="Запишитесь на онлайн-консультацию, чтобы узнать подробнее о франшизе PriChina"
-          hidden
-        />
-        <input
-          type="text"
-          name="section-btn-text"
-          value="Получить консультацию"
-          hidden
-        />
         <div class="feedback-modal-call__agree">
           <ui-agree></ui-agree>
         </div>
@@ -75,7 +62,10 @@ export default {
       fields: {
         name: '',
         email: '',
-        phone: ''
+        phone: '',
+        'section-name-text': 'Запишитесь на онлайн-консультацию, чтобы узнать подробнее о франшизе PriChina',
+        'section-btn-text': 'Получить консультацию',
+        'section-name': 'Закрытая',
       }
     }
   },
