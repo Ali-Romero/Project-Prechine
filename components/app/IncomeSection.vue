@@ -1,5 +1,5 @@
 <template>
-  <section ref="section" class="income-section decor-bg">
+  <section id="income-section" ref="section" class="income-section decor-bg">
     <ui-wrapper>
       <div class="income-section__inner">
         <div ref="total" class="income-section__title-container">

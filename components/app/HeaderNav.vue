@@ -2,13 +2,36 @@
   <nav class="header-nav">
     <ul class="header-nav__list">
       <li class="header-nav__item active">
-        <a href="#">Формат сотрудничества</a>
+        <a
+          v-scroll-to="{
+          el: '#main-section',
+          duration: 800,
+          easing: 'linear',
+          force: true,
+          }" href="#">
+          Формат сотрудничества</a>
       </li>
       <li class="header-nav__item">
-        <a href="#">Примеры товаров</a>
+        <a
+          v-scroll-to="{
+          el: '#cases-section',
+          duration: 800,
+          easing: 'linear',
+          force: true,
+          }"
+          href="#">
+          Примеры товаров</a>
       </li>
       <li class="header-nav__item">
-        <a href="#">Доходы партнёров</a>
+        <a
+          v-scroll-to="{
+          el: '#income-section',
+          duration: 800,
+          easing: 'linear',
+          force: true,
+          }"
+          href="#">
+          Доходы партнёров</a>
       </li>
     </ul>
   </nav>

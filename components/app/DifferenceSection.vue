@@ -9,7 +9,7 @@
           <h2 class="difference-section__title title-secondary">
             Франшиза или обучение? Показываем разницу
           </h2>
-          <div class="difference-section__title-info">
+          <div class="difference-section__title-info info">
             Объясняем, чем франшиза отличается от обучения бизнесу на
             маркетплейсах и показываем какие выгоды она даёт.
           </div>
@@ -61,9 +61,12 @@
           </div>
           <div class="difference-section__cards">
             <app-difference-card
-              positive-text="На старте и по запросу предоставляется список товаров, перспективных для продажи, со всеми данными: цена закупки, рекомендованная цена продажи и объём партии."
-              negative-text="Раскроют принцип аналитики продаж на маркетплейсах и передадут список инструментов для самостоятельного поиска товаров под реализацию."
-            ></app-difference-card>
+              black-title="Франшиза PriChina"
+              white-title="Обучение бизнесу на маркетплейсах"
+              black-text="На старте и по запросу предоставляется список товаров, перспективных для продажи, со всеми данными: цена закупки, рекомендованная цена продажи и объём партии."
+              white-text="Раскроют принцип аналитики продаж на маркетплейсах и передадут список инструментов для самостоятельного поиска товаров под реализацию."
+              blue-text="Фулфилмент центр PriChina в 7 раз дешевле найма собственного штата и аренды склада, а также имеет тарифы ниже конкурентов."
+            />
           </div>
         </div>
       </div>
@@ -171,7 +174,11 @@ export default {
     @media (min-width: map-get($breakpoints, 'md'))
       margin-bottom: 52px
   &__inner
-    padding: 92px 0 103px 0
+    padding: 92px 0
+    @media (min-width: map-get($breakpoints, 'md'))
+      padding: 92px 0 100px 0
+    @media (min-width: map-get($breakpoints, 'xxxl'))
+      padding: 92px 0 133px 0
   &__title
     max-width: 460px
     margin: 0 auto 21px auto
@@ -196,10 +203,18 @@ export default {
   &__cards
     display: flex
     justify-content: center
-    margin-bottom: 142px
+    margin: 0 auto
+    max-width: 300px
+    width: 100%
     @media (min-width: map-get($breakpoints, 'md'))
-      margin-bottom: 0
+      margin: 0
       display: block
+      max-width: 507px
+    @media (min-width: map-get($breakpoints, 'lg'))
+      max-width: 594px
+    @media (min-width: map-get($breakpoints, 'xxxl'))
+      max-width: 740px
+
   &__steps
     justify-content: center
     align-items: center
@@ -235,6 +250,7 @@ export default {
     max-width: 885px
     font-size: 20px
     line-height: 30px
+    padding: 0 0 103px
     @media (min-width: map-get($breakpoints, 'sm'))
       font-size: 24px
       line-height: 30px

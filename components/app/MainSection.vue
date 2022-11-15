@@ -1,5 +1,5 @@
 <template>
-  <section class="main-section">
+  <section id="main-section" class="main-section">
     <app-header></app-header>
     <ui-wrapper>
       <div class="main-section__inner">

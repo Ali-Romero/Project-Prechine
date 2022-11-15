@@ -6,7 +6,7 @@
 
 <script>
 // eslint-disable-next-line import/no-named-as-default
-import Swiper, { Navigation, Pagination, FreeMode } from 'swiper'
+import Swiper, { Navigation, Pagination, FreeMode, Thumbs } from 'swiper'
 import merge from 'deepmerge'
 import { isPlainObject } from 'is-plain-object'
 
@@ -14,7 +14,7 @@ export default {
   provide() {
     return {
       swiper: new Swiper({
-        modules: [Navigation, Pagination, FreeMode],
+        modules: [Navigation, Pagination, FreeMode, Thumbs],
         ...this.params,
       }),
       updateSwiper: this.updateSwiper,
