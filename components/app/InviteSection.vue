@@ -1,5 +1,5 @@
 <template>
-  <section class="invite-section">
+  <section ref="invite" class="invite-section">
     <ui-wrapper>
       <div class="invite-section__inner">
         <div class="invite-section__row">
@@ -79,10 +79,56 @@
         <div class="invite-section__feedback">
           <app-feedback></app-feedback>
         </div>
+        <div class="invite-section__button" @click.prevent="modal = true">
+          <ui-button fluid>
+            Принять участие
+            <template #icon>
+              <ui-icon name="arrow-btn" />
+            </template>
+          </ui-button>
+        </div>
       </div>
     </ui-wrapper>
+    <ui-modal v-model="modal">
+      <app-feedback-modal-action />
+    </ui-modal>
   </section>
 </template>
+
+<script>
+// import { gsap } from 'gsap'
+// import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+// gsap.registerPlugin(ScrollTrigger)
+
+export default {
+  data() {
+    return {
+      modal: false,
+    }
+  },
+  // mounted() {
+  //   const mm = gsap.matchMedia()
+
+  //   mm.add('(min-width: 768px)', () => {
+  //     const timeline = gsap.timeline({
+  //       scrollTrigger: {
+  //         markers: true,
+  //         trigger: this.$refs.invite,
+  //         pin: true,
+  //         pinSpacing: false,
+  //         start: 'bottom bottom',
+  //         end: () => this.$refs.invite.offsetHeight * 4, // end after scrolling 500px beyond the start
+  //         scrub: true, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+  //       },
+  //     })
+  //     timeline.to(this.$refs.invite, {
+  //       ease: 'ease',
+  //     })
+  //   })
+  // },
+}
+</script>
 
 <style lang="sass" scoped>
 .invite-section
@@ -94,6 +140,8 @@
   position: relative
   top: -90px
   padding: 90px 0 0 0
+  margin: 0 0 -90px 0
+  z-index: 2
 
   &__inner
     padding: 81px 0 90px 0
@@ -101,6 +149,8 @@
       padding: 100px 0 90px 0
     @media (min-width: map-get($breakpoints, 'lg'))
       padding: 169px 0 90px 0
+      @media (max-height: 800px)
+        padding: 70px 0 80px 0
 
   &__row
     margin-bottom: 34px
@@ -136,10 +186,18 @@
         font-size: 50px
         line-height: 59px
         max-width: 651px
+        @media (max-height: 800px)
+          font-size: 28px
+          line-height: 34px
+          max-width: 400px
       @media (min-width: map-get($breakpoints, 'xxxl'))
         max-width: 700px
         font-size: 54px
         line-height: 68px
+        @media (max-height: 800px)
+          max-width: 700px
+          font-size: 36px
+          line-height: 46px
     span.text-border
       margin-left: 2px
       display: inline-block
@@ -161,9 +219,14 @@
           padding: 0px 7px
           left: -10px
           top: 8px
+          @media (max-height: 800px)
+            top: 4px
         @media (min-width: map-get($breakpoints, 'xxxl'))
           left: -9px
           top: 8px
+          @media (max-height: 800px)
+            left: -9px
+            top: 5px
 
   &__founder
     display: flex
@@ -186,6 +249,8 @@
         width: 90px
       @media (min-width: map-get($breakpoints, 'lg'))
         width: 120px
+        @media (max-height: 800px)
+          width: 90px
     span
       position: absolute
       background: #FF840C
@@ -232,10 +297,18 @@
       max-width: 374px
       font-size: 20px
       line-height: 26px
+      @media (max-height: 800px)
+        max-width: 374px
+        font-size: 18px
+        line-height: 24px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       max-width: 458px
       font-size: 24px
       line-height: 36px
+      @media (max-height: 800px)
+        max-width: 420px
+        font-size: 20px
+        line-height: 28px
 
   &__table-info
     position: relative
@@ -335,12 +408,18 @@
       bottom: 200px
       left: 149px
     @media (min-width: map-get($breakpoints, 'lg'))
-      bottom: 65px
       z-index: 2
+      bottom: 65px
       left: 65px
+      @media (max-height: 800px)
+        bottom: 70px
+        left: 100px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       bottom: 69px
       left: 95px
+      @media (max-height: 800px)
+        bottom: 69px
+        left: 180px
     img
       width: 169px
       height: auto
@@ -348,6 +427,29 @@
         width: 189px
       @media (min-width: map-get($breakpoints, 'lg'))
         width: 626px
+        @media (max-height: 800px)
+          width: 430px
       @media (min-width: map-get($breakpoints, 'xxxl'))
         width: 698px
+        @media (max-height: 800px)
+          width: 500px
+  &__feedback
+    display: block
+    @media (min-width: map-get($breakpoints, 'sm'))
+      @media (max-height: 800px)
+        display: none
+  &__button
+    display: none
+    @media (min-width: map-get($breakpoints, 'sm'))
+      @media (max-height: 800px)
+        display: block
+        max-width: 300px
+        height: 66px
+    @media (min-width: map-get($breakpoints, 'lg'))
+      @media (max-height: 800px)
+        max-width: 360px
+        height: 76px
+      @media (min-width: map-get($breakpoints, 'xxxl'))
+        max-width: 390px
+        height: 87px
 </style>

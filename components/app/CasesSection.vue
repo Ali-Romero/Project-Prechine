@@ -116,7 +116,7 @@ export default {
           profit: '451 106 рублей',
           pricePurchase: '356 рублей',
           priceSale: '1 084 рублей',
-          markup: '254%'
+          markup: '254%',
         },
         {
           id: 2,
@@ -127,7 +127,7 @@ export default {
           profit: '1 948 961 рублей',
           pricePurchase: '430 рублей',
           priceSale: '1 059 рублей',
-          markup: '246%'
+          markup: '246%',
         },
         {
           id: 3,
@@ -138,7 +138,7 @@ export default {
           profit: '498 634 рублей',
           pricePurchase: '80 рублей',
           priceSale: '406 рублей',
-          markup: '507%'
+          markup: '507%',
         },
         {
           id: 4,
@@ -149,7 +149,7 @@ export default {
           profit: '1 272 425 рублей',
           pricePurchase: '307 рублей',
           priceSale: '968 рублей',
-          markup: '315%'
+          markup: '315%',
         },
         {
           id: 5,
@@ -160,7 +160,7 @@ export default {
           profit: '470 106 рублей',
           pricePurchase: '312 рублей',
           priceSale: '1 084 рублей',
-          markup: '347%'
+          markup: '347%',
         },
         {
           id: 6,
@@ -171,7 +171,7 @@ export default {
           profit: '661 100 рублей',
           pricePurchase: '249 рублей',
           priceSale: '779 рублей',
-          markup: '312%'
+          markup: '312%',
         },
         {
           id: 7,
@@ -182,7 +182,7 @@ export default {
           profit: '453 784 рублей',
           pricePurchase: '119 рублей',
           priceSale: '714 рублей',
-          markup: '600%'
+          markup: '600%',
         },
         {
           id: 8,
@@ -193,7 +193,7 @@ export default {
           profit: '1 572 331 рублей',
           pricePurchase: '489 рублей',
           priceSale: '1 752 рублей',
-          markup: '358%'
+          markup: '358%',
         },
         {
           id: 9,
@@ -204,7 +204,7 @@ export default {
           profit: '4 912 800 рублей',
           pricePurchase: '456 рублей',
           priceSale: '1 117 рублей',
-          markup: '244%'
+          markup: '244%',
         },
         {
           id: 10,
@@ -215,15 +215,15 @@ export default {
           profit: '4 388 364 рублей',
           pricePurchase: '312 рублей',
           priceSale: '1 492 рублей',
-          markup: '478%'
-        }
-      ]
+          markup: '478%',
+        },
+      ],
     }
   },
   computed: {
     currentProduct() {
       return this.products[this.slide - 1]
-    }
+    },
   },
   methods: {
     next() {
@@ -236,15 +236,20 @@ export default {
     },
     select(id) {
       this.slide = id
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style lang="sass" scoped>
 .cases-section
   color: #212121
-
+  position: relative
+  z-index: 2
+  background-color: white
+  top: -90px
+  padding: 90px 0 0 0
+  margin: 0 0 -90px 0
   &__inner
     padding: 81px 0 0 0
     @media (min-width: map-get($breakpoints, 'lg'))

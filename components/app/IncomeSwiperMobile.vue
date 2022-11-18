@@ -32,16 +32,16 @@
           <div class="income-swiper-mobile__item">
             <ui-card value="330%" name="средняя наценка"></ui-card>
           </div>
-          <div class="income-swiper-mobile__item">
+          <div
+            class="income-swiper-mobile__item income-swiper-mobile__item--last"
+          >
             <ui-card value="5" name="месяцев окупаемости"></ui-card>
           </div>
         </div>
       </ui-swiper-slide>
     </ui-swiper-wrapper>
   </ui-swiper>
-
 </template>
-
 
 <script>
 export default {
@@ -53,7 +53,7 @@ export default {
         // freeMode: true,
         speed: 500,
         centeredSlides: true,
-        centeredSlidesBounds: true
+        centeredSlidesBounds: true,
       },
     }
   },
@@ -80,4 +80,6 @@ export default {
     margin-bottom: 10px
     &:last-child
       margin-bottom: 0
+    &--last
+      margin-bottom: 145px !important
 </style>

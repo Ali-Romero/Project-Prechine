@@ -59,15 +59,19 @@ export default {
       fields: {
         name: '',
         email: '',
-        phone: ''
-      }
+        phone: '',
+        'section-name-text':
+          'Пoлучитe пpeзeнтацию и финaнcoвую мoдeль франшизы',
+        'section-btn-text': 'Получить материалы',
+        'section-name': 'Закрытая',
+      },
     }
   },
   methods: {
     async submit() {
       await this.$feedback.submit(this.fields)
-    }
-  }
+    },
+  },
 }
 </script>
 

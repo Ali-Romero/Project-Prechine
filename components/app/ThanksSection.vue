@@ -2,16 +2,16 @@
   <section class="thanks-section decor-bg">
     <ui-wrapper>
       <div class="thanks-section__inner">
-        <h1 class="thanks-section__title">
-          <span class="text-border">Светлана,</span> благодарим Вас <br />
+        <h1 v-if="(name, city)" class="thanks-section__title">
+          <span class="text-border">{{ name }},</span> благодарим Вас за заявку
+          <br class="d-none d-sm-block" />
+          на город <span class="text-border">{{ city }}</span> на франшизу
+          PriChina ©
+        </h1>
+        <h1 v-else class="thanks-section__title">
+          <span class="text-border">{{ name }},</span> благодарим Вас <br />
           за обращение в компанию PriChina ©
         </h1>
-        <!-- <h1 class="thanks-section__title">
-          <span class="text-border">Светлана,</span> благодарим Вас за заявку
-          <br class="d-none d-sm-block" />
-          на город <span class="text-border">москва</span> на франшизу PriChina
-          ©
-        </h1> -->
         <div class="thanks-section__description">
           Для обсуждения сотрудничества мы свяжемся с Вами в ближайшее время.
         </div>
@@ -106,6 +106,25 @@
     </ui-wrapper>
   </section>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      name: '',
+      city: '',
+    }
+  },
+  head() {
+    return {
+      title: this.name + ', спасибо, ваша заявка принята',
+    }
+  },
+  mounted() {
+    this.name = localStorage.getItem('lead_name')
+    this.city = localStorage.getItem('city')
+  },
+}
+</script>
 
 <style lang="sass" scoped>
 .thanks-section

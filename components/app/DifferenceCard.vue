@@ -17,10 +17,7 @@
         <transition name="fade" mode="out-in">
           <div :key="blackText" class="difference-card__text-box">
             <div class="difference-card__description">{{ blackText }}</div>
-            <div
-              v-if="blueText"
-              class="difference-card__description-helper"
-            >
+            <div v-if="blueText" class="difference-card__description-helper">
               {{ blueText }}
             </div>
           </div>
@@ -39,7 +36,9 @@
               loading="lazy"
             />
           </div>
-          <div class="difference-card__title">Обучение бизнесу на маркетплейсах</div>
+          <div class="difference-card__title">
+            Обучение бизнесу на маркетплейсах
+          </div>
         </div>
         <transition name="fade" mode="out-in">
           <div :key="whiteText" class="difference-card__text-box">
@@ -95,13 +94,7 @@ export default {
     flex-direction: column
     justify-content: flex-start
     align-items: center
-    // padding: 24px 26px
-    // @media (min-width: map-get($breakpoints, 'md'))
-    //   padding: 20px 16px
-    // @media (min-width: map-get($breakpoints, 'lg'))
-    //   padding: 30px 20px
-    // @media (min-width: map-get($breakpoints, 'xxxl'))
-    //   padding: 50px 40px
+
   &__top
     display: flex
     align-items: center
@@ -109,6 +102,7 @@ export default {
     @media (min-width: map-get($breakpoints, 'md'))
       margin-bottom: 0
       display: block
+
   &__icon
     display: flex
     justify-content: center
@@ -121,8 +115,12 @@ export default {
     @media (min-width: map-get($breakpoints, 'lg'))
       margin-bottom: 18px
       padding-top: 30px
+      @media (max-height: 800px)
+        padding-top: 16px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       padding-top: 50px
+      @media (max-height: 800px)
+        padding-top: 16px
     img
       width: auto
       height: 47px
@@ -132,6 +130,9 @@ export default {
         height: 64px
       @media (min-width: map-get($breakpoints, 'xxxl'))
         height: 80px
+        @media (max-height: 800px)
+          height: 68px
+
   &__title
     font-size: 16px
     line-height: 21px
@@ -153,15 +154,28 @@ export default {
       line-height: 26px
       height: 41px
       max-width: 208px
+      @media (max-height: 800px)
+        margin-bottom: 10px
+        font-size: 17px
+        line-height: 24px
+        max-width: 180px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       max-width: 243px
       margin-bottom: 20px
       font-size: 22px
       line-height: 33px
       height: 66px
+      @media (max-height: 800px)
+        font-size: 19px
+        line-height: 26px
+        max-width: 200px
+        margin-bottom: 14px
+        height: 41px
+
 
   &__text-box
     width: 100%
+
   &__description
     font-size: 14px
     line-height: 21px
@@ -173,11 +187,18 @@ export default {
       font-size: 16px
       line-height: 24px
       padding: 0 20px 30px 20px
+      @media (max-height: 800px)
+        font-size: 14px
+        line-height: 20px
+        padding: 0 20px 16px 20px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       font-size: 18px
       line-height: 27px
       padding: 0 40px 50px 40px
-
+      @media (max-height: 800px)
+        font-size: 15px
+        line-height: 19px
+        padding: 0 30px 24px 30px
 
   &__description-helper
     background-color: #1776D4
@@ -197,4 +218,8 @@ export default {
       padding: 30px 40px
       font-size: 16px
       line-height: 24px
+      @media (max-height: 800px)
+        font-size: 14px
+        line-height: 20px
+        padding: 14px 30px
 </style>

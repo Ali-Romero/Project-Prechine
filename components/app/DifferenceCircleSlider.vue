@@ -28,14 +28,14 @@ export default {
   props: {
     slide: {
       type: Number,
-      default: 1
-    }
+      default: 1,
+    },
   },
   computed: {
     classes() {
       return [`circle-slider--current-${this.slide}`]
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -59,6 +59,9 @@ export default {
   @media (min-width: map-get($breakpoints, 'xxxl'))
     width: 893px
     height: 893px
+    @media (max-height: 800px)
+      width: 700px
+      height: 700px
 
   &::before
     @media (min-width: map-get($breakpoints, 'md'))
@@ -80,6 +83,9 @@ export default {
     @media (min-width: map-get($breakpoints, 'xxxl'))
       width: 621px
       height: 621px
+      @media (max-height: 800px)
+        width: 560px
+        height: 560px
 
   &--current-2
     transform: rotate(-20deg)

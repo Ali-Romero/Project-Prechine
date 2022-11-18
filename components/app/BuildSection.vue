@@ -1,7 +1,7 @@
 <template>
-  <section ref="section" class="build-section">
+  <section ref="ss" class="build-section">
     <ui-wrapper>
-      <div class="build-section__inner">
+      <div ref="inner" class="build-section__inner">
         <h2 class="build-section__title title-secondary">
           Строим совместный бизнес
         </h2>
@@ -52,42 +52,44 @@
             </li>
           </ul>
         </div>
-        <div class="build-section__bottom-description">
-          Подобный принцип работы применяют и сами маркетплейсы, которые
-          предлагают услуги площадки взамен на комиссию с товара, вместо того,
-          чтобы торговать на ней самостоятельно.
-        </div>
+      </div>
+      <div class="build-section__bottom-description">
+        Подобный принцип работы применяют и сами маркетплейсы, которые
+        предлагают услуги площадки взамен на комиссию с товара, вместо того,
+        чтобы торговать на ней самостоятельно.
       </div>
     </ui-wrapper>
   </section>
 </template>
 
 <script>
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
 
 export default {
   mounted() {
-    const mm = gsap.matchMedia();
+    const mm = gsap.matchMedia()
 
-    mm.add("(min-width: 768px)", () => {
+    mm.add('(min-width: 768px)', () => {
       const timeline = gsap.timeline({
         scrollTrigger: {
           markers: false,
-          trigger: this.$refs.section,
-          pin: false,
-          pinSpacing: false,
-          start: "top center-=200px",
-          end: '100%-=700px',
+          trigger: this.$refs.inner,
+          pin: true,
+          pinSpacing: true,
+          start: 'top top',
+          end: '100%',
           scrub: true,
-        }
+        },
       })
 
-      timeline.to(this.$refs.list, { x: () => -(this.$refs.list.firstChild.offsetWidth) })
+      timeline.to(this.$refs.list, {
+        x: () => -this.$refs.list.firstChild.offsetWidth,
+      })
     })
-  }
+  },
 }
 </script>
 
@@ -98,14 +100,14 @@ export default {
   border-radius: 0px 0px 60px 60px
   font-family: 'Manrope-Light'
   position: relative
-  z-index: 2
+  z-index: 4
   @media (min-width: map-get($breakpoints, 'lg'))
     border-radius: 0px 0px 80px 80px
 
   &__inner
-    padding: 81px 0 60px 0
+    padding: 81px 0 0 0
     @media (min-width: map-get($breakpoints, 'lg'))
-      padding: 92px 0 90px 0
+      padding: 92px 0 0 0
 
   &__title
     margin-bottom: 14px
@@ -133,11 +135,11 @@ export default {
       line-height: 33px
 
   &__scroll
-    margin-bottom: 60px
+    padding-bottom: 60px
     @media (min-width: map-get($breakpoints, 'lg'))
-      margin-bottom: 70px
+      padding-bottom: 70px
     @media (min-width: map-get($breakpoints, 'xxxl'))
-      margin-bottom: 90px
+      padding-bottom: 90px
 
   &__scroll-list
     @media (min-width: map-get($breakpoints, 'sm'))
@@ -163,12 +165,22 @@ export default {
     max-width: 582px
     font-size: 18px
     line-height: 26px
+    padding: 0 0 60px 0
     @media (min-width: map-get($breakpoints, 'lg'))
+      padding: 0 0 90px 0
       max-width: 646px
       font-size: 20px
       line-height: 30px
+      @media (max-height: 800px)
+        max-width: 850px
+        font-size: 26px
+        line-height: 34px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       max-width: 978px
       font-size: 30px
       line-height: 45px
+      @media (max-height: 800px)
+        max-width: 850px
+        font-size: 26px
+        line-height: 34px
 </style>

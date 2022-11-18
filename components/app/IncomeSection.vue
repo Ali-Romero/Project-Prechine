@@ -80,21 +80,21 @@
 </template>
 
 <script>
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
 
 export default {
   data() {
     return {
-      modal: false
+      modal: false,
     }
   },
   mounted() {
-    const mm = gsap.matchMedia();
+    const mm = gsap.matchMedia()
 
-    mm.add("(min-width: 768px)", () => {
+    mm.add('(min-width: 768px)', () => {
       gsap.timeline({
         scrollTrigger: {
           markers: false,
@@ -102,13 +102,13 @@ export default {
           endTrigger: this.$refs.cards,
           pin: true,
           pinSpacing: false,
-          start: "top top+=93px",
+          start: 'top top+=93px',
           end: () => `bottom-=${this.$refs.total.offsetHeight + 93}`,
           scrub: true,
-        }
+        },
       })
     })
-  }
+  },
 }
 </script>
 
@@ -258,6 +258,10 @@ export default {
     @media (min-width: map-get($breakpoints, 'xxxl'))
       font-size: 40px
       line-height: 56px
+      @media (max-height: 800px)
+        max-width: 680px
+        font-size: 32px
+        line-height: 46px
 
   &__btn
     width: 100%

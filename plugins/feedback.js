@@ -6,7 +6,7 @@ export default ({ app, route, $axios }, inject) => {
       name: '',
       city: await app.$ymaps.getCountry(),
       user_location_ip: await app.$ymaps.getUserLocationIp(),
-      timezone: -1 * new Date().getTimezoneOffset() / 60,
+      timezone: (-1 * new Date().getTimezoneOffset()) / 60,
       utm_medium: route.query.utm_medium,
       utm_placement: route.query.utm_placement,
       utm_source: route.query.utm_source,
@@ -48,8 +48,8 @@ export default ({ app, route, $axios }, inject) => {
 
     await $axios.post('php/formProcessor.php', createFormData(data), {
       headers: {
-        'X-Requested-With': 'XMLHttpRequest'
-      }
+        'X-Requested-With': 'XMLHttpRequest',
+      },
     })
 
     app.router.push({ name: 'thanks' })

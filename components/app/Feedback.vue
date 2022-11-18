@@ -67,15 +67,18 @@ export default {
         name: '',
         email: '',
         phone: '',
-        action: 'приехать в Казань (в том числе на экскурсию)'
-      }
+        action: 'приехать в Казань (в том числе на экскурсию)',
+        'section-name-text': 'Принять участие в экскурсии:',
+        'section-btn-text': 'Получить консультацию',
+        'section-name': 'Открытая',
+      },
     }
   },
   methods: {
     async submit() {
       await this.$feedback.submit(this.fields)
-    }
-  }
+    },
+  },
 }
 </script>
 

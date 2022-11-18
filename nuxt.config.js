@@ -21,7 +21,10 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
-      { name: 'description', content: 'Франшиза удалённого бизнеса на маркетплейсах PriChina' },
+      {
+        name: 'description',
+        content: 'Франшиза удалённого бизнеса на маркетплейсах PriChina',
+      },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' }],
   },
@@ -46,6 +49,7 @@ export default {
     '@/plugins/validation.js',
     '@/plugins/scrollto.js',
     '@/plugins/feedback.js',
+    '@/plugins/gsap.js',
     { src: '@/plugins/ymaps.js', mode: 'client' },
   ],
 

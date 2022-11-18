@@ -12,7 +12,7 @@ export default {
   props: {
     titleDifferenceNum: {
       type: String,
-      default: ''
+      default: '',
     },
     title: {
       type: String,
@@ -59,6 +59,10 @@ export default {
       font-size: 160px
       line-height: 160px
       top: -105px
+      @media (max-height: 800px)
+        font-size: 130px
+        line-height: 130px
+        top: -90px
 
   &__text
     font-size: 18px
@@ -78,4 +82,9 @@ export default {
     @media (min-width: map-get($breakpoints, 'xxxl'))
       font-size: 36px
       line-height: 50px
+      @media (max-height: 800px)
+        font-size: 28px
+        line-height: 34px
+        width: 100%
+        max-width: 400px
 </style>
