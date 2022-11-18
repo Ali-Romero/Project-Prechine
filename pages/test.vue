@@ -4,16 +4,14 @@
       {{ `${num}`.repeat(20) }}
     </div>
 
-    <app-scroll-sections>
+    <!-- <app-scroll-sections>
       <template #primary>
-        <app-test-test />
+        <app-build-section></app-build-section>
       </template>
       <template #secondary>
-        <div class="test1">
-          {{ 'LOOK AT MEEEEEEEEEEEEEEEEEEEEE'.repeat(20) }}
-        </div>
+        <app-invite-section></app-invite-section>
       </template>
-    </app-scroll-sections>
+    </app-scroll-sections> -->
 
     <div v-for="num in [1, 2, 3]" :key="num" :class="`test${num - 1}`">
       {{ `${num}`.repeat(20) }}

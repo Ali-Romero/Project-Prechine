@@ -1,13 +1,34 @@
 <template>
   <ui-layout>
     <template #main>
-      <app-main-section></app-main-section>
-      <app-difference-section></app-difference-section>
-      <app-about-section></app-about-section>
-      <app-cases-section></app-cases-section>
-      <app-income-section></app-income-section>
-      <app-build-section></app-build-section>
-      <app-invite-section></app-invite-section>
+      <app-main-section-anim>
+        <template #main-section>
+          <app-main-section />
+        </template>
+        <template #difference-section>
+          <app-difference-section />
+        </template>
+      </app-main-section-anim>
+
+      <app-scroll-sections>
+        <template #primary>
+          <app-about-section />
+        </template>
+        <template #secondary>
+          <app-cases-section />
+        </template>
+      </app-scroll-sections>
+
+      <app-income-section />
+
+      <app-scroll-sections>
+        <template #primary>
+          <app-build-section />
+        </template>
+        <template #secondary>
+          <app-invite-section />
+        </template>
+      </app-scroll-sections>
     </template>
     <template #footer>
       <app-footer></app-footer>

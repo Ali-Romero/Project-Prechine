@@ -118,7 +118,7 @@ export default {
       @media (max-height: 800px)
         padding-top: 16px
     @media (min-width: map-get($breakpoints, 'xxxl'))
-      padding-top: 50px
+      padding-top: 40px
       @media (max-height: 800px)
         padding-top: 16px
     img
@@ -161,7 +161,7 @@ export default {
         max-width: 180px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       max-width: 243px
-      margin-bottom: 20px
+      margin-bottom: 18px
       font-size: 22px
       line-height: 33px
       height: 66px
@@ -194,7 +194,7 @@ export default {
     @media (min-width: map-get($breakpoints, 'xxxl'))
       font-size: 18px
       line-height: 27px
-      padding: 0 40px 50px 40px
+      padding: 0 40px 40px 40px
       @media (max-height: 800px)
         font-size: 15px
         line-height: 19px
@@ -215,7 +215,7 @@ export default {
       font-size: 15px
       line-height: 20px
     @media (min-width: map-get($breakpoints, 'xxxl'))
-      padding: 30px 40px
+      padding: 18px 40px
       font-size: 16px
       line-height: 24px
       @media (max-height: 800px)

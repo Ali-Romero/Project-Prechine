@@ -1,11 +1,11 @@
 <template>
-  <div ref="section" class="scroll-sections">
-    <div ref="primary" class="scroll-sections__primary">
-      <slot name="primary" />
+  <div ref="section" class="main-section-anim">
+    <div ref="main" class="main-section-anim__primary">
+      <slot name="main-section" />
     </div>
-    <div ref="overlay" class="scroll-sections__overlay" />
-    <div class="scroll-sections__secondary">
-      <slot name="secondary" />
+    <div ref="overlay" class="main-section-anim__overlay" />
+    <div ref="ss" class="main-section-anim__secondary">
+      <slot name="difference-section" />
     </div>
   </div>
 </template>
@@ -17,28 +17,28 @@ export default {
 
     mm.add('(min-width: 768px)', () => {
       const timeline = this.$gsap.timeline({
-        id: 'scroll-sections',
+        id: 'main-section-anim',
         scrollTrigger: {
           anticipatePin: true,
           markers: true,
-          trigger: this.$refs.section,
+          trigger: this.$refs.main,
           pin: true,
           pinSpacing: true,
           start: 'top top',
-          end: '100%',
-          scrub: 0.4,
+          end: 'bottom',
+          scrub: 1,
         },
       })
 
       timeline.to(this.$refs.overlay, { opacity: 0 }, 0)
-      timeline.to(this.$refs.primary, { y: '-100%' }, 0)
+      timeline.to(this.$refs.main, { y: '-100%' }, 0)
     })
   },
 }
 </script>
 
 <style lang="sass" scoped>
-.scroll-sections
+.main-section-anim
   position: relative
   overflow: hidden
   &__primary

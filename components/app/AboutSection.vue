@@ -1,6 +1,6 @@
 <template>
-  <section ref="about" class="about-section">
-    <div ref="ss" class="about-section__bg decor-bg">
+  <section class="about-section">
+    <div ref="list" class="about-section__bg decor-bg">
       <ui-wrapper>
         <div class="about-section__inner">
           <div class="about-section__box">
@@ -91,35 +91,11 @@
 </template>
 
 <script>
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-gsap.registerPlugin(ScrollTrigger)
 export default {
   data() {
     return {
       modal: false,
     }
-  },
-  mounted() {
-    // const mm = gsap.matchMedia()
-    // mm.add('(min-width: 768px)', () => {
-    //   const timeline = gsap.timeline({
-    //     scrollTrigger: {
-    //       markers: true,
-    //       trigger: this.$refs.about,
-    //       pin: true,
-    //       pinSpacing: false,
-    //       start: 'top top-=20%',
-    //       // end: '100%-=700px',
-    //       // end: () => this.$refs.about.offsetHeight, // end after scrolling 500px beyond the start
-    //       scrub: true, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-    //     },
-    //   })
-    //   timeline.to(this.$refs.about, {
-    //     opacity: 0.5,
-    //   })
-    // })
   },
 }
 </script>

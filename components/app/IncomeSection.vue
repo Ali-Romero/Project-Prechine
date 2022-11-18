@@ -104,7 +104,7 @@ export default {
           pinSpacing: false,
           start: 'top top+=93px',
           end: () => `bottom-=${this.$refs.total.offsetHeight + 93}`,
-          scrub: true,
+          scrub: 1,
         },
       })
     })

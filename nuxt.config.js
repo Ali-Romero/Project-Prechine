@@ -51,6 +51,7 @@ export default {
     '@/plugins/feedback.js',
     '@/plugins/gsap.js',
     { src: '@/plugins/ymaps.js', mode: 'client' },
+    { src: '@/plugins/animations.js', mode: 'client' },
   ],
 
   components: true,

@@ -137,11 +137,11 @@ export default {
   background-repeat: no-repeat
   background-position: center
   background-size: cover
-  position: relative
-  top: -90px
-  padding: 90px 0 0 0
-  margin: 0 0 -90px 0
-  z-index: 2
+  // position: relative
+  // top: -90px
+  // padding: 90px 0 0 0
+  // margin: 0 0 -90px 0
+  // z-index: 2
 
   &__inner
     padding: 81px 0 90px 0

@@ -48,39 +48,12 @@
 </template>
 
 <script>
-// import { gsap } from 'gsap'
-// import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-// gsap.registerPlugin(ScrollTrigger)
-
 export default {
   data() {
     return {
       modal: false,
     }
   },
-
-  // mounted() {
-  //   const mm = gsap.matchMedia()
-
-  //   mm.add('(min-width: 768px)', () => {
-  //     const timeline = gsap.timeline({
-  //       scrollTrigger: {
-  //         markers: false,
-  //         trigger: this.$refs.section,
-  //         pin: true,
-  //         pinSpacing: false,
-  //         start: 'top top',
-  //         end: () => this.$refs.section.offsetHeight, // end after scrolling 500px beyond the start
-  //         scrub: true, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-  //       },
-  //     })
-  //     timeline.to(this.$refs.section, {
-  //       // y: -this.$refs.section.offsetHeight,
-  //       opacity: 0.7,
-  //     })
-  //   })
-  // },
 }
 </script>
 
@@ -88,10 +61,10 @@ export default {
 .main-section
   color: white
   position: relative
-  z-index: 13
+  z-index: 1
   overflow: unset
-  ::v-deep
-    background-color: #F4F4F4
+  // ::v-deep
+  //   background-color: #F4F4F4
   &:before
     content: ""
     position: absolute

@@ -63,31 +63,16 @@
 </template>
 
 <script>
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-gsap.registerPlugin(ScrollTrigger)
-
 export default {
   mounted() {
-    const mm = gsap.matchMedia()
-
-    mm.add('(min-width: 768px)', () => {
-      const timeline = gsap.timeline({
-        scrollTrigger: {
-          markers: false,
-          trigger: this.$refs.inner,
-          pin: true,
-          pinSpacing: true,
-          start: 'top top',
-          end: '100%',
-          scrub: true,
+    this.$nextTick(() => {
+      this.$gsap.getById('scroll-sections').to(
+        this.$refs.list,
+        {
+          x: () => -this.$refs.list.firstChild.offsetWidth,
         },
-      })
-
-      timeline.to(this.$refs.list, {
-        x: () => -this.$refs.list.firstChild.offsetWidth,
-      })
+        -0.5
+      )
     })
   },
 }
