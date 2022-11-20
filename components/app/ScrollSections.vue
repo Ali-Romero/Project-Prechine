@@ -12,21 +12,27 @@
 
 <script>
 export default {
+  props: {
+    timelineId: {
+      type: String,
+      default: 'scroll-sections',
+    },
+  },
   mounted() {
     const mm = this.$gsap.matchMedia()
 
     mm.add('(min-width: 768px)', () => {
       const timeline = this.$gsap.timeline({
-        id: 'scroll-sections',
+        id: this.timelineId,
         scrollTrigger: {
-          anticipatePin: true,
+          anticipatePin: 0,
           markers: true,
           trigger: this.$refs.section,
           pin: true,
           pinSpacing: true,
           start: 'top top',
-          end: '100%',
-          scrub: 0.4,
+          end: 'bottom',
+          scrub: 2,
         },
       })
 
@@ -39,22 +45,28 @@ export default {
 
 <style lang="sass" scoped>
 .scroll-sections
-  position: relative
-  overflow: hidden
+  @media (min-width: map-get($breakpoints, 'sm'))
+    position: relative
   &__primary
-    width: 100%
-    position: absolute
-    top: 0
-    left: 0
-    z-index: 10
+    @media (min-width: map-get($breakpoints, 'sm'))
+      width: 100%
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 10
 
   &__overlay
-    width: 100%
-    height: 100%
-    position: absolute
-    top: 0
-    left: 0
-    background-color: rgba(0, 0, 0, 1)
+    @media (min-width: map-get($breakpoints, 'sm'))
+      width: 100%
+      height: 100%
+      position: absolute
+      top: 0
+      left: 0
+      background-color: rgba(0, 0, 0, 1)
+      pointer-events: none
+      z-index: 9
+
+  &__nav
+    color: white
     pointer-events: none
-    z-index: 9
 </style>

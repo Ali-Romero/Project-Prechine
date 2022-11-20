@@ -35,12 +35,12 @@ export default {
   props: {
     header: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {
-      modal: false
+      modal: false,
     }
   },
   computed: {
@@ -49,14 +49,14 @@ export default {
     },
     classes() {
       return {
-        'connection--header': this.header
+        'connection--header': this.header,
       }
-    }
-  }
+    },
+  },
 }
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 .connection
   display: flex
   color: #212121

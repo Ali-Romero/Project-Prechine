@@ -1,7 +1,10 @@
 <template>
-  <section class="difference-section">
+  <section id="difference-section" ref="difference" class="difference-section">
+    <div ref="nav" class="difference-section__nav d-none d-sm-block">
+      <app-header></app-header>
+    </div>
     <ui-wrapper class="difference-section__wrapper">
-      <div ref="inner" class="difference-section__inner">
+      <div class="difference-section__inner">
         <div class="difference-section__circle">
           <app-difference-circle-slider :slide="step" />
         </div>
@@ -129,22 +132,19 @@ export default {
         const lastStep = steps.pop()
 
         const timeline = gsap.getById('main-section-anim')
-
-        timeline.to({
-          // scrollTrigger: {
-          //   markers: false,
-          //   trigger: this.$refs.inner,
-          //   pin: true, // pin the trigger element while active
-          //   pinSpacing: true,
-          //   start: 'top top-=40px', // when the top of the trigger hits the top of the viewport
-          //   end: () => this.$refs.inner.offsetHeight * 4, // end after scrolling 500px beyond the start
-          //   scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-          // },
-        })
+        timeline.to(
+          this.$refs.nav,
+          {
+            opacity: 1,
+            scale: 1,
+            y: -20,
+          },
+          0.2
+        )
         timeline.fromTo(
           firstStep,
           {
-            y: '-100%',
+            y: () => -($steps.offsetHeight / 2 + firstStep.offsetHeight / 2),
           },
           {
             y: () => -$steps.offsetHeight,
@@ -190,73 +190,6 @@ export default {
           '-=65%'
         )
       })
-      // const timeline = gsap.timeline({
-      //   scrollTrigger: {
-      //     markers: false,
-      //     trigger: this.$refs.inner,
-      //     pin: true, // pin the trigger element while active
-      //     pinSpacing: true,
-      //     start: 'top top-=40px', // when the top of the trigger hits the top of the viewport
-      //     end: () => this.$refs.inner.offsetHeight * 4, // end after scrolling 500px beyond the start
-      //     scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-      //   },
-      // })
-
-      // const $steps = this.$refs.steps
-
-      // const [firstStep, ...steps] = $steps.querySelectorAll(
-      //   '.difference-section__step'
-      // )
-      // const lastStep = steps.pop()
-
-      // timeline.fromTo(
-      //   firstStep,
-      //   {
-      //     y: '-100%',
-      //   },
-      //   {
-      //     y: () => -$steps.offsetHeight,
-      //     onStart: () => {
-      //       this.step = 1
-      //     },
-      //   }
-      // )
-
-      // steps.forEach((step, index) => {
-      //   timeline.fromTo(
-      //     step,
-      //     {
-      //       y: '-100%',
-      //     },
-      //     {
-      //       y: () => -$steps.offsetHeight,
-      //       onStart: () => {
-      //         this.step = index + 2
-      //       },
-      //       onReverseComplete: () => {
-      //         this.step = index + 1
-      //       },
-      //     },
-      //     '-=65%'
-      //   )
-      // })
-
-      // timeline.fromTo(
-      //   lastStep,
-      //   {
-      //     y: '-100%',
-      //   },
-      //   {
-      //     y: -($steps.offsetHeight / 2 + lastStep.offsetHeight / 2),
-      //     onStart: () => {
-      //       this.step = 4
-      //     },
-      //     onReverseComplete: () => {
-      //       this.step = 3
-      //     },
-      //   },
-      //   '-=65%'
-      // )
     })
   },
   methods: {
@@ -311,10 +244,10 @@ export default {
         right: calc(100% - 170px)
     @media (min-width: map-get($breakpoints, 'xxxl'))
       right: calc(100% - 199px)
-      top: 159px
+      top: 96px
       @media (max-height: 800px)
         right: calc(100% - 199px)
-        top: 56px
+        top: 50px
     &:before
       content: ""
       position: absolute
@@ -336,6 +269,13 @@ export default {
     @media (min-width: map-get($breakpoints, 'lg'))
       @media (max-height: 800px)
         margin-bottom: 40px
+  &__nav
+    transform: scale(0.98)
+    transition: 0.1s
+    position: relative
+    top: 20px
+    z-index: 9
+
   &__inner
     padding: 82px 0
     @media (min-width: map-get($breakpoints, 'md'))
@@ -347,9 +287,9 @@ export default {
       @media (max-height: 800px)
         padding: 80px 0 80px 0
     @media (min-width: map-get($breakpoints, 'xxxl'))
-      padding: 92px 0 133px 0
+      padding: 10px 0 133px 0
       @media (max-height: 800px)
-        padding: 40px 0 80px 0
+        padding: 30px 0 80px 0
 
   &__title
     max-width: 460px
@@ -420,7 +360,7 @@ export default {
       @media (max-height: 800px)
         height: 340px
     @media (min-width: map-get($breakpoints, 'xxxl'))
-      height: 510px
+      height: 450px
       @media (max-height: 800px)
         height: 380px
   &__step

@@ -1,5 +1,5 @@
 <template>
-  <section class="about-section">
+  <section id="about-section" class="about-section">
     <div ref="list" class="about-section__bg decor-bg">
       <ui-wrapper>
         <div class="about-section__inner">

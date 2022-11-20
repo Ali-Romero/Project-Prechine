@@ -1,7 +1,7 @@
 <template>
-  <section ref="ss" class="build-section">
+  <section class="build-section">
     <ui-wrapper>
-      <div ref="inner" class="build-section__inner">
+      <div class="build-section__inner">
         <h2 class="build-section__title title-secondary">
           Строим совместный бизнес
         </h2>
@@ -65,14 +65,17 @@
 <script>
 export default {
   mounted() {
+    const mm = this.$gsap.matchMedia()
     this.$nextTick(() => {
-      this.$gsap.getById('scroll-sections').to(
-        this.$refs.list,
-        {
-          x: () => -this.$refs.list.firstChild.offsetWidth,
-        },
-        -0.5
-      )
+      mm.add('(min-width: 768px)', () => {
+        this.$gsap.getById('invite-section').to(
+          this.$refs.list,
+          {
+            x: () => -this.$refs.list.firstChild.offsetWidth,
+          },
+          -0.5
+        )
+      })
     })
   },
 }
@@ -86,13 +89,14 @@ export default {
   font-family: 'Manrope-Light'
   position: relative
   z-index: 4
+  overflow: hidden
   @media (min-width: map-get($breakpoints, 'lg'))
     border-radius: 0px 0px 80px 80px
 
   &__inner
     padding: 81px 0 0 0
     @media (min-width: map-get($breakpoints, 'lg'))
-      padding: 92px 0 0 0
+      padding: 70px 0 0 0
 
   &__title
     margin-bottom: 14px
@@ -120,7 +124,8 @@ export default {
       line-height: 33px
 
   &__scroll
-    padding-bottom: 60px
+    @media (min-width: map-get($breakpoints, 'sm'))
+      padding-bottom: 60px
     @media (min-width: map-get($breakpoints, 'lg'))
       padding-bottom: 70px
     @media (min-width: map-get($breakpoints, 'xxxl'))

@@ -1,5 +1,8 @@
 <template>
   <section id="cases-section" class="cases-section">
+    <div ref="nav" class="cases-section__nav d-none d-sm-block">
+      <app-header></app-header>
+    </div>
     <ui-wrapper>
       <div class="cases-section__inner">
         <h2 class="cases-section__title title-secondary">Реальные кейсы</h2>
@@ -225,6 +228,22 @@ export default {
       return this.products[this.slide - 1]
     },
   },
+  mounted() {
+    const mm = this.$gsap.matchMedia()
+    this.$nextTick(() => {
+      mm.add('(min-width: 768px)', () => {
+        this.$gsap.getById('cases-section').to(
+          this.$refs.nav,
+          {
+            opacity: 1,
+            scale: 1,
+            y: -20,
+          },
+          0.2
+        )
+      })
+    })
+  },
   methods: {
     next() {
       // this.slide = this.slide === this.products.length ? 1 : this.slide + 1
@@ -247,13 +266,21 @@ export default {
   position: relative
   z-index: 2
   background-color: white
-  top: -90px
-  padding: 90px 0 0 0
-  margin: 0 0 -90px 0
+
+  &__nav
+    transform: scale(0.98)
+    transition: 0.1s
+    position: relative
+    top: 20px
+    z-index: 22
+    ::v-deep
+      .header-nav__item
+        &:nth-child(2)
+          pointer-events: none
   &__inner
     padding: 81px 0 0 0
     @media (min-width: map-get($breakpoints, 'lg'))
-      padding: 92px 0 0 0
+      padding: 20px 0 0 0
 
   &__title
     margin-bottom: 21px

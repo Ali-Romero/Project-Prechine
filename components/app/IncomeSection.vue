@@ -97,6 +97,7 @@ export default {
     mm.add('(min-width: 768px)', () => {
       gsap.timeline({
         scrollTrigger: {
+          anticipatePin: 0,
           markers: false,
           trigger: this.$refs.total,
           endTrigger: this.$refs.cards,

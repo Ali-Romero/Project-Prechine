@@ -4,7 +4,7 @@
       <slot name="main-section" />
     </div>
     <div ref="overlay" class="main-section-anim__overlay" />
-    <div ref="ss" class="main-section-anim__secondary">
+    <div ref="difference" class="main-section-anim__secondary">
       <slot name="difference-section" />
     </div>
   </div>
@@ -21,12 +21,12 @@ export default {
         scrollTrigger: {
           anticipatePin: true,
           markers: true,
-          trigger: this.$refs.main,
+          trigger: this.$refs.section,
           pin: true,
           pinSpacing: true,
           start: 'top top',
-          end: 'bottom',
-          scrub: 1,
+          end: 'bottom -=5000',
+          scrub: 1.4,
         },
       })
 
@@ -39,22 +39,24 @@ export default {
 
 <style lang="sass" scoped>
 .main-section-anim
-  position: relative
-  overflow: hidden
+  @media (min-width: map-get($breakpoints, 'sm'))
+    position: relative
   &__primary
-    width: 100%
-    position: absolute
-    top: 0
-    left: 0
-    z-index: 10
+    @media (min-width: map-get($breakpoints, 'sm'))
+      width: 100%
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 10
 
   &__overlay
-    width: 100%
-    height: 100%
-    position: absolute
-    top: 0
-    left: 0
-    background-color: rgba(0, 0, 0, 1)
-    pointer-events: none
-    z-index: 9
+    @media (min-width: map-get($breakpoints, 'sm'))
+      width: 100%
+      height: 100%
+      position: absolute
+      top: 0
+      left: 0
+      background-color: rgba(24, 29, 17, 1)
+      pointer-events: none
+      z-index: 9
 </style>

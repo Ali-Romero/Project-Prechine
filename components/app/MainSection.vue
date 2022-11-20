@@ -1,6 +1,5 @@
 <template>
   <section id="main-section" ref="section" class="main-section">
-    <div ref="overlay" class="main-section__overlay" />
     <app-header></app-header>
     <ui-wrapper>
       <div class="main-section__inner">
@@ -63,8 +62,7 @@ export default {
   position: relative
   z-index: 1
   overflow: unset
-  // ::v-deep
-  //   background-color: #F4F4F4
+
   &:before
     content: ""
     position: absolute
@@ -90,14 +88,6 @@ export default {
   .wrapper
     ::d-deep
       overflow: hidden
-  &__overlay
-    position: absolute
-    width: 100%
-    height: 100%
-    z-index: 17
-    left: 0
-    top: 0
-    pointer-events: none
   &__inner
     padding: 148px 0 89px 6px
     @media (min-width: map-get($breakpoints, 'sm'))

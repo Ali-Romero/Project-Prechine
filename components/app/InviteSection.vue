@@ -1,5 +1,8 @@
 <template>
-  <section ref="invite" class="invite-section">
+  <section id="invite-section" class="invite-section">
+    <div ref="nav" class="invite-section__nav d-none d-sm-block">
+      <app-header></app-header>
+    </div>
     <ui-wrapper>
       <div class="invite-section__inner">
         <div class="invite-section__row">
@@ -96,37 +99,29 @@
 </template>
 
 <script>
-// import { gsap } from 'gsap'
-// import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-// gsap.registerPlugin(ScrollTrigger)
-
 export default {
   data() {
     return {
       modal: false,
     }
   },
-  // mounted() {
-  //   const mm = gsap.matchMedia()
 
-  //   mm.add('(min-width: 768px)', () => {
-  //     const timeline = gsap.timeline({
-  //       scrollTrigger: {
-  //         markers: true,
-  //         trigger: this.$refs.invite,
-  //         pin: true,
-  //         pinSpacing: false,
-  //         start: 'bottom bottom',
-  //         end: () => this.$refs.invite.offsetHeight * 4, // end after scrolling 500px beyond the start
-  //         scrub: true, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-  //       },
-  //     })
-  //     timeline.to(this.$refs.invite, {
-  //       ease: 'ease',
-  //     })
-  //   })
-  // },
+  mounted() {
+    const mm = this.$gsap.matchMedia()
+    this.$nextTick(() => {
+      mm.add('(min-width: 768px)', () => {
+        this.$gsap.getById('invite-section').to(
+          this.$refs.nav,
+          {
+            opacity: 1,
+            scale: 1,
+            y: -20,
+          },
+          0.2
+        )
+      })
+    })
+  },
 }
 </script>
 
@@ -137,18 +132,23 @@ export default {
   background-repeat: no-repeat
   background-position: center
   background-size: cover
-  // position: relative
-  // top: -90px
-  // padding: 90px 0 0 0
-  // margin: 0 0 -90px 0
-  // z-index: 2
 
+  &__nav
+    transform: scale(0.98)
+    transition: 0.1s
+    position: relative
+    top: 20px
+    z-index: 9
+    ::v-deep
+      .header-nav__item
+        &:last-child
+          pointer-events: none
   &__inner
     padding: 81px 0 90px 0
     @media (min-width: map-get($breakpoints, 'sm'))
       padding: 100px 0 90px 0
     @media (min-width: map-get($breakpoints, 'lg'))
-      padding: 169px 0 90px 0
+      padding: 30px 0 90px 0
       @media (max-height: 800px)
         padding: 70px 0 80px 0
 

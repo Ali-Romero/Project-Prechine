@@ -1,41 +1,73 @@
 <template>
   <nav class="header-nav">
     <ul class="header-nav__list">
-      <li class="header-nav__item active">
+      <li class="header-nav__item">
         <a
           v-scroll-to="{
-          el: '#main-section',
-          duration: 800,
-          easing: 'linear',
-          force: true,
-          }" href="#">
-          Формат сотрудничества</a>
+            el: '#difference-section',
+            duration: 800,
+            easing: 'linear',
+            force: false,
+            offset: sectionOffsetMain - -1500,
+          }"
+          href="#"
+          >Формат сотрудничества</a
+        >
       </li>
       <li class="header-nav__item">
         <a
           v-scroll-to="{
-          el: '#cases-section',
-          duration: 800,
-          easing: 'linear',
-          force: true,
+            el: '#cases-section',
+            duration: 800,
+            easing: 'linear',
+            force: false,
+            offset: sectionOffsetAbout,
           }"
-          href="#">
-          Примеры товаров</a>
+          href="#"
+        >
+          Товары и доходы</a
+        >
       </li>
       <li class="header-nav__item">
         <a
           v-scroll-to="{
-          el: '#income-section',
-          duration: 800,
-          easing: 'linear',
-          force: true,
+            force: false,
+            el: '#invite-section',
+            duration: 800,
+            easing: 'linear',
+            offset: sectionOffsetInvite,
           }"
-          href="#">
-          Доходы партнёров</a>
+          href="#"
+        >
+          Экскурсия по офису</a
+        >
       </li>
     </ul>
   </nav>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      sectionOffsetMain: '',
+      sectionOffsetAbout: '',
+      sectionOffsetInvite: '',
+    }
+  },
+  mounted() {
+    this.sectionOffsetMain = document.getElementById(
+      'main-section'
+    ).offsetHeight
+    this.sectionOffsetAbout = document.getElementById(
+      'about-section'
+    ).offsetHeight
+    this.sectionOffsetInvite = document.getElementById(
+      'invite-section'
+    ).offsetHeight
+  },
+}
+</script>
 
 <style lang="sass" scoped>
 .header-nav
@@ -57,17 +89,17 @@
       line-height: 19px
     &:last-child
       margin-right: 0
-    &.active
-        a
-          position: relative
-          color: #FF840C
-          &::before
-            content: ""
-            position: absolute
-            bottom: 0
-            height: 1px
-            width: 100%
-            background-color: #FF840C
-            @media (min-width: map-get($breakpoints, 'lg'))
-              height: 2px
+    // &.active
+    //     a
+    //       position: relative
+    //       color: #FF840C
+    //       &::before
+    //         content: ""
+    //         position: absolute
+    //         bottom: 0
+    //         height: 1px
+    //         width: 100%
+    //         background-color: #FF840C
+    //         @media (min-width: map-get($breakpoints, 'lg'))
+    //           height: 2px
 </style>

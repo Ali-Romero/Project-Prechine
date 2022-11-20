@@ -10,7 +10,7 @@
         </template>
       </app-main-section-anim>
 
-      <app-scroll-sections>
+      <app-scroll-sections timeline-id="cases-section">
         <template #primary>
           <app-about-section />
         </template>
@@ -21,7 +21,7 @@
 
       <app-income-section />
 
-      <app-scroll-sections>
+      <app-scroll-sections timeline-id="invite-section">
         <template #primary>
           <app-build-section />
         </template>

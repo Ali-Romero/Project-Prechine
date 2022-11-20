@@ -33,8 +33,8 @@ export default {
   computed: {
     page() {
       return this.$route.name
-    }
-  }
+    },
+  },
 }
 </script>
 

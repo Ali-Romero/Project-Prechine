@@ -100,7 +100,7 @@ export default {
   &--current-4
     transform: rotate(-60deg)
     @media (min-width: map-get($breakpoints, 'md'))
-        transform: rotate(-105deg)
+      transform: rotate(-105deg)
 
   &--current-1 &__slide--1 &__item &__icon
     transform: scale(1)

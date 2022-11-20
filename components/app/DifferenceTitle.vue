@@ -56,8 +56,8 @@ export default {
       line-height: 120px
       top: -82px
     @media (min-width: map-get($breakpoints, 'xxxl'))
-      font-size: 160px
-      line-height: 160px
+      font-size: 150px
+      line-height: 150px
       top: -105px
       @media (max-height: 800px)
         font-size: 130px
@@ -80,8 +80,8 @@ export default {
       font-size: 24px
       line-height: 30px
     @media (min-width: map-get($breakpoints, 'xxxl'))
-      font-size: 36px
-      line-height: 50px
+      font-size: 34px
+      line-height: 48px
       @media (max-height: 800px)
         font-size: 28px
         line-height: 34px
