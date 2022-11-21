@@ -89,9 +89,9 @@ export default {
     ::d-deep
       overflow: hidden
   &__inner
-    padding: 148px 0 89px 6px
+    padding: 148px 0 89px 3px
     @media (min-width: map-get($breakpoints, 'sm'))
-      padding: 28px 0 100px 10px
+      padding: 28px 0 66px 10px
     @media (min-width: map-get($breakpoints, 'lg'))
       padding: 36px 0 130px 0
     @media (min-width: map-get($breakpoints, 'xxxl'))
@@ -136,7 +136,7 @@ export default {
     top: 104px
     right: -5px
     @media (min-width: map-get($breakpoints, 'sm'))
-      top: 148px
+      top: 169px
       right: -114px
     @media (min-width: map-get($breakpoints, 'lg'))
       top: 224px
@@ -174,10 +174,10 @@ export default {
   &__description
     @media (min-width: map-get($breakpoints, 'sm'))
       font-family: 'Manrope-Light'
-      font-size: 14px
-      line-height: 21px
+      font-size: 16px
+      line-height: 24px
       margin-bottom: 30px
-      max-width: 402px
+      max-width: 458px
     @media (min-width: map-get($breakpoints, 'lg'))
       max-width: 626px
       font-size: 22px

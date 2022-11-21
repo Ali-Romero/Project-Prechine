@@ -128,6 +128,8 @@ export default {
         height: 54px
       @media (min-width: map-get($breakpoints, 'lg'))
         height: 64px
+        @media (max-height: 800px)
+          height: 54px
       @media (min-width: map-get($breakpoints, 'xxxl'))
         height: 80px
         @media (max-height: 800px)
@@ -156,21 +158,21 @@ export default {
       max-width: 208px
       @media (max-height: 800px)
         margin-bottom: 10px
-        font-size: 17px
-        line-height: 24px
+        font-size: 16px
+        line-height: 20px
         max-width: 180px
+        height: 38px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       max-width: 243px
       margin-bottom: 14px
       font-size: 22px
-      line-height: 33px
-      height: 66px
+      line-height: 30px
+      height: 58px
       @media (max-height: 800px)
         font-size: 19px
         line-height: 26px
         max-width: 200px
         height: 41px
-
 
   &__text-box
     width: 100%
@@ -188,11 +190,11 @@ export default {
       padding: 0 20px 30px 20px
       @media (max-height: 800px)
         font-size: 14px
-        line-height: 20px
+        line-height: 18px
         padding: 0 20px 16px 20px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       font-size: 18px
-      line-height: 27px
+      line-height: 26px
       padding: 0 40px 30px 40px
       @media (max-height: 800px)
         font-size: 15px
@@ -213,10 +215,14 @@ export default {
       padding: 12px 11px 16px 20px
       font-size: 15px
       line-height: 20px
+      @media (max-height: 800px)
+        padding: 10px 11px 12px 20px
+        font-size: 15px
+        line-height: 19px
     @media (min-width: map-get($breakpoints, 'xxxl'))
-      padding: 18px 40px
+      padding: 14px 40px
       font-size: 16px
-      line-height: 24px
+      line-height: 20px
       @media (max-height: 800px)
         font-size: 14px
         line-height: 20px

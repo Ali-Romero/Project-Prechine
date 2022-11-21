@@ -122,15 +122,8 @@ export default {
   mounted() {
     const mm = gsap.matchMedia()
 
-    mm.add('(min-width: 1024px)', () => {
+    mm.add('(min-width: 768px)', () => {
       this.$nextTick(() => {
-        const $steps = this.$refs.steps
-
-        const [firstStep, ...steps] = $steps.querySelectorAll(
-          '.difference-section__step'
-        )
-        const lastStep = steps.pop()
-
         const timeline = gsap.getById('main-section-anim')
         timeline.to(
           this.$refs.nav,
@@ -141,6 +134,19 @@ export default {
           },
           0.2
         )
+      })
+    })
+    mm.add('(min-width: 1024px)', () => {
+      this.$nextTick(() => {
+        const $steps = this.$refs.steps
+
+        const [firstStep, ...steps] = $steps.querySelectorAll(
+          '.difference-section__step'
+        )
+        const lastStep = steps.pop()
+
+        const timeline = gsap.getById('main-section-anim')
+
         timeline.fromTo(
           firstStep,
           {
@@ -207,6 +213,15 @@ export default {
 .difference-section
   background-color: #F4F4F4
   overflow: hidden
+  position: relative
+  top: -50px
+  margin-bottom: -50px
+  padding-top: 50px
+  @media (min-width: map-get($breakpoints, 'sm'))
+    position: unset
+    top: auto
+    margin-bottom: 0
+    padding-top: 0
   .ui-wrapper
     ::v-deep
       max-width: 300px
@@ -229,22 +244,22 @@ export default {
     @media (min-width: map-get($breakpoints, 'sm'))
       width: auto
       left: 0
-      top: 289px
+      top: 202px
     @media (min-width: map-get($breakpoints, 'md'))
       left: auto
-      top: 206px
+      top: 113px
       right: calc(100% - 130px)
       @media (max-height: 800px)
-        top: 150px
+        top: 132px
     @media (min-width: map-get($breakpoints, 'lg'))
       right: calc(100% - 188px)
-      top: 220px
+      top: 164px
       @media (max-height: 800px)
-        top: 76px
+        top: 20px
         right: calc(100% - 170px)
     @media (min-width: map-get($breakpoints, 'xxxl'))
       right: calc(100% - 199px)
-      top: 96px
+      top: 26px
       @media (max-height: 800px)
         right: calc(100% - 199px)
         top: 50px
@@ -275,17 +290,22 @@ export default {
     position: relative
     top: 20px
     z-index: 9
-
+    opacity: 0
+    ::v-deep
+      .header-nav__item
+        &:first-child
+          pointer-events: none
+          color: #FF840C
   &__inner
     padding: 82px 0
+    @media (min-width: map-get($breakpoints, 'sm'))
+      padding: 0 0 100px 0
     @media (min-width: map-get($breakpoints, 'md'))
-      padding: 92px 0
-      @media (max-height: 800px)
-        padding: 30px 0 80px 0
+      padding: 0px 0 80px 0
     @media (min-width: map-get($breakpoints, 'lg'))
-      padding: 92px 0 100px 0
+      padding: 30px 0 100px 0
       @media (max-height: 800px)
-        padding: 80px 0 80px 0
+        padding: 0 0 80px 0
     @media (min-width: map-get($breakpoints, 'xxxl'))
       padding: 10px 0 133px 0
       @media (max-height: 800px)
@@ -397,11 +417,13 @@ export default {
     max-width: 885px
     font-size: 20px
     line-height: 30px
-    padding: 0 0 79px
+    padding: 0 0 79px 0
     @media (min-width: map-get($breakpoints, 'sm'))
-      padding: 0 0 103px
+      padding: 0 0 120px 0
       font-size: 24px
       line-height: 30px
+    @media (min-width: map-get($breakpoints, 'lg'))
+      padding: 0 0 103px 0
     @media (min-width: map-get($breakpoints, 'xxxl'))
       max-width: 885px
       font-size: 30px

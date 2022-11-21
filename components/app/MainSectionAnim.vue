@@ -20,13 +20,13 @@ export default {
         id: 'main-section-anim',
         scrollTrigger: {
           anticipatePin: true,
-          markers: true,
+          markers: false,
           trigger: this.$refs.section,
           pin: true,
-          pinSpacing: true,
+          pinSpacing: 'true',
           start: 'top top',
-          end: 'bottom -=5000',
-          scrub: 1.4,
+          end: () => this.$refs.section.offsetHeight + 3000,
+          scrub: 1,
         },
       })
 
@@ -56,7 +56,7 @@ export default {
       position: absolute
       top: 0
       left: 0
-      background-color: rgba(24, 29, 17, 1)
+      background-color: rgba(0, 0, 0, 1)
       pointer-events: none
       z-index: 9
 </style>

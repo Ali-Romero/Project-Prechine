@@ -132,7 +132,15 @@ export default {
   background-repeat: no-repeat
   background-position: center
   background-size: cover
-
+  position: relative
+  top: -66px
+  margin-bottom: -66px
+  padding-top: 66px
+  @media (min-width: map-get($breakpoints, 'sm'))
+    position: unset
+    top: auto
+    margin-bottom: 0
+    padding-top: 0
   &__nav
     transform: scale(0.98)
     transition: 0.1s
@@ -143,21 +151,24 @@ export default {
       .header-nav__item
         &:last-child
           pointer-events: none
+          color: #FF840C
   &__inner
     padding: 81px 0 90px 0
     @media (min-width: map-get($breakpoints, 'sm'))
-      padding: 100px 0 90px 0
+      padding: 6px 0 90px 0
     @media (min-width: map-get($breakpoints, 'lg'))
       padding: 30px 0 90px 0
       @media (max-height: 800px)
-        padding: 70px 0 80px 0
+        padding: 20px 0 80px 0
 
   &__row
     margin-bottom: 34px
     @media (min-width: map-get($breakpoints, 'sm'))
-      margin-bottom: 60px
+      margin-bottom: 40px
       display: flex
       align-items: flex-end
+    @media (min-width: map-get($breakpoints, 'lg'))
+      margin-bottom: 60px
 
   &__col
     &:first-child
@@ -180,7 +191,7 @@ export default {
       max-width: 300px
       @media (min-width: map-get($breakpoints, 'sm'))
         font-size: 30px
-        line-height: 39px
+        line-height: 32px
         max-width: 408px
       @media (min-width: map-get($breakpoints, 'lg'))
         font-size: 50px
@@ -443,12 +454,12 @@ export default {
     @media (min-width: map-get($breakpoints, 'sm'))
       @media (max-height: 800px)
         display: block
-        max-width: 300px
-        height: 66px
+        max-width: 280px
+        height: 60px
     @media (min-width: map-get($breakpoints, 'lg'))
       @media (max-height: 800px)
-        max-width: 360px
-        height: 76px
+        max-width: 340px
+        height: 70px
       @media (min-width: map-get($breakpoints, 'xxxl'))
         max-width: 390px
         height: 87px

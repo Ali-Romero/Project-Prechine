@@ -26,7 +26,7 @@ export default {
         id: this.timelineId,
         scrollTrigger: {
           anticipatePin: 0,
-          markers: true,
+          markers: false,
           trigger: this.$refs.section,
           pin: true,
           pinSpacing: true,
@@ -60,7 +60,7 @@ export default {
       width: 100%
       height: 100%
       position: absolute
-      top: 0
+      top: 2px
       left: 0
       background-color: rgba(0, 0, 0, 1)
       pointer-events: none

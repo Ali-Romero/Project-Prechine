@@ -132,6 +132,8 @@ export default {
   &__inner
     padding: 83px 0 64px 0
     @media (min-width: map-get($breakpoints, 'sm'))
+      padding: 70px 0 90px 0
+    @media (min-width: map-get($breakpoints, 'lg'))
       padding: 93px 0 90px 0
 
   &__title-container

@@ -277,9 +277,11 @@ export default {
       .header-nav__item
         &:nth-child(2)
           pointer-events: none
+          color: #FF840C
+
   &__inner
     padding: 81px 0 0 0
-    @media (min-width: map-get($breakpoints, 'lg'))
+    @media (min-width: map-get($breakpoints, 'sm'))
       padding: 20px 0 0 0
 
   &__title
@@ -291,7 +293,10 @@ export default {
     max-width: 704px
     margin: 0 auto 48px auto
     color: #7D7D7D
+    @media (min-width: map-get($breakpoints, 'sm'))
+    margin: 0 auto 70px auto
     @media (min-width: map-get($breakpoints, 'lg'))
+      margin: 0 auto 48px auto
       max-width: 836px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       max-width: 963px

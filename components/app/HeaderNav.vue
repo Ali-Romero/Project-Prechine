@@ -8,9 +8,22 @@
             duration: 800,
             easing: 'linear',
             force: false,
-            offset: sectionOffsetMain - -1500,
+            offset: sectionOffsetMain - -3400,
           }"
           href="#"
+          class="header-nav__link-1"
+          >Формат сотрудничества</a
+        >
+        <a
+          v-scroll-to="{
+            el: '#difference-section',
+            duration: 800,
+            easing: 'linear',
+            force: false,
+            offset: sectionOffsetMain - -600,
+          }"
+          href="#"
+          class="header-nav__link-2"
           >Формат сотрудничества</a
         >
       </li>
@@ -21,7 +34,7 @@
             duration: 800,
             easing: 'linear',
             force: false,
-            offset: sectionOffsetAbout,
+            offset: sectionOffsetAbout - 20,
           }"
           href="#"
         >
@@ -35,7 +48,7 @@
             el: '#invite-section',
             duration: 800,
             easing: 'linear',
-            offset: sectionOffsetInvite,
+            offset: sectionOffsetInvite - 20,
           }"
           href="#"
         >
@@ -87,19 +100,33 @@ export default {
       margin-right: 40px
       font-size: 16px
       line-height: 19px
+      -webkit-touch-callout: none
+      -webkit-user-select: none
+      -khtml-user-select: none
+      -moz-user-select: none
+      -ms-user-select: none
+      user-select: none
+  &__link-1
+    @media (min-width: map-get($breakpoints, 'md'))
+      display: none
+  &__link-2
+    @media (min-width: map-get($breakpoints, 'sm'))
+      display: none
+    @media (min-width: map-get($breakpoints, 'md'))
+      display: block
     &:last-child
       margin-right: 0
-    // &.active
-    //     a
-    //       position: relative
-    //       color: #FF840C
-    //       &::before
-    //         content: ""
-    //         position: absolute
-    //         bottom: 0
-    //         height: 1px
-    //         width: 100%
-    //         background-color: #FF840C
-    //         @media (min-width: map-get($breakpoints, 'lg'))
-    //           height: 2px
+    &:hover
+      a
+        position: relative
+        color: #FF840C
+        &::before
+          content: ""
+          position: absolute
+          bottom: 0
+          height: 1px
+          width: 100%
+          background-color: #FF840C
+          @media (min-width: map-get($breakpoints, 'lg'))
+            height: 2px
 </style>

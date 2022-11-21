@@ -107,12 +107,11 @@ export default {
   padding: 0 0 64px 0
   position: relative
   z-index: 4
+  background: #F4F4F4
   @media (min-width: map-get($breakpoints, 'sm'))
-    padding: 0 0 90px 0
+    padding: 0 0 70px 0
   @media (min-width: map-get($breakpoints, 'lg'))
     border-radius: 0px 0px 80px 80px
-  ::v-deep
-    background-color: white
   &::before
     content: ""
     width: 100%
@@ -132,6 +131,7 @@ export default {
     margin: 0 auto 60px auto
     @media (min-width: map-get($breakpoints, 'sm'))
       max-width: 785px
+      margin: 0 auto 40px auto
     @media (min-width: map-get($breakpoints, 'lg'))
       max-width: 1193px
       margin: 0 auto 70px auto
@@ -410,6 +410,9 @@ export default {
     width: 100%
     max-width: 300px
     height: 70px
+    @media (min-width: map-get($breakpoints, 'sm'))
+      max-width: 260px
+      height: 60px
     @media (min-width: map-get($breakpoints, 'lg'))
       max-width: 340px
       height: 70px

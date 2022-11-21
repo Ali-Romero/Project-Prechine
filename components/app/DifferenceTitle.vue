@@ -30,11 +30,6 @@ export default {
   padding-top: 48px
   @media (min-width: map-get($breakpoints, 'md'))
     padding-top: 0
-  //   padding-top: 50px
-  // @media (min-width: map-get($breakpoints, 'lg'))
-  //   padding-top: 62px
-  // @media (min-width: map-get($breakpoints, 'xxxl'))
-  //   padding-top: 100px
 
   &__num
     font-family: 'Manrope-Light'
