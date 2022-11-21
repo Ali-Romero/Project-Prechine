@@ -63,17 +63,18 @@ export default {
         name: '',
         email: '',
         phone: '',
-        'section-name-text': 'Запишитесь на онлайн-консультацию, чтобы узнать подробнее о франшизе PriChina',
+        'section-name-text':
+          'Запишитесь на онлайн-консультацию, чтобы узнать подробнее о франшизе PriChina',
         'section-btn-text': 'Получить консультацию',
         'section-name': 'Закрытая',
-      }
+      },
     }
   },
   methods: {
     async submit() {
       await this.$feedback.submit(this.fields)
-    }
-  }
+    },
+  },
 }
 </script>
 

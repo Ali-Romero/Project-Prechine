@@ -1,6 +1,6 @@
 <template>
   <div class="case-mini" :class="classes" v-on="$listeners">
-    <img :src="image" width="84" height="84" alt="product" />
+    <img :src="image" width="84" height="84" loading="lazy" alt="product" />
   </div>
 </template>
 
