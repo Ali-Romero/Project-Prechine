@@ -106,21 +106,13 @@ export default {
       -moz-user-select: none
       -ms-user-select: none
       user-select: none
-  &__link-1
-    @media (min-width: map-get($breakpoints, 'md'))
-      display: none
-  &__link-2
-    @media (min-width: map-get($breakpoints, 'sm'))
-      display: none
-    @media (min-width: map-get($breakpoints, 'md'))
-      display: block
     &:last-child
       margin-right: 0
     &:hover
       a
         position: relative
         color: #FF840C
-        &::before
+        &:before
           content: ""
           position: absolute
           bottom: 0
@@ -129,4 +121,12 @@ export default {
           background-color: #FF840C
           @media (min-width: map-get($breakpoints, 'lg'))
             height: 2px
+  &__link-1
+    @media (min-width: map-get($breakpoints, 'md'))
+      display: none
+  &__link-2
+    @media (min-width: map-get($breakpoints, 'sm'))
+      display: none
+    @media (min-width: map-get($breakpoints, 'md'))
+      display: block
 </style>

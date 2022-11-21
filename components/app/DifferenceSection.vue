@@ -236,7 +236,7 @@ export default {
     z-index: 1
   &__circle
     position: absolute
-    top: 319px
+    top: 298px
     right: 0
     left: -98px
     z-index: -1
