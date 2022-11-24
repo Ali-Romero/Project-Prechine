@@ -4,7 +4,7 @@ export default ({ app, route, $axios }, inject) => {
       phone: '',
       email: '',
       name: '',
-      city: await app.$ymaps.getCountry(),
+      city: 'не заполнено',
       user_location_ip: await app.$ymaps.getUserLocationIp(),
       timezone: (-1 * new Date().getTimezoneOffset()) / 60,
       utm_medium: route.query.utm_medium,

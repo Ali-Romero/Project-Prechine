@@ -1,4 +1,4 @@
-const BASE_URL = '/project/prichina-new/'
+const BASE_URL = '/'
 
 const BREAKPOINTS = {
   xxs: 320,
