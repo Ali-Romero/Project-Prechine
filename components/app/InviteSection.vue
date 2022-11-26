@@ -7,7 +7,7 @@
       <div class="invite-section__inner">
         <div class="invite-section__row">
           <div class="invite-section__col">
-            <h2 class="invite-section__title">
+            <h2 ref="titleAnim" class="invite-section__title">
               <span class="title">
                 Посмотрите <br />
                 на бизнес лично:
@@ -19,7 +19,7 @@
               </span>
             </h2>
             <div class="invite-section__founder">
-              <div class="invite-section__founder-photo">
+              <div ref="photoAnim" class="invite-section__founder-photo">
                 <img
                   src="@/assets/images/invite-founder-photo.png"
                   alt="founder"
@@ -32,7 +32,10 @@
                   <ui-icon name="quotes" />
                 </span>
               </div>
-              <div class="invite-section__founder-description">
+              <div
+                ref="photoTextAnim"
+                class="invite-section__founder-description"
+              >
                 Я, Айсылу Хуснутдинова, приглашаю познакомиться с работой
                 фулфилмент центра лично или по видеосвязи
               </div>
@@ -50,10 +53,12 @@
                   class="d-block"
                 />
               </div>
-              <div class="invite-section__table-info-content">
+              <div ref="contentAnim" class="invite-section__table-info-content">
                 <div class="invite-section__table-info-title">
-                  Программа <br d-sm-none />
-                  презентации:
+                  <h3>
+                    Программа <br d-sm-none />
+                    презентации:
+                  </h3>
                 </div>
                 <ul>
                   <li>
@@ -79,10 +84,14 @@
             </div>
           </div>
         </div>
-        <div class="invite-section__feedback">
+        <div ref="feedbackAnim" class="invite-section__feedback">
           <app-feedback></app-feedback>
         </div>
-        <div class="invite-section__button" @click.prevent="modal = true">
+        <div
+          ref="feedbackBtnAnim"
+          class="invite-section__button"
+          @click.prevent="modal = true"
+        >
           <ui-button fluid>
             Принять участие
             <template #icon>
@@ -110,7 +119,8 @@ export default {
     const mm = this.$gsap.matchMedia()
     this.$nextTick(() => {
       mm.add('(min-width: 768px)', () => {
-        this.$gsap.getById('invite-section').to(
+        const tl = this.$gsap.getById('invite-section')
+        tl.to(
           this.$refs.nav,
           {
             opacity: 1,
@@ -118,6 +128,60 @@ export default {
             y: -20,
           },
           0.2
+        )
+        tl.to(
+          this.$refs.titleAnim,
+          {
+            scale: 1,
+            x: 0,
+            ease: 'power1.out',
+          },
+          0
+        )
+        tl.to(
+          this.$refs.contentAnim,
+          {
+            scale: 1,
+            x: 0,
+            duration: 0.6,
+            ease: 'power1.out',
+          },
+          0
+        )
+        tl.to(
+          this.$refs.photoAnim,
+          {
+            scale: 1,
+            ease: 'power1.out',
+          },
+          0
+        )
+        tl.to(
+          this.$refs.photoTextAnim,
+          {
+            opacity: 1,
+            ease: 'power1.out',
+            scale: 1,
+            duration: 0.6,
+          },
+          0
+        )
+        tl.to(
+          this.$refs.feedbackAnim,
+          {
+            scale: 1,
+            y: 0,
+            ease: 'power1.out',
+          },
+          0
+        )
+        tl.to(
+          this.$refs.feedbackBtnAnim,
+          {
+            scale: 1,
+            ease: 'power1.out',
+          },
+          0
         )
       })
     })
@@ -179,6 +243,8 @@ export default {
 
   &__title
     margin-bottom: 40px
+    @media (min-width: map-get($breakpoints, 'sm'))
+      transform: scale(0)
     @media (min-width: map-get($breakpoints, 'xxxl'))
       margin-bottom: 56px
     span.text-border
@@ -249,6 +315,8 @@ export default {
   &__founder-photo
     margin-right: 21px
     position: relative
+    @media (min-width: map-get($breakpoints, 'sm'))
+      transform: scale(0)
     @media (min-width: map-get($breakpoints, 'lg'))
       margin-right: 30px
     @media (min-width: map-get($breakpoints, 'xxxl'))
@@ -301,6 +369,8 @@ export default {
     font-size: 15px
     line-height: 19px
     @media (min-width: map-get($breakpoints, 'sm'))
+      opacity: 0
+      transform: scale(0)
       max-width: 296px
       font-size: 16px
       line-height: 21px
@@ -335,6 +405,7 @@ export default {
     min-height: 244px
     border-radius: 16px
     @media (min-width: map-get($breakpoints, 'sm'))
+      transform: translateX(1000px) scale(0)
       padding: 18px 12px
       max-width: 285px
       min-height: 246px
@@ -392,23 +463,27 @@ export default {
             max-width: 297px
 
   &__table-info-title
-    font-family: 'Manrope-SemiBold'
-    text-transform: uppercase
-    font-size: 16px
-    line-height: 24px
     margin-bottom: 10px
     @media (min-width: map-get($breakpoints, 'sm'))
-      font-size: 17px
-      line-height: 25px
       margin-bottom: 12px
     @media (min-width: map-get($breakpoints, 'lg'))
-      font-size: 20px
-      line-height: 28px
       margin-bottom: 16px
     @media (min-width: map-get($breakpoints, 'xxxl'))
-      font-size: 22px
-      line-height: 33px
       margin-bottom: 20px
+    h3
+      font-family: 'Manrope-SemiBold'
+      text-transform: uppercase
+      font-size: 16px
+      line-height: 24px
+      @media (min-width: map-get($breakpoints, 'sm'))
+        font-size: 17px
+        line-height: 25px
+      @media (min-width: map-get($breakpoints, 'lg'))
+        font-size: 20px
+        line-height: 28px
+      @media (min-width: map-get($breakpoints, 'xxxl'))
+        font-size: 22px
+        line-height: 33px
 
   &__table-info-image
     position: absolute
@@ -447,11 +522,13 @@ export default {
   &__feedback
     display: block
     @media (min-width: map-get($breakpoints, 'sm'))
+      transform: scale(0) translateY(1000px)
       @media (max-height: 800px)
         display: none
   &__button
     display: none
     @media (min-width: map-get($breakpoints, 'sm'))
+      transform: scale(0)
       @media (max-height: 800px)
         display: block
         max-width: 280px

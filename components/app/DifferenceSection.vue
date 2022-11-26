@@ -5,10 +5,10 @@
     </div>
     <ui-wrapper class="difference-section__wrapper">
       <div class="difference-section__inner">
-        <div class="difference-section__circle">
+        <div ref="circleAnim" class="difference-section__circle">
           <app-difference-circle-slider :slide="step" />
         </div>
-        <div class="difference-section__header">
+        <div ref="titleAnim" class="difference-section__header">
           <h2 class="difference-section__title title-secondary">
             Франшиза или обучение? Показываем разницу
           </h2>
@@ -39,7 +39,7 @@
               />
             </div>
           </div>
-          <div class="difference-section__cards">
+          <div ref="cardsAnim" class="difference-section__cards">
             <app-difference-card
               :black-text="currentStep.blackText"
               :white-text="currentStep.whiteText"
@@ -53,7 +53,7 @@
         </div>
       </div>
       <div class="difference-section__bottom-info">
-        Обеспечим пассивный доход на взаимовыгодных условиях:
+        <h3>Обеспечим пассивный доход на взаимовыгодных условиях:</h3>
         <span>
           вы инвестируете в товар, а всю работу с логистикой и закупкой
           выполняем мы.
@@ -134,6 +134,22 @@ export default {
           },
           0.2
         )
+        timeline.to(
+          this.$refs.cardsAnim,
+          {
+            scale: 1,
+            y: 0,
+          },
+          0
+        )
+        timeline.to(
+          this.$refs.titleAnim,
+          {
+            scale: 1,
+            x: 0,
+          },
+          0
+        )
       })
     })
     mm.add('(min-width: 1024px)', () => {
@@ -147,6 +163,21 @@ export default {
 
         const timeline = gsap.getById('main-section-anim')
 
+        timeline.to(
+          this.$refs.circleAnim,
+          {
+            scale: 1,
+            x: 0,
+          },
+          0
+        )
+        timeline.to(
+          $steps,
+          {
+            scale: 1,
+          },
+          0
+        )
         timeline.fromTo(
           firstStep,
           {
@@ -246,6 +277,7 @@ export default {
       left: 0
       top: 202px
     @media (min-width: map-get($breakpoints, 'md'))
+      transform: translateX(-100%) scale(0.4)
       left: auto
       top: 113px
       right: calc(100% - 130px)
@@ -262,7 +294,7 @@ export default {
       top: 26px
       @media (max-height: 800px)
         right: calc(100% - 199px)
-        top: 50px
+        top: 36px
     &:before
       content: ""
       position: absolute
@@ -279,6 +311,8 @@ export default {
         content: none
   &__header
     margin-bottom: 87px
+    @media (min-width: map-get($breakpoints, 'sm'))
+      transform: translateX(100%) scale(0.4)
     @media (min-width: map-get($breakpoints, 'md'))
       margin-bottom: 52px
     @media (min-width: map-get($breakpoints, 'lg'))
@@ -351,6 +385,8 @@ export default {
     margin: 0 auto
     max-width: 300px
     width: 100%
+    @media (min-width: map-get($breakpoints, 'sm'))
+      transform: translateY(100%) scale(0.4)
     @media (min-width: map-get($breakpoints, 'md'))
       margin: 0
       display: block
@@ -368,6 +404,7 @@ export default {
     flex-direction: column
     margin-bottom: 24px
     @media (min-width: map-get($breakpoints, 'md'))
+      transform: scale(0)
       margin-bottom: 0
       position: relative
       height: 344px
@@ -415,19 +452,13 @@ export default {
     text-align: center
     margin: 0 auto
     max-width: 885px
-    font-size: 20px
-    line-height: 30px
     padding: 0 0 79px 0
     @media (min-width: map-get($breakpoints, 'sm'))
       padding: 0 0 120px 0
-      font-size: 24px
-      line-height: 30px
     @media (min-width: map-get($breakpoints, 'lg'))
       padding: 0 0 103px 0
     @media (min-width: map-get($breakpoints, 'xxxl'))
       max-width: 885px
-      font-size: 30px
-      line-height: 45px
     &:before
       content: ""
       background: url("@/assets/images/info-icon.svg")
@@ -446,6 +477,16 @@ export default {
         width: 80px
         height: 80px
         top: -58px
+    h3
+      font-weight: 300
+      font-size: 20px
+      line-height: 30px
+      @media (min-width: map-get($breakpoints, 'sm'))
+        font-size: 24px
+        line-height: 30px
+      @media (min-width: map-get($breakpoints, 'xxxl'))
+        font-size: 30px
+        line-height: 45px
     span
       font-size: 14px
       line-height: 21px

@@ -32,6 +32,35 @@
     </template>
     <template #footer>
       <app-footer></app-footer>
+      <ui-modal v-model="modal">
+        <app-feedback-modal-leave />
+      </ui-modal>
     </template>
   </ui-layout>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      modal: false,
+    }
+  },
+  beforeDestroy() {
+    document.removeEventListener('mouseleave', this.onMouseLeave)
+  },
+  mounted() {
+    document.addEventListener('mouseleave', this.onMouseLeave)
+  },
+  methods: {
+    onMouseLeave(e) {
+      if (e.clientY < 10) {
+        setTimeout(() => {
+          document.removeEventListener('mouseleave', this.onMouseLeave)
+          this.modal = true
+        }, 2000)
+      }
+    },
+  },
+}
+</script>

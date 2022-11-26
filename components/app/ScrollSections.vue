@@ -37,7 +37,7 @@ export default {
       })
 
       timeline.to(this.$refs.overlay, { opacity: 0 }, 0)
-      timeline.to(this.$refs.primary, { y: '-100%' }, 0)
+      timeline.to(this.$refs.primary, { y: '-100%', ease: 'power1.out' }, 0)
     })
   },
 }

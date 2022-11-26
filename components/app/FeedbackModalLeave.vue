@@ -89,7 +89,6 @@ export default {
   background: #FFFFFF
   box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.08)
   border-radius: 16px
-  max-width: 700px
   padding: 33px 23px 20px 23px
   margin: 0 auto
   overflow: hidden

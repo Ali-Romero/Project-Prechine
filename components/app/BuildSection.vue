@@ -54,9 +54,11 @@
         </div>
       </div>
       <div class="build-section__bottom-description">
-        Подобный принцип работы применяют и сами маркетплейсы, которые
-        предлагают услуги площадки взамен на комиссию с товара, вместо того,
-        чтобы торговать на ней самостоятельно.
+        <h3>
+          Подобный принцип работы применяют и сами маркетплейсы, которые
+          предлагают услуги площадки взамен на комиссию с товара, вместо того,
+          чтобы торговать на ней самостоятельно.
+        </h3>
       </div>
     </ui-wrapper>
   </section>
@@ -155,24 +157,31 @@ export default {
     margin: 0 auto
     text-align: center
     max-width: 582px
-    font-size: 18px
-    line-height: 26px
     padding: 0 0 60px 0
     @media (min-width: map-get($breakpoints, 'lg'))
       padding: 0 0 90px 0
       max-width: 646px
-      font-size: 20px
-      line-height: 30px
       @media (max-height: 800px)
         max-width: 850px
-        font-size: 26px
-        line-height: 34px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       max-width: 978px
-      font-size: 30px
-      line-height: 45px
       @media (max-height: 800px)
         max-width: 850px
-        font-size: 26px
-        line-height: 34px
+    h3
+      font-family: 'Manrope-Light'
+      font-weight: 300
+      font-size: 18px
+      line-height: 26px
+      @media (min-width: map-get($breakpoints, 'lg'))
+        font-size: 20px
+        line-height: 30px
+        @media (max-height: 800px)
+          font-size: 26px
+          line-height: 34px
+      @media (min-width: map-get($breakpoints, 'xxxl'))
+        font-size: 30px
+        line-height: 45px
+        @media (max-height: 800px)
+          font-size: 26px
+          line-height: 34px
 </style>

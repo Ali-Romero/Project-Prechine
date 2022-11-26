@@ -5,14 +5,16 @@
     </div>
     <ui-wrapper>
       <div class="cases-section__inner">
-        <h2 class="cases-section__title title-secondary">Реальные кейсы</h2>
-        <div class="cases-section__title-info info">
+        <h2 ref="titleAnim" class="cases-section__title title-secondary">
+          Реальные кейсы
+        </h2>
+        <div ref="titleTextAnim" class="cases-section__title-info info">
           Для всех партнёров проводится постоянный мониторинг спроса товаров на
           маркетплейсах, на основе которого готовится подборка перспективных
           позиций на продажу.
         </div>
         <div class="cases-section__content">
-          <div class="cases-section__mini">
+          <div ref="productMiniAnim" class="cases-section__mini">
             <div class="product-mini">
               <div class="product-mini__image">
                 <ui-image
@@ -50,7 +52,7 @@
               </div>
             </div>
           </div>
-          <div class="cases-section__product">
+          <div ref="productAnim" class="cases-section__product">
             <div v-show="false">
               <ui-image
                 v-for="product in products"
@@ -95,8 +97,10 @@
             ></ui-image>
           </div>
           <div class="cases-section__bottom-text">
-            Каждый партнёр получил на старте вводное обучение и список ходовых
-            товаров на выбор, и за месяц вышел на продажи.
+            <h3>
+              Каждый партнёр получил на старте вводное обучение и список ходовых
+              товаров на выбор, и за месяц вышел на продажи.
+            </h3>
           </div>
         </div>
       </div>
@@ -232,7 +236,8 @@ export default {
     const mm = this.$gsap.matchMedia()
     this.$nextTick(() => {
       mm.add('(min-width: 768px)', () => {
-        this.$gsap.getById('cases-section').to(
+        const tl = this.$gsap.getById('cases-section')
+        tl.to(
           this.$refs.nav,
           {
             opacity: 1,
@@ -240,6 +245,64 @@ export default {
             y: -20,
           },
           0.2
+        )
+        tl.fromTo(
+          this.$refs.titleAnim,
+          {
+            opacity: 0,
+            x: '100%',
+            ease: 'power1.out',
+          },
+          {
+            opacity: 1,
+            x: 0,
+            ease: 'power1.out',
+          },
+          0
+        )
+        tl.fromTo(
+          this.$refs.titleTextAnim,
+          {
+            opacity: 0,
+            y: '200%',
+            scale: 0,
+            ease: 'power1.out',
+          },
+          {
+            scale: 1,
+            opacity: 1,
+            y: 0,
+            ease: 'power1.out',
+          },
+          0
+        )
+        tl.fromTo(
+          this.$refs.productMiniAnim,
+          {
+            opacity: 0,
+            x: '-100%',
+            ease: 'power1.out',
+          },
+          {
+            opacity: 1,
+            x: 0,
+            ease: 'power1.out',
+          },
+          0
+        )
+        tl.fromTo(
+          this.$refs.productAnim,
+          {
+            opacity: 0,
+            x: '100%',
+            ease: 'power1.out',
+          },
+          {
+            opacity: 1,
+            x: 0,
+            ease: 'power1.out',
+          },
+          0
         )
       })
     })
@@ -345,21 +408,26 @@ export default {
           width: 652px
 
   &__bottom-text
-    font-family: 'Manrope-Light'
-    font-size: 18px
-    line-height: 24px
     @media (min-width: map-get($breakpoints, 'sm'))
-      font-size: 19px
-      line-height: 26px
       max-width: 402px
     @media (min-width: map-get($breakpoints, 'lg'))
-      font-size: 24px
-      line-height: 35px
       max-width: 520px
     @media (min-width: map-get($breakpoints, 'xxxl'))
-      font-size: 30px
-      line-height: 45px
       max-width: 657px
+    h3
+      font-family: 'Manrope-Light'
+      font-size: 18px
+      line-height: 24px
+      font-weight: 300
+      @media (min-width: map-get($breakpoints, 'sm'))
+        font-size: 19px
+        line-height: 26px
+      @media (min-width: map-get($breakpoints, 'lg'))
+        font-size: 24px
+        line-height: 35px
+      @media (min-width: map-get($breakpoints, 'xxxl'))
+        font-size: 30px
+        line-height: 45px
 
   &__nav-button
     display: flex

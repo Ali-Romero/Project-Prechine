@@ -19,8 +19,12 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
+      {
+        name: 'keywords',
+        content:
+          'франшиза маркетплейса, франшиза продажи товаров на маркетплейсах, франшиза товаров из китая на маркетплейсах, бизнес +на маркетплейсах, бизнес план маркетплейса, продажа +на маркетплейсах бизнес, бизнес модель маркетплейса, озон бизнес, вайлдберриз бизнес, вайлдберриз начало бизнес, бизнес вайлдберриз +с нуля самостоятельно, +как открыть бизнес +на вайлдберриз, +как начать бизнес +на вайлдберриз, бизнес план вайлдберриз, wildberries бизнес, бизнес +на wildberries +с нуля, запуск бизнеса +на wildberries, бизнес +на wildberries отзывы, продажа бизнеса wildberries',
+      },
       {
         name: 'description',
         content: 'Франшиза удалённого бизнеса на маркетплейсах PriChina',

@@ -1,24 +1,24 @@
 <template>
-  <section id="about-section" class="about-section">
+  <section id="about-section" ref="section" class="about-section">
     <div ref="list" class="about-section__bg decor-bg">
       <ui-wrapper>
         <div class="about-section__inner">
           <div class="about-section__box">
             <div class="about-section__info">
-              <h2 class="about-section__title title-secondary">
+              <h2 ref="titleAnim" class="about-section__title title-secondary">
                 Продала машину, <br />
                 чтобы стать
                 <br class="d-none d-sm-block" />
                 миллионером
               </h2>
-              <div class="about-section__info-part-1">
+              <div ref="textAnim1" class="about-section__info-part-1">
                 Это шутка :) Не было ни машины, ни больших денег для закупки
                 крупной партии товаров. Поэтому пришлось
                 <span>пройти путь длиной в 5 лет,</span>
                 накапливая капитал, чтобы мои обороты выросли до
                 полномасштабного бизнеса.
               </div>
-              <div class="about-section__info-part-2">
+              <div ref="textAnim2" class="about-section__info-part-2">
                 <div>
                   С улыбкой вспоминаю, как надо мной подшучивал муж «семья
                   засыпает — просыпается предприниматель», видя, как я ночами
@@ -33,7 +33,7 @@
                 </div>
               </div>
             </div>
-            <div class="about-section__photo">
+            <div ref="photoAnim" class="about-section__photo">
               <img
                 src="@/assets/images/about-photo.png"
                 alt="KazanExpress"
@@ -70,9 +70,9 @@
     <div class="about-section__btn-content">
       <ui-wrapper>
         <div class="about-section__btn-container">
-          <div class="about-section__btn-description">
+          <h3 class="about-section__btn-description">
             Узнайте подробнее о франшизе и фулфилмент сервисе
-          </div>
+          </h3>
           <div class="about-section__btn" @click.prevent="modal = true">
             <ui-button fluid
               >Подробнее о франшизе
@@ -96,6 +96,80 @@ export default {
     return {
       modal: false,
     }
+  },
+  mounted() {
+    const mm = this.$gsap.matchMedia()
+
+    mm.add('(min-width: 768px)', () => {
+      const tl = this.$gsap.timeline({
+        scrollTrigger: {
+          anticipatePin: 0,
+          markers: false,
+          trigger: this.$refs.list,
+          pin: false,
+          pinSpacing: false,
+          start: 'top center',
+          end: 'top',
+          scrub: false,
+        },
+      })
+      tl.fromTo(
+        this.$refs.titleAnim,
+        {
+          opacity: 0,
+          x: '100%',
+          ease: 'power1.out',
+        },
+        {
+          opacity: 1,
+          x: 0,
+          ease: 'power1.out',
+        },
+        0
+      )
+      tl.fromTo(
+        this.$refs.textAnim1,
+        {
+          opacity: 0,
+          y: '100%',
+          ease: 'power1.out',
+        },
+        {
+          opacity: 1,
+          y: 0,
+          ease: 'power1.out',
+        },
+        0
+      )
+      tl.fromTo(
+        this.$refs.textAnim2,
+        {
+          opacity: 0,
+          y: '100%',
+          ease: 'power1.out',
+        },
+        {
+          opacity: 1,
+          y: 0,
+          ease: 'power1.out',
+        },
+        0
+      )
+      tl.fromTo(
+        this.$refs.photoAnim,
+        {
+          opacity: 0,
+          y: '100%',
+          ease: 'power1.out',
+        },
+        {
+          opacity: 1,
+          y: 0,
+          ease: 'power1.out',
+        },
+        0
+      )
+    })
   },
 }
 </script>

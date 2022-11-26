@@ -183,7 +183,9 @@ export default {
     margin: 0 auto
     padding: 0 26px 20px 26px
     @media (min-width: map-get($breakpoints, 'md'))
-      padding: 0 16px 20px 16px
+      padding: 0 16px 14px 16px
+      font-size: 14px
+      line-height: 18px
     @media (min-width: map-get($breakpoints, 'lg'))
       font-size: 16px
       line-height: 24px
@@ -210,7 +212,7 @@ export default {
     @media (min-width: map-get($breakpoints, 'md'))
       padding: 12px 11px 12px 16px
       font-size: 13px
-      line-height: 19px
+      line-height: 15px
     @media (min-width: map-get($breakpoints, 'lg'))
       padding: 12px 11px 16px 20px
       font-size: 15px

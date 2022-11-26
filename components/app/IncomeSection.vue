@@ -59,10 +59,16 @@
           </div>
         </div>
         <div ref="end" class="income-section__btn-content">
-          <div class="income-section__btn-description">
-            Обсудить финансовую модель и товары, которые продают партнёры
+          <div ref="titleAnim" class="income-section__btn-description">
+            <h3>
+              Обсудить финансовую модель и товары, которые продают партнёры
+            </h3>
           </div>
-          <div class="income-section__btn" @click.prevent="modal = true">
+          <div
+            ref="titleBtn"
+            class="income-section__btn"
+            @click.prevent="modal = true"
+          >
             <ui-button fluid>
               Подробнее о доходах
               <template #icon>
@@ -95,7 +101,7 @@ export default {
     const mm = gsap.matchMedia()
 
     mm.add('(min-width: 768px)', () => {
-      gsap.timeline({
+      const tl = gsap.timeline({
         scrollTrigger: {
           anticipatePin: 0,
           markers: false,
@@ -108,6 +114,38 @@ export default {
           scrub: 1,
         },
       })
+      tl.fromTo(
+        this.$refs.titleAnim,
+        {
+          opacity: 0,
+          x: '-1000%',
+          ease: 'power1.out',
+          duration: 2,
+        },
+        {
+          opacity: 1,
+          x: 0,
+          ease: 'power1.out',
+          duration: 2,
+        },
+        0.5
+      )
+      tl.fromTo(
+        this.$refs.titleBtn,
+        {
+          opacity: 0,
+          x: '1000%',
+          ease: 'power1.out',
+          duration: 2,
+        },
+        {
+          opacity: 1,
+          x: 0,
+          ease: 'power1.out',
+          duration: 2,
+        },
+        0.5
+      )
     })
   },
 }
@@ -242,29 +280,36 @@ export default {
     text-transform: uppercase
     width: 100%
     max-width: 827px
-    font-size: 22px
-    line-height: 31px
     text-align: center
     margin-bottom: 30px
     @media (min-width: map-get($breakpoints, 'sm'))
       margin-bottom: 0
       text-align: left
       max-width: 827px
-      font-size: 21px
-      line-height: 30px
       margin-right: 30px
     @media (min-width: map-get($breakpoints, 'lg'))
       max-width: 827px
-      font-size: 30px
-      line-height: 42px
       margin-right: 135px
     @media (min-width: map-get($breakpoints, 'xxxl'))
-      font-size: 40px
-      line-height: 56px
       @media (max-height: 800px)
         max-width: 680px
-        font-size: 32px
-        line-height: 46px
+    h3
+      font-weight:800
+      font-size: 22px
+      line-height: 31px
+      @media (min-width: map-get($breakpoints, 'sm'))
+        font-size: 21px
+        line-height: 30px
+      @media (min-width: map-get($breakpoints, 'lg'))
+        font-size: 30px
+        line-height: 42px
+      @media (min-width: map-get($breakpoints, 'xxxl'))
+        font-size: 40px
+        line-height: 56px
+        @media (max-height: 800px)
+          font-size: 32px
+          line-height: 46px
+
 
   &__btn
     width: 100%

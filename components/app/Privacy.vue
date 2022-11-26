@@ -207,8 +207,7 @@
 </template>
 
 <style lang="sass" scoped>
-.privacy-wrapper
-  padding: 20px 0
+
 .content-privacy
   max-width: 300px
   width: 100%
@@ -216,10 +215,12 @@
   background-color: white
   text-align: start
   position: relative
+  border-radius: 20px
   @media (min-width: map-get($breakpoints, 'sm'))
     padding: 24px 44px
     max-width: 450px
   @media (min-width: map-get($breakpoints, 'lg'))
+    border-radius: 40px
     max-width: 650px
 
   &__close
