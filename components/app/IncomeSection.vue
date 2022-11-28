@@ -288,11 +288,11 @@ export default {
       max-width: 827px
       margin-right: 30px
     @media (min-width: map-get($breakpoints, 'lg'))
-      max-width: 827px
+      max-width: 870px
       margin-right: 135px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       @media (max-height: 800px)
-        max-width: 680px
+        max-width: 700px
     h3
       font-weight:800
       font-size: 22px

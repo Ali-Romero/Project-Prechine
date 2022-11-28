@@ -465,17 +465,17 @@ export default {
     @media (min-width: map-get($breakpoints, 'sm'))
       margin-bottom: 0
       text-align: left
-      max-width: 361px
+      max-width: 373px
       font-size: 20px
       line-height: 33px
       margin-right: 38px
     @media (min-width: map-get($breakpoints, 'lg'))
-      max-width: 483px
+      max-width: 502px
       font-size: 27px
       line-height: 41px
       margin-right: 76px
     @media (min-width: map-get($breakpoints, 'xxxl'))
-      max-width: 729px
+      max-width: 750px
       font-size: 40px
       line-height: 56px
       margin-right: 160px
