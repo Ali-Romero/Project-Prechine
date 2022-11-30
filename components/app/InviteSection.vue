@@ -499,7 +499,7 @@ export default {
       left: 65px
       @media (max-height: 800px)
         bottom: 70px
-        left: 100px
+        left: 183px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       bottom: 69px
       left: 95px
