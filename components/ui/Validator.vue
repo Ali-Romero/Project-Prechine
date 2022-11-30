@@ -46,8 +46,10 @@ export default {
     animation: shake 0.3s 0.3s
     font-size: 9px
     line-height: 12px
-    top: 34px
+    top: 38px
     left: 16px
+    @media (min-width: map-get($breakpoints, 'sm'))
+      top: 34px
     @media (min-width: map-get($breakpoints, 'lg'))
       font-size: 12px
       line-height: 14px
