@@ -27,19 +27,12 @@
           </div>
           <div class="footer__col">
             <div v-if="page === 'index'" class="footer__logo">
-              <a href="https://kazanexpress.ru/prichina" target="_blank">
+              <a href="#" target="_blank">
                 <img
                   src="@/assets/images/logo-main.svg"
                   alt="logo"
                   width="79"
                   height="64"
-                  loading="lazy"
-                />
-                <img
-                  src="@/assets/images/k-express.png"
-                  alt="KazanExpress"
-                  width="148"
-                  height="19"
                   loading="lazy"
                 />
               </a>
@@ -55,24 +48,15 @@
             <div class="footer__connection">
               <app-connection></app-connection>
             </div>
-            <div v-if="page === 'thanks'" class="footer__f5">
-              <a
-                href="https://xn--5-7sbamtgf4aex7b0b.xn--p1ai/"
-                target="_blank"
-              >
-                <span class="footer__f5-logo">
-                  <img
-                    src="@/assets/images/f5.svg"
-                    alt="f5-logo"
-                    width="37"
-                    height="34"
-                    loading="lazy"
-                  />
-                </span>
-                <span class="footer__f5-text">
-                  Упаковка и продвижение <br />
-                  франшиз: «Франчайзинг5»
-                </span>
+            <div v-if="page === 'index'" class="footer__kaz">
+              <a href="https://kazanexpress.ru/prichina" target="_blank">
+                <img
+                  src="@/assets/images/k-express.png"
+                  alt="KazanExpress"
+                  width="148"
+                  height="19"
+                  loading="lazy"
+                />
               </a>
             </div>
           </div>
@@ -89,14 +73,14 @@
 export default {
   data() {
     return {
-      modal: false
+      modal: false,
     }
   },
   computed: {
     page() {
       return this.$route.name
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -169,27 +153,17 @@ export default {
       margin-bottom: 31px
     a
       display: flex
-      align-items: center
-      flex-direction: column
-      @media (min-width: map-get($breakpoints, 'sm'))
-        flex-direction: row
+      justify-content: center
+      pointer-events: none
 
     img
-      &:first-child
-        width: 60px
-        height: auto
-        margin-bottom: 16px
-        @media (min-width: map-get($breakpoints, 'sm'))
-          margin-bottom: 0
-          margin-right: 26px
-        @media (min-width: map-get($breakpoints, 'lg'))
-          margin-right: 46px
-          width: 79px
-      &:last-child
-        width: 120px
-        height: auto
-        @media (min-width: map-get($breakpoints, 'lg'))
-          width: 148px
+      width: 60px
+      height: auto
+      margin-bottom: 16px
+      @media (min-width: map-get($breakpoints, 'sm'))
+        margin-bottom: 0
+      @media (min-width: map-get($breakpoints, 'lg'))
+        width: 79px
 
   &__made-in
     text-align: center
@@ -215,24 +189,23 @@ export default {
     justify-content: center
     margin-bottom: 28px
     @media (min-width: map-get($breakpoints, 'sm'))
-      margin-bottom: 0
-
-  &__f5
+      margin-bottom: 58px
+    @media (min-width: map-get($breakpoints, 'lg'))
+      margin-bottom: 68px
+  &__kaz
+    margin-bottom: 20px
+    @media (min-width: map-get($breakpoints, 'sm'))
+      padding-left: 36px
+    @media (min-width: map-get($breakpoints, 'lg'))
+      padding-left: 48px
     a
       display: flex
-      align-items: center
       justify-content: center
-      margin-bottom: 28px
       @media (min-width: map-get($breakpoints, 'sm'))
-        margin-bottom: 0
-        margin-top: 27px
-        justify-content: flex-start
-      span
         display: block
-      &:hover
-        text-decoration: underline
-        cursor: pointer
-
-  &__f5-logo
-    margin-right: 17px
+    img
+      width: 110px
+      height: auto
+      @media (min-width: map-get($breakpoints, 'lg'))
+        width: 130px
 </style>

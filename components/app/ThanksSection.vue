@@ -23,7 +23,9 @@
               </div>
               <div class="thanks-section__time-text">
                 График работы компании:
-                <span>С Пн по Пт</span>
+                <span class="font-bold"
+                  >пн вт ср чт пт<span class="font-reg">сб вс</span></span
+                >
               </div>
             </li>
             <li>
@@ -32,7 +34,7 @@
               </div>
               <div class="thanks-section__time-text">
                 По московскому времени:
-                <span>с 9:00 до 18:00</span>
+                <span class="font-bold">с 9:00 до 18:00</span>
               </div>
             </li>
           </ul>
@@ -40,9 +42,6 @@
             Если Вы оставили заявку в нерабочее время или в выходной/праздничный
             день — <span>мы перезвоним Вам в ближайший рабочий день.</span>
           </div>
-        </div>
-        <div class="thanks-section__team-title">
-          А пока ближе познакомьтесь с командой
         </div>
         <div class="thanks-section__photo">
           <img
@@ -220,7 +219,7 @@ export default {
       font-size: 16px
       line-height: 24px
       max-width: 589px
-      margin-bottom: 49px
+      margin-bottom: 39px
     ul
       margin-bottom: 14px
       @media (min-width: map-get($breakpoints, 'lg'))
@@ -239,7 +238,7 @@ export default {
     margin-right: 14px
 
   &__time-text
-    span
+    .font-bold
       display: block
       font-size: 17px
       line-height: 22px
@@ -247,6 +246,9 @@ export default {
       @media (min-width: map-get($breakpoints, 'xxxl'))
         font-size: 18px
         line-height: 27px
+    .font-reg
+      color: #7D7D7D
+      margin-left: 5px
 
   &__time-info
     color: #7D7D7D
@@ -286,7 +288,7 @@ export default {
     margin-bottom: 174px
     font-family: 'Manrope-Light'
     @media (min-width: map-get($breakpoints, 'sm'))
-      margin-bottom: 26px
+      margin-bottom: 30px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       margin-bottom: 39px
     ul
@@ -305,15 +307,14 @@ export default {
           margin-bottom: 10px
           @media (min-width: map-get($breakpoints, 'lg'))
             margin-bottom: 0
-          a
-            justify-content: flex-end
-            @media (min-width: map-get($breakpoints, 'sm'))
-              justify-content: flex-start
           img
-            width: 170px
+            width: 110px
             height: auto
+            @media (min-width: map-get($breakpoints, 'sm'))
+              width: 120px
+            @media (min-width: map-get($breakpoints, 'lg'))
             @media (min-width: map-get($breakpoints, 'xxxl'))
-              width: 187px
+              width: 160px
         &:last-child
           margin-right: 0
           img
