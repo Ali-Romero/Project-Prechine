@@ -7,26 +7,45 @@
       </slot>
     </span>
     <span class="ui-input__field">
-      <input
+      <textarea
+        v-if="textarea"
         v-model="model"
         v-mask="mask"
         v-bind="$attrs"
         class="ui-input__input"
-        @focus="focus = true"
-        @blur="focus = false"
+        @focus="focusHandler"
+        @blur="blurHandler"
+        v-on="listeners"
+      />
+      <input
+        v-else
+        ref="input"
+        v-model="model"
+        v-mask="mask"
+        v-bind="$attrs"
+        class="ui-input__input"
+        @focus="focusHandler"
+        @blur="blurHandler"
         v-on="listeners"
       />
 
       <span v-if="showMaskPlaceholder" class="ui-input__mask">
-        <span>{{ maskPlaceholder.value }}</span
-        >{{ maskPlaceholder.mask }}
+        <span
+          v-for="(char,
+          index) in `${maskPlaceholder.value}${maskPlaceholder.mask}`.split('')"
+          :key="index"
+          :class="{
+            'ui-input__mask-hidden': index < maskPlaceholder.value.length,
+          }"
+          >{{ char }}</span
+        >
       </span>
     </span>
   </label>
 </template>
 
 <script>
-import { VueMaskDirective } from 'v-mask'
+import { VueMaskDirective, VueMaskFilter } from 'v-mask'
 
 export default {
   directives: {
@@ -56,6 +75,14 @@ export default {
      * Отображение символов маски. Заполняет оставшиеся символы символом "_"
      */
     showMask: {
+      type: Boolean,
+      default: false,
+    },
+    startMask: {
+      type: String,
+      default: '',
+    },
+    textarea: {
       type: Boolean,
       default: false,
     },
@@ -95,7 +122,35 @@ export default {
       return {
         'ui-input--focus': this.focus,
         'ui-input--error': this.error,
+        'ui-input--textarea': this.textarea,
       }
+    },
+  },
+  methods: {
+    focusHandler() {
+      if (this.startMask && this.mask && !this.model) {
+        this.model = VueMaskFilter(this.startMask, this.mask)
+
+        setTimeout(() => {
+          this.$refs.input.setSelectionRange(
+            this.startMask.length,
+            this.startMask.length
+          )
+        })
+      }
+
+      this.focus = true
+    },
+    blurHandler() {
+      if (
+        this.startMask &&
+        this.mask &&
+        VueMaskFilter(this.model, this.mask) === this.startMask
+      ) {
+        this.model = ''
+      }
+
+      this.focus = false
     },
   },
 }
@@ -174,8 +229,9 @@ export default {
     left: 0
     pointer-events: none
     font-family: 'Manrope-Light'
+    white-space: pre
 
-    & span
+    &-hidden
       visibility: hidden
 
   &__input
