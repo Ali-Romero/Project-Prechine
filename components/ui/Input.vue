@@ -13,6 +13,7 @@
         v-mask="mask"
         v-bind="$attrs"
         class="ui-input__input"
+        @mouseup="mouseupHandler"
         @focus="focusHandler"
         @blur="blurHandler"
         v-on="listeners"
@@ -24,6 +25,7 @@
         v-mask="mask"
         v-bind="$attrs"
         class="ui-input__input"
+        @mouseup="mouseupHandler"
         @focus="focusHandler"
         @blur="blurHandler"
         v-on="listeners"
@@ -127,6 +129,9 @@ export default {
     },
   },
   methods: {
+    mouseupHandler() {
+      this.$refs.input.setSelectionRange(this.value.length, this.value.length)
+    },
     focusHandler() {
       if (this.startMask && this.mask && !this.model) {
         this.model = VueMaskFilter(this.startMask, this.mask)
