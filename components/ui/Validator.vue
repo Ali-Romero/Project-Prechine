@@ -4,6 +4,7 @@
     v-bind="$attrs"
     class="ui-validator"
     tag="div"
+    mode="lazy"
   >
     <div class="ui-validator__field">
       <slot v-bind="{ error: !!errors.length }" />

@@ -5,6 +5,7 @@
       v-bind="$attrs"
       scroll-lock-gap-method="padding"
       :layout="false"
+      focusable-element="input"
       v-on="$listeners"
     >
       <button class="modal__close" @click="close">
