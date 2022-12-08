@@ -1,28 +1,28 @@
 <template>
   <div class="connection" :class="classes">
-    <div
-      v-if="page === 'index'"
-      class="connection__icon"
-      @click.prevent="modal = true"
-    >
-      <ui-icon name="connection-phone" />
-    </div>
-    <div v-if="page === 'thanks'" class="connection__icon">
-      <ui-icon name="connection-phone" />
-    </div>
     <div class="connection__container">
+      <div
+        v-if="page === 'index'"
+        class="connection__icon"
+        @click.prevent="modal = true"
+      >
+        <ui-icon name="connection-phone" />
+      </div>
+      <div v-if="page === 'thanks'" class="connection__icon">
+        <ui-icon name="connection-phone" />
+      </div>
       <div class="connection__num">
         <a href="tel:88003330168">8 (800) 333-01-68</a>
       </div>
-      <div class="connection__description">
-        <a v-if="page === 'index'" href="#" @click.prevent="modal = true"
-          >Бесплатный звонок</a
-        >
-        <a v-if="page === 'thanks'" href="tel:88003330168"
-          >позвоните сейчас <br />
-          чтобы не ждать звонка</a
-        >
-      </div>
+    </div>
+    <div class="connection__description">
+      <a v-if="page === 'index'" href="#" @click.prevent="modal = true"
+        >Бесплатный звонок</a
+      >
+      <a v-if="page === 'thanks'" href="tel:88003330168"
+        >позвоните сейчас <br />
+        чтобы не ждать звонка</a
+      >
     </div>
     <ui-modal v-model="modal">
       <app-feedback-modal-call />
@@ -58,10 +58,12 @@ export default {
 
 <style lang="sass">
 .connection
-  display: flex
   color: #212121
+  &__container
+    display: flex
+    align-items: center
   &--header
-    .connection__container
+    .connection__num
       display: none
       @media (min-width: map-get($breakpoints, 'sm'))
         display: block
@@ -85,6 +87,9 @@ export default {
           color: #FF840C
     .connection__description
       color: #212121
+      display: none
+      @media (min-width: map-get($breakpoints, 'sm'))
+        display: flex
 
   &__icon
     width: 23px

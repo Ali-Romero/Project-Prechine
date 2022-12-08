@@ -26,8 +26,8 @@
             </div>
           </div>
           <div class="footer__col">
-            <div v-if="page === 'index'" class="footer__logo">
-              <a href="#" target="_blank">
+            <div class="footer__logo">
+              <a href="#" onclick="return false">
                 <img
                   src="@/assets/images/logo-main.svg"
                   alt="logo"
@@ -38,26 +38,15 @@
               </a>
             </div>
             <div class="footer__made-in">Сделано в России 🤘</div>
-            <div class="footer__policy">
-              <a href="#" @click.prevent="modal = true"
-                >Политика конфиденциальности</a
-              >
-            </div>
           </div>
           <div class="footer__col">
             <div class="footer__connection">
               <app-connection></app-connection>
             </div>
-            <div v-if="page === 'index'" class="footer__kaz">
-              <a href="https://kazanexpress.ru/prichina" target="_blank">
-                <img
-                  src="@/assets/images/k-express.png"
-                  alt="KazanExpress"
-                  width="148"
-                  height="19"
-                  loading="lazy"
-                />
-              </a>
+            <div class="footer__policy">
+              <a href="#" @click.prevent="modal = true"
+                >Политика конфиденциальности</a
+              >
             </div>
           </div>
         </div>
@@ -154,7 +143,6 @@ export default {
     a
       display: flex
       justify-content: center
-      pointer-events: none
 
     img
       width: 60px
@@ -167,6 +155,9 @@ export default {
 
   &__made-in
     text-align: center
+    margin-bottom: 30px
+    @media (min-width: map-get($breakpoints, 'sm'))
+      margin-bottom: 0
 
   &__policy
     text-align: center
@@ -189,23 +180,13 @@ export default {
     justify-content: center
     margin-bottom: 28px
     @media (min-width: map-get($breakpoints, 'sm'))
-      margin-bottom: 58px
+      justify-content: flex-start
+      margin-bottom: 40px
     @media (min-width: map-get($breakpoints, 'lg'))
-      margin-bottom: 68px
-  &__kaz
-    margin-bottom: 20px
-    @media (min-width: map-get($breakpoints, 'sm'))
-      padding-left: 36px
-    @media (min-width: map-get($breakpoints, 'lg'))
-      padding-left: 48px
-    a
-      display: flex
-      justify-content: center
-      @media (min-width: map-get($breakpoints, 'sm'))
-        display: block
-    img
-      width: 110px
-      height: auto
-      @media (min-width: map-get($breakpoints, 'lg'))
-        width: 130px
+      margin-bottom: 44px
+    ::v-deep
+      .connection
+        &__icon
+          width: auto
+          height: auto
 </style>

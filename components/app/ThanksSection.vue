@@ -74,7 +74,7 @@
               </a>
             </li>
             <li>
-              <a href="https://kazanexpress.ru/prichina" target="_blank">
+              <a href="#" onclick="return false">
                 <span>Главный сайт бренда:</span>
                 <img
                   src="@/assets/images/logo-main.svg"
