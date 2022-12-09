@@ -37,12 +37,12 @@
                 />
               </a>
             </div>
-            <div class="footer__made-in">Сделано в России 🤘</div>
           </div>
           <div class="footer__col">
             <div class="footer__connection">
               <app-connection></app-connection>
             </div>
+            <div class="footer__made-in">Сделано в России 🤘</div>
             <div class="footer__policy">
               <a href="#" @click.prevent="modal = true"
                 >Политика конфиденциальности</a
@@ -106,7 +106,9 @@ export default {
       flex-direction: column
       justify-content: flex-end
       @media (min-width: map-get($breakpoints, 'sm'))
+        justify-content: center
         order: unset
+
 
   &__date,
   &__name
@@ -137,12 +139,10 @@ export default {
         margin-right: 14px
 
   &__logo
-    margin-bottom: 28px
-    @media (min-width: map-get($breakpoints, 'lg'))
-      margin-bottom: 31px
     a
       display: flex
       justify-content: center
+      pointer-events: none
 
     img
       width: 60px
@@ -155,9 +155,8 @@ export default {
 
   &__made-in
     text-align: center
-    margin-bottom: 30px
     @media (min-width: map-get($breakpoints, 'sm'))
-      margin-bottom: 0
+      text-align: left
 
   &__policy
     text-align: center
@@ -181,9 +180,9 @@ export default {
     margin-bottom: 28px
     @media (min-width: map-get($breakpoints, 'sm'))
       justify-content: flex-start
-      margin-bottom: 40px
+      margin-bottom: 23px
     @media (min-width: map-get($breakpoints, 'lg'))
-      margin-bottom: 44px
+      margin-bottom: 24px
     ::v-deep
       .connection
         &__icon

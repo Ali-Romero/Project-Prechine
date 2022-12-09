@@ -66,7 +66,7 @@ export default {
     '@nuxtjs/stylelint-module',
   ],
 
-  modules: ['@nuxtjs/axios', '@nuxtjs/pwa'],
+  modules: ['@nuxtjs/axios'],
 
   image: {
     dir: 'assets/images',
@@ -77,12 +77,6 @@ export default {
 
   axios: {
     baseURL: BASE_URL,
-  },
-
-  pwa: {
-    manifest: {
-      lang: 'ru',
-    },
   },
 
   build: {

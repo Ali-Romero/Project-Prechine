@@ -11,8 +11,6 @@
   "vueCompilerOptions": {
     "target": 2.7
   },
-  "extensions": [
-    ".vue"
-  ],
+  "extensions": [".vue"],
   "exclude": ["node_modules", ".nuxt", "dist"]
 }

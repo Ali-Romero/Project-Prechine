@@ -137,6 +137,7 @@ export default {
     display: flex
     justify-content: center
     color: #7D7D7D
+    text-align: center
     @media (min-width: map-get($breakpoints, 'lg'))
       font-size: 15px
       line-height: 20px
