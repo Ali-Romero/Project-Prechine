@@ -181,8 +181,10 @@ export default {
     @media (min-width: map-get($breakpoints, 'sm'))
       justify-content: flex-start
       margin-bottom: 23px
+      margin-left: -21px
     @media (min-width: map-get($breakpoints, 'lg'))
       margin-bottom: 24px
+      margin-left: -30px
     ::v-deep
       .connection
         &__icon

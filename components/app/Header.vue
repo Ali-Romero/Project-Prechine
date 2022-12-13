@@ -5,12 +5,22 @@
         <div class="header__container">
           <div class="header__logo">
             <img
+              v-if="page === 'index'"
               src="@/assets/images/logo-main.svg"
               width="111"
               height="90"
               alt="logo"
               loading="lazy"
             />
+            <router-link v-if="page === 'thanks'" to="/">
+              <img
+                src="@/assets/images/logo-main.svg"
+                width="111"
+                height="90"
+                alt="logo"
+                loading="lazy"
+              />
+            </router-link>
           </div>
           <div v-if="page === 'index'" class="d-none d-sm-block header__nav">
             <app-header-nav></app-header-nav>
