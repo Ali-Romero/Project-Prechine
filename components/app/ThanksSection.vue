@@ -63,7 +63,11 @@
         <div class="thanks-section__social">
           <ul>
             <li>
-              <a href="https://kazanexpress.ru/prichina" target="_blank">
+              <a
+                class="thanks-section__social-link"
+                href="https://kazanexpress.ru/prichina"
+                target="_blank"
+              >
                 <img
                   src="@/assets/images/k-express.png"
                   alt="KazanExpress"
@@ -71,10 +75,15 @@
                   height="24"
                   loading="lazy"
                 />
+                <span class="helper-info"
+                  ><span class="helper-info__text"
+                    >Действующий магазин на маркетплейсе:</span
+                  ></span
+                >
               </a>
             </li>
             <li>
-              <a href="#" onclick="return false">
+              <a href="http://prichina.store" target="_blank">
                 <span>Главный сайт бренда:</span>
                 <img
                   src="@/assets/images/logo-main.svg"
@@ -210,10 +219,12 @@ export default {
     line-height: 20px
     max-width: 333px
     margin-bottom: 30px
+    @media (min-width: map-get($breakpoints, 'sm'))
+      margin-bottom: 70px
     @media (min-width: map-get($breakpoints, 'lg'))
       padding: 20px 20px 18px 20px
       max-width: 503px
-      margin-bottom: 30px
+      margin-bottom: 34px
     @media (min-width: map-get($breakpoints, 'xxxl'))
       padding: 30px 30px 26px 30px
       font-size: 16px
@@ -322,7 +333,41 @@ export default {
             height: auto
             @media (min-width: map-get($breakpoints, 'xxxl'))
               width: 71px
+  &__social-link
+    position: relative
+    .helper-info
+      position: absolute
+      top: 0
+      width: 0
+      transform: scale(0)
+      text-align: center
+      font-size: 13px
+      line-height: 15px
+      transition: 0.3s
+      padding: 0
+      @media (min-width: map-get($breakpoints, 'xxxl'))
+        font-size: 14px
+        line-height: 16px
 
+      &__text
+        width: 270px
+        @media (min-width: map-get($breakpoints, 'xxxl'))
+          width: 290px
+    &:hover
+      .helper-info
+        transform: scale(1)
+        width: 270px
+        top: -40px
+        @media (min-width: map-get($breakpoints, 'xxxl'))
+          width: 290px
+        &__text
+          width: 270px
+          display: block
+          background-color: #ffffff3d
+          padding: 8px 6px 7px 6px
+          border-radius: 5px 0 5px 0
+          @media (min-width: map-get($breakpoints, 'xxxl'))
+            width: 290px
   &__backup
     font-size: 15px
     line-height: 22px
@@ -427,7 +472,7 @@ export default {
 
   &__photo
     position: relative
-    margin-bottom: 29px
+    margin-bottom: 46px
     @media (min-width: map-get($breakpoints, 'sm'))
       margin-bottom: 0
       position: absolute
