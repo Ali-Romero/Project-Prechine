@@ -9,6 +9,7 @@
     <span class="ui-input__field">
       <textarea
         v-if="textarea"
+        ref="input"
         v-model="model"
         v-mask="mask"
         v-bind="$attrs"
@@ -225,6 +226,7 @@ export default {
     color: inherit
     width: 100%
     display: block
+    font-family: 'Manrope-Light'
 
   &__mask
     display: flex
@@ -233,7 +235,6 @@ export default {
     top: 0
     left: 0
     pointer-events: none
-    font-family: 'Manrope-Light'
     white-space: pre
 
     &-hidden
