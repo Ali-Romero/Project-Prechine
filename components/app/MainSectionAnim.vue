@@ -25,7 +25,7 @@ export default {
           pin: true,
           pinSpacing: 'true',
           start: 'top top',
-          end: () => this.$refs.section.offsetHeight + 3000,
+          end: () => this.$refs.section?.offsetHeight + 3000,
           scrub: 1,
         },
       })

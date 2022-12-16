@@ -73,7 +73,7 @@ export default {
         this.$gsap.getById('invite-section').to(
           this.$refs.list,
           {
-            x: () => -this.$refs.list.firstChild.offsetWidth,
+            x: () => -this.$refs.list?.firstChild?.offsetWidth,
           },
           -0.5
         )

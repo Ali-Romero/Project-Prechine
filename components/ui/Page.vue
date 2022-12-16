@@ -13,20 +13,14 @@
 </template>
 
 <script>
-let loaded = false
-
 export default {
   data() {
     return {
-      loading: !loaded,
+      loading: true,
     }
   },
   mounted() {
-    if (!loaded) {
-      loaded = true
-
-      this.loading = false
-    }
+    this.loading = false
   },
 }
 </script>
