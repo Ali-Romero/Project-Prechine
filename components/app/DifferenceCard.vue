@@ -81,7 +81,7 @@ export default {
       max-width: 370px
       width: 100%
     &--1
-      background-color: #212121
+      background-color: #33A453
       border-radius: 24px
       color: white
     &--2
