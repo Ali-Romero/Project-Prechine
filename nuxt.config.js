@@ -66,7 +66,15 @@ export default {
     '@nuxtjs/stylelint-module',
   ],
 
-  modules: ['@nuxtjs/axios'],
+  modules: ['@nuxtjs/axios', '@nuxtjs/yandex-metrika'],
+
+  yandexMetrika: {
+    id: 88821037,
+    clickmap: true,
+    trackLinks: true,
+    accurateTrackBounce: true,
+    webvisor: true,
+  },
 
   image: {
     dir: 'assets/images',
