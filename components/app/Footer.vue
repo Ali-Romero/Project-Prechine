@@ -8,8 +8,8 @@
               PriChina ®, 2017-{{ new Date().getFullYear() }} г.
             </div>
             <div class="footer__name">
-              ИП Хуснутдинова А. Р., <br class="d-none d-sm-block" />
-              ИНН 25301919960
+              ИП Хуснутдинов А. A., <br class="d-none d-sm-block" />
+              ИНН 165712292191
             </div>
             <div class="footer__arms">
               <img
