@@ -30,20 +30,20 @@ export default {
   props: {
     img: {
       type: String,
-      required: true
+      required: true,
     },
     second: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   computed: {
     classes() {
       return {
-        'advantage--secondary': this.second
+        'advantage--secondary': this.second,
       }
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -68,12 +68,16 @@ export default {
 
   &__image
     margin-bottom: 22px
+    border-radius: 20px
+    overflow: hidden
     @media (min-width: map-get($breakpoints, 'sm'))
       margin-bottom: 0
       margin-right: 30px
     @media (min-width: map-get($breakpoints, 'lg'))
       margin-right: 50px
+      border-radius: 30px
     @media (min-width: map-get($breakpoints, 'xxxl'))
+      border-radius: 40px
       margin-right: 70px
     ::v-deep
       img

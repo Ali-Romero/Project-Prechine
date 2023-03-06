@@ -4,9 +4,12 @@
     <ui-wrapper>
       <div class="main-section__inner">
         <h1 class="main-section__title title">
-          Франшиза
-          <br />
-          онлайн бизнеса:
+          <span class="title-mob">Франшиза удалённого бизнеса: </span>
+          <span class="title-desctop">
+            Франшиза
+            <br />
+            онлайн бизнеса:
+          </span>
           <br class="d-none d-sm-inline" />
           <span class="text-border"> продавай</span> товары
           <br class="d-none d-sm-inline" />
@@ -29,6 +32,28 @@
         <div class="main-section__description-mobile d-sm-none">
           Всю логистику и упаковку товара проделает франчайзинговый фулфилмент
           центр.
+        </div>
+        <div class="main-section__price">
+          <div class="main-section__price-list">
+            <div class="main-section__price-item">
+              <div class="main-section__price-icon">
+                <ui-icon name="main-price-icon-1"></ui-icon>
+              </div>
+              <div class="main-section__price-description">
+                Стоимость франшизы
+                <span>490 т.р.</span>
+              </div>
+            </div>
+            <div class="main-section__price-item">
+              <div class="main-section__price-icon">
+                <ui-icon name="main-price-icon-2"></ui-icon>
+              </div>
+              <div class="main-section__price-description">
+                Инвестиции в товар
+                <span>150 т.р.</span>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="main-section__button" @click.prevent="modal = true">
           <ui-button fluid>
@@ -89,19 +114,21 @@ export default {
     ::d-deep
       overflow: hidden
   &__inner
-    padding: 148px 0 89px 3px
+    padding: 148px 0 79px 3px
     @media (min-width: map-get($breakpoints, 'sm'))
-      padding: 28px 0 66px 10px
+      padding: 16px 0 66px 10px
     @media (min-width: map-get($breakpoints, 'lg'))
-      padding: 36px 0 130px 0
+      padding: 20px 0 130px 0
     @media (min-width: map-get($breakpoints, 'xxxl'))
-      padding: 55px 0 191px 0
+      padding: 40px 0 191px 0
       @media (max-height: 800px)
         padding: 30px 0 191px 0
 
   &__title
-    margin-bottom: 25px
+    margin-bottom: 18px
     position: relative
+    @media (min-width: map-get($breakpoints, 'sm'))
+      margin-bottom: 25px
     @media (min-width: map-get($breakpoints, 'lg'))
       margin-bottom: 30px
     @media (min-width: map-get($breakpoints, 'xxxl'))
@@ -120,32 +147,44 @@ export default {
           left: -14px
           top: -4px
         @media (min-width: map-get($breakpoints, 'lg'))
-          padding: 0px 16px
+          padding: 0px 14px
           left: -20px
           top: -5px
         @media (min-width: map-get($breakpoints, 'xxxl'))
-          left: -20px
+          left: -18px
           top: -5px
           @media (max-height: 800px)
             padding: 0px 12px
             left: -16px
             top: -5px
-
+    span.title-mob
+      font-size: 17px
+      line-height: 24px
+      text-transform: uppercase
+      display: block
+      font-family: 'Manrope-Regular'
+      font-weight: 400
+      @media (min-width: map-get($breakpoints, 'sm'))
+        display: none
+    span.title-desctop
+      display: none
+      @media (min-width: map-get($breakpoints, 'sm'))
+        display: inline
   &__title-img
     position: absolute
-    top: 104px
-    right: -5px
+    top: 60px
+    right: 0
     @media (min-width: map-get($breakpoints, 'sm'))
-      top: 169px
+      top: 124px
       right: -114px
     @media (min-width: map-get($breakpoints, 'lg'))
       top: 224px
       right: -160px
       @media (max-height: 800px)
-        top: 134px
-        right: -130px
+        top: 120px
+        right: -124px
     @media (min-width: map-get($breakpoints, 'xxxl'))
-      top: 264px
+      top: 226px
       right: -181px
       @media (max-height: 800px)
         top: 172px
@@ -155,13 +194,13 @@ export default {
         width: 74px
         height: auto
         @media (min-width: map-get($breakpoints, 'sm'))
-          width: 102px
+          width: 90px
         @media (min-width: map-get($breakpoints, 'lg'))
           width: 136px
           @media (max-height: 800px)
-            width: 110px
+            width: 100px
         @media (min-width: map-get($breakpoints, 'xxxl'))
-          width: 161px
+          width: 154px
           @media (max-height: 800px)
               width: 120px
 
@@ -169,7 +208,7 @@ export default {
     font-size: 16px
     line-height: 24px
     font-family: 'Manrope-Light'
-    margin-bottom: 44px
+    margin-bottom: 18px
 
   &__description
     @media (min-width: map-get($breakpoints, 'sm'))
@@ -201,9 +240,64 @@ export default {
     span
       font-family: 'Manrope-Bold'
 
+  &__price
+    margin: 0 0 26px 0
+    @media (min-width: map-get($breakpoints, 'lg'))
+      margin: 0 0 30px 0
+    @media (min-width: map-get($breakpoints, 'xxxl'))
+      margin: 0 0 53px 0
+  &__price-list
+    display: flex
+  &__price-item
+    margin: 0 40px 0 0
+    display: flex
+    align-items: center
+    @media (min-width: map-get($breakpoints, 'xxxl'))
+      margin: 0 60px 0 0
+    &:last-child
+      margin: 0
+  &__price-icon
+    margin: 0 18px 0 0
+    @media (min-width: map-get($breakpoints, 'xxxl'))
+      margin: 0 24px 0 0
+    ::v-deep
+      svg
+        width: 38px
+        height: 38px
+        @media (min-width: map-get($breakpoints, 'lg'))
+          width: 40px
+          height: 40px
+        @media (min-width: map-get($breakpoints, 'xxxl'))
+          width: 60px
+          height: 60px
+  &__price-description
+    font-size: 14px
+    line-height: 18px
+    @media (min-width: map-get($breakpoints, 'sm'))
+      font-size: 14px
+      line-height: 16px
+    @media (min-width: map-get($breakpoints, 'lg'))
+      font-size: 16px
+      line-height: 20px
+      @media (max-height: 800px)
+        font-size: 16px
+        line-height: 20px
+    @media (min-width: map-get($breakpoints, 'xxxl'))
+      font-size: 18px
+      line-height: 27px
+      @media (max-height: 800px)
+        font-size: 16px
+        line-height: 20px
+    span
+      display: block
+      font-family: 'Manrope-ExtraBold'
+
   &__button
     max-width: 300px
     height: 70px
+    @media (min-width: map-get($breakpoints, 'sm'))
+      max-width: 260px
+      height: 56px
     @media (min-width: map-get($breakpoints, 'lg'))
       max-width: 370px
       height: 78px

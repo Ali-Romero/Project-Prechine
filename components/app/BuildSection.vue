@@ -12,7 +12,7 @@
         <div class="build-section__scroll">
           <ul ref="list" class="build-section__scroll-list">
             <li class="build-section__scroll-item">
-              <app-advantage img="advantage-1.png">
+              <app-advantage img="advantage-1.jpg">
                 <template #icon>
                   <ui-icon name="icon-handshake"></ui-icon>
                 </template>
@@ -28,7 +28,7 @@
               </app-advantage>
             </li>
             <li class="build-section__scroll-item">
-              <app-advantage img="advantage-2.png" second>
+              <app-advantage img="advantage-2.jpg" second>
                 <template #icon>
                   <ui-icon name="icon-people"></ui-icon>
                 </template>
