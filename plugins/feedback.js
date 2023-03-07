@@ -52,7 +52,7 @@ export default ({ app, route, $axios }, inject) => {
       },
     })
 
-    app.router.push({ name: 'thanks' })
+    // app.router.push({ name: 'thanks' })
   }
 
   inject('feedback', {

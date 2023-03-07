@@ -84,7 +84,7 @@
         </div>
       </ui-wrapper>
       <ui-modal v-model="modal">
-        <app-feedback-modal-call />
+        <app-feedback-modal-call btn-text="Подробнее о франшизе" />
       </ui-modal>
     </div>
   </section>

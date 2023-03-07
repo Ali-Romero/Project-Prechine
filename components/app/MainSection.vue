@@ -66,7 +66,7 @@
       </div>
     </ui-wrapper>
     <ui-modal v-model="modal">
-      <app-feedback-modal-presentation />
+      <app-feedback-modal-presentation btn-text="Получить презентацию" />
     </ui-modal>
   </section>
 </template>

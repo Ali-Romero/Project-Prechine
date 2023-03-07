@@ -29,7 +29,6 @@ export default {
 
 <style lang="sass">
 .modal
-  padding: 30px 0 !important
   overflow: auto
   &__container
     overflow: unset !important

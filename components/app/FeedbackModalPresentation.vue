@@ -53,6 +53,12 @@
 
 <script>
 export default {
+  props: {
+    btnText: {
+      type: String,
+      required: true,
+    },
+  },
   data() {
     return {
       loading: false,
@@ -62,7 +68,8 @@ export default {
         phone: '',
         'section-name-text':
           'Пoлучитe пpeзeнтацию и финaнcoвую мoдeль франшизы',
-        'section-btn-text': 'Получить материалы',
+        'section-btn-text': this.btnText,
+        'section-btn-text-2': 'Получить материалы',
         'section-name': 'Закрытая',
       },
     }

@@ -6,8 +6,9 @@ if (
     die('error');
 }
 // Pre settings
-define('SND_FROM', 'info@franch5sender.ru');
-define('SND_TO', 'leads@conversionpro.agency, franch5.leads@gmail.com'); // allowble comma-sepparated values
+define('SND_FROM', 'info@prichina-partners.ru');
+// define('SND_TO', 'leads@conversionpro.agency, franch5.leads@gmail.com'); // allowble comma-sepparated values
+define('SND_TO', 'sherali920825@gmail.com'); // allowble comma-sepparated values
 define('SND_NAME', 'PRICHINA');
 define('NAME_FRANCH', 'PRICHINA');
 define('SMTP', false); // see settings in Helper.php before you change this const
@@ -20,7 +21,12 @@ $domainName = idn_to_utf8($_SERVER['HTTP_HOST']);
 
 // Structure of array: $arr["NAME_OF_FORM_FIELD"] = array(0..1=>"Field name translations",2=>"Field value")
 $fields = [
-    'section-btn-text' => ['Текст на кнопке', 'Answertext', false],
+    'section-btn-text' => ['текст на кнопке №1', 'Answertext1', false],
+    'section-btn-text-2' => [
+        'текст на кнопке №2, т.е. в модальном окне (если форма захвата закрытая)',
+        'Answertext2',
+        false,
+    ],
     'section-name-text' => [
         'Заголовок на экране, с которого оставлена заявка',
         'Section-name-text',
@@ -96,6 +102,7 @@ $groups = [
     '3) Кастомная информация:' => [
         'fields' => [
             'section-btn-text',
+            'section-btn-text-2',
             'section-name-text',
             'section-name',
             'user_location_ip',
@@ -151,7 +158,7 @@ $headers .= "Content-Type: text/html;charset=utf-8;\r\n";
 $headers .= "X-Priority: 3\r\n";
 $headers .= 'X-Mailer: PHP' . phpversion() . "\r\n";
 
-$subject = 'Заявка на франшизу «' . NAME_FRANCH . '»';
+$subject = 'Новый лид prichina-partners.ru';
 
 $phone = '';
 $nameOrCity = '';
@@ -179,7 +186,23 @@ $htmlBody .= '</body></html>';
 $goodStatus = $thankYouPage ? 2 : 1;
 
 try {
-    if (SND_TO_BITRIX) {
+    $arrContextOptions = [
+        'ssl' => [
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+        ],
+    ];
+    $url =
+        'https://functions.yandexcloud.net/d4emqfdda3tkm7c4oepc?email=' .
+        trim($fields['email'][2]) .
+        '&domain=' .
+        $_SERVER['HTTP_HOST'];
+    $data = file_get_contents(
+        $url,
+        false,
+        stream_context_create($arrContextOptions)
+    );
+    if (SND_TO_BITRIX && $data === 'true') {
         require_once '../bx/crest.php';
 
         $leadRsp = CRest::call('crm.lead.add', [
@@ -203,7 +226,7 @@ try {
                         'VALUE_TYPE' => 'WORK',
                     ],
                 ],
-                'UF_CRM_1650794493' => 'https://voltron-franch.ru/',
+                'UF_CRM_1650794493' => 'https://prichina-partners.ru/',
                 'SOURCE_ID' => 'CALL',
                 'UF_CRM_PROPERTY_NOVOE_POLE' => '10689',
                 'UF_CRM_1665128109' => $fields['city'][2],

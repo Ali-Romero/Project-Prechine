@@ -55,7 +55,7 @@
           <ui-input-name v-model="fields.name" :error="error" />
         </ui-validator>
         <div class="feedback-modal-action__button">
-          <ui-button fluid type="submit">Получить консультацию</ui-button>
+          <ui-button fluid type="submit">Принять участие</ui-button>
         </div>
         <div class="feedback-modal-action__agree">
           <ui-agree></ui-agree>
@@ -76,7 +76,7 @@ export default {
         phone: '',
         action: 'приехать в Казань (в том числе на экскурсию)',
         'section-name-text': 'Принять участие в экскурсии:',
-        'section-btn-text': 'Получить консультацию',
+        'section-btn-text': 'Принять участие',
         'section-name': 'Закрытая',
       },
     }
