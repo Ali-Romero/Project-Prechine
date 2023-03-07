@@ -6,9 +6,7 @@
         <h1 class="main-section__title title">
           <span class="title-mob">Франшиза удалённого бизнеса: </span>
           <span class="title-desctop">
-            Франшиза
-            <br />
-            онлайн бизнеса:
+            Франшиза онлайн бизнеса:
           </span>
           <br class="d-none d-sm-inline" />
           <span class="text-border"> продавай</span> товары
@@ -66,7 +64,10 @@
       </div>
     </ui-wrapper>
     <ui-modal v-model="modal">
-      <app-feedback-modal-presentation btn-text="Получить презентацию" />
+      <app-feedback-modal-presentation
+        title="Франшиза онлайн бизнеса: продавай товары на маркетплейсах и путешествуй"
+        btn-text="Получить презентацию"
+      />
     </ui-modal>
   </section>
 </template>
@@ -169,26 +170,28 @@ export default {
     span.title-desctop
       display: none
       @media (min-width: map-get($breakpoints, 'sm'))
+        font-family: 'Manrope-Regular'
         display: inline
+        font-weight: 400
   &__title-img
     position: absolute
     top: 60px
     right: 0
     @media (min-width: map-get($breakpoints, 'sm'))
-      top: 124px
-      right: -114px
+      top: 83px
+      right: 15px
     @media (min-width: map-get($breakpoints, 'lg'))
-      top: 224px
-      right: -160px
+      top: 150px
+      right: 60px
       @media (max-height: 800px)
-        top: 120px
-        right: -124px
+        top: 81px
+        right: 9px
     @media (min-width: map-get($breakpoints, 'xxxl'))
-      top: 226px
-      right: -181px
+      top: 149px
+      right: 39px
       @media (max-height: 800px)
-        top: 172px
-        right: -150px
+        top: 117px
+        right: 30px
     ::v-deep
       img
         width: 74px

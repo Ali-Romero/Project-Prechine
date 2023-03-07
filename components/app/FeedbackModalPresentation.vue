@@ -58,6 +58,10 @@ export default {
       type: String,
       required: true,
     },
+    title: {
+      type: String,
+      required: true,
+    },
   },
   data() {
     return {
@@ -66,6 +70,7 @@ export default {
         name: '',
         email: '',
         phone: '',
+        'section-title': this.title,
         'section-name-text':
           'Пoлучитe пpeзeнтацию и финaнcoвую мoдeль франшизы',
         'section-btn-text': this.btnText,

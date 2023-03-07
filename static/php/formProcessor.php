@@ -20,22 +20,27 @@ $domainName = idn_to_utf8($_SERVER['HTTP_HOST']);
 
 // Structure of array: $arr["NAME_OF_FORM_FIELD"] = array(0..1=>"Field name translations",2=>"Field value")
 $fields = [
-    'section-btn-text' => ['текст на кнопке №1', 'Answertext1', false],
-    'section-btn-text-2' => [
-        'текст на кнопке №2, т.е. в модальном окне (если форма захвата закрытая)',
-        'Answertext2',
+    'section-title' => [
+        'Заголовок на экране, с которого оставлена заявка',
+        'Title',
         false,
     ],
+    'section-name' => ['Тип формы', 'Section-name', false],
     'section-name-text' => [
-        'Заголовок на экране, с которого оставлена заявка',
+        'Призыв на форме захвата, с которого оставлена заявка',
         'Section-name-text',
+        false,
+    ],
+    'section-btn-text' => ['Текст на кнопке №1', 'Answertext1', false],
+    'section-btn-text-2' => [
+        'Текст на кнопке №2, т.е. в модальном окне (если форма захвата закрытая)',
+        'Answertext2',
         false,
     ],
     'name' => ['Имя отправителя', 'Name', false],
     'phone' => ['Номер телефона', 'Phone', false],
     'email' => ['Email', 'Email', false],
     'action' => ['Приехать в Казань или пройти онлайн', 'action', false],
-    'section-name' => ['Тип формы', 'Section-name', false],
     'page_url' => ['Url страницы, с которого пришла заявка', 'Page URL', false],
     'utm_source' => ['Источник трафика', 'utm_source', false],
     'utm_medium' => ['Тип рекламы', 'utm_medium', false],
@@ -100,10 +105,11 @@ $groups = [
     ],
     '3) Кастомная информация:' => [
         'fields' => [
-            'section-btn-text',
-            'section-btn-text-2',
+            'section-title',
             'section-name-text',
             'section-name',
+            'section-btn-text',
+            'section-btn-text-2',
             'user_location_ip',
         ],
         'html' => '',

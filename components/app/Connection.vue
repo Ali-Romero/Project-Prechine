@@ -25,7 +25,7 @@
       </div>
     </div>
     <ui-modal v-model="modal">
-      <app-feedback-modal-call />
+      <app-feedback-modal-call :title="title" />
     </ui-modal>
   </div>
 </template>
@@ -36,6 +36,10 @@ export default {
     header: {
       type: Boolean,
       default: false,
+    },
+    title: {
+      type: String,
+      required: true,
     },
   },
   data() {

@@ -61,6 +61,10 @@ export default {
       type: String,
       required: true,
     },
+    title: {
+      type: String,
+      required: true,
+    },
   },
   data() {
     return {
@@ -69,6 +73,7 @@ export default {
         name: '',
         email: '',
         phone: '',
+        'section-title': this.title,
         'section-name-text':
           'Запишитесь на онлайн-консультацию, чтобы узнать подробнее о франшизе PriChina',
         'section-btn-text': this.btnText,

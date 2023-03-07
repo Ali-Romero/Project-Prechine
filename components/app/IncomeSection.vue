@@ -80,7 +80,10 @@
       </div>
     </ui-wrapper>
     <ui-modal v-model="modal">
-      <app-feedback-modal-call btn-text="Подробнее о доходах" />
+      <app-feedback-modal-call
+        title="Обсудить финансовую модель и товары, которые продают партнёры"
+        btn-text="Подробнее о доходах"
+      />
     </ui-modal>
   </section>
 </template>

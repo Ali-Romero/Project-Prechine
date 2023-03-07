@@ -84,7 +84,10 @@
         </div>
       </ui-wrapper>
       <ui-modal v-model="modal">
-        <app-feedback-modal-call btn-text="Подробнее о франшизе" />
+        <app-feedback-modal-call
+          title="Узнайте подробнее о франшизе и фулфилмент сервисе"
+          btn-text="Подробнее о франшизе"
+        />
       </ui-modal>
     </div>
   </section>

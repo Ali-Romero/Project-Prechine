@@ -31,7 +31,7 @@
           <ui-social></ui-social>
         </div>
         <div class="header__connection">
-          <app-connection header></app-connection>
+          <app-connection title="Бесплатный звонок (хедер)" header />
         </div>
       </div>
     </ui-wrapper>

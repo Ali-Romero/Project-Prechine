@@ -40,7 +40,7 @@
           </div>
           <div class="footer__col">
             <div class="footer__connection">
-              <app-connection></app-connection>
+              <app-connection title="Бесплатный звонок (футер)" />
             </div>
             <div class="footer__made-in">Сделано в России 🤘</div>
             <div class="footer__policy">
