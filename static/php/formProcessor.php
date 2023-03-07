@@ -7,8 +7,7 @@ if (
 }
 // Pre settings
 define('SND_FROM', 'info@prichina-partners.ru');
-// define('SND_TO', 'leads@conversionpro.agency, franch5.leads@gmail.com'); // allowble comma-sepparated values
-define('SND_TO', 'sherali920825@gmail.com'); // allowble comma-sepparated values
+define('SND_TO', 'leads@conversionpro.agency, franch5.leads@gmail.com'); // allowble comma-sepparated values
 define('SND_NAME', 'PRICHINA');
 define('NAME_FRANCH', 'PRICHINA');
 define('SMTP', false); // see settings in Helper.php before you change this const
