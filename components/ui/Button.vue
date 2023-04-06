@@ -18,20 +18,20 @@ export default {
   props: {
     tag: {
       type: String,
-      default: 'button'
+      default: 'button',
     },
     fluid: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   computed: {
     classes() {
       return {
-        'ui-button--fluid': this.fluid
+        'ui-button--fluid': this.fluid,
       }
-    }
-  }
+    },
+  },
 }
 </script>
 
