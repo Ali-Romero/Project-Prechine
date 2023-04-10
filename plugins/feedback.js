@@ -52,7 +52,11 @@ export default ({ app, route, $axios }, inject) => {
       },
     })
 
-    app.router.push({ name: 'thanks' })
+    /* eslint-disable */
+    ym(88821037, 'reachGoal', 'ORDER')
+
+    // window.location = 'thanks.html'
+    window.location = 'thanks'
   }
 
   inject('feedback', {
