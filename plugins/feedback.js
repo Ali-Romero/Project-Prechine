@@ -35,6 +35,10 @@ export default ({ app, route, $axios }, inject) => {
   }
 
   async function submit(fields) {
+    /* eslint-disable-next-line */
+    ym(88821037, 'reachGoal', 'ORDER')
+    app.router.push({ name: 'thanks' })
+
     const defaultFields = await getDefaultFields()
     const data = { ...defaultFields, ...fields }
 
@@ -46,17 +50,11 @@ export default ({ app, route, $axios }, inject) => {
       localStorage.setItem('city', fields.city)
     }
 
-    await $axios.post('php/formProcessor.php', createFormData(data), {
+    $axios.post('php/formProcessor.php', createFormData(data), {
       headers: {
         'X-Requested-With': 'XMLHttpRequest',
       },
     })
-
-    /* eslint-disable */
-    ym(88821037, 'reachGoal', 'ORDER')
-
-    // window.location = 'thanks.html'
-    window.location = 'thanks'
   }
 
   inject('feedback', {

@@ -57,10 +57,6 @@
 <script>
 export default {
   props: {
-    btnText: {
-      type: String,
-      required: true,
-    },
     title: {
       type: String,
       required: true,
@@ -76,8 +72,7 @@ export default {
         'section-title': this.title,
         'section-name-text':
           'Запишитесь на онлайн-консультацию, чтобы узнать подробнее о франшизе PriChina',
-        'section-btn-text': this.btnText,
-        'section-btn-text-2': 'Получить консультацию',
+        'section-btn-text': 'Получить консультацию',
         'section-name': 'Закрытая',
       },
     }
